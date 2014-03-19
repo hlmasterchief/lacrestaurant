@@ -1,7 +1,4 @@
 <?php
 
-require_once 'database/db.php';
-
-$db = new Database();
-$results = $db->selectAll("yup", array());
-var_dump($results);
+require_once 'model/Model.php';
+require_once 'model/Yup.php';
