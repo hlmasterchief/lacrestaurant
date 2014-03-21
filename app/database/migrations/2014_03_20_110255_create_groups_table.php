@@ -15,6 +15,7 @@ class CreateGroupsTable extends Migration {
 			$table->increment('id');
 			$table->string('name')->unique();
 			$table->string('permission');
+			$table->boolean('staff');
 			$table->timestamps();
 		});
 	}

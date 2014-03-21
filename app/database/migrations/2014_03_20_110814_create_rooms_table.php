@@ -15,7 +15,6 @@ class CreateRoomsTable extends Migration {
 			$table->increment('id');
 			$table->string('room_code');
 			$table->boolean('active');
-			$table->integer('person_count');
 			$table->timestamps();
 		});
 	}
