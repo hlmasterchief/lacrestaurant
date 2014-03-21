@@ -54,7 +54,7 @@ class UserController extends BaseController {
 	public function getLogout() {
 		if (Auth::check()) {
 			Auth::logout();
-			return Redirect::intended('user');
+			return Redirect::intended('/');
 		} else {
 			return Redirect::to('user');
 		}
