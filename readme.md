@@ -1,21 +1,25 @@
-## Laravel PHP Framework
+## Cheatsheet for group (Vietnamese)
 
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/version.png)](https://packagist.org/packages/laravel/framework) [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.png)](https://packagist.org/packages/laravel/framework) [![Build Status](https://travis-ci.org/laravel/framework.png)](https://travis-ci.org/laravel/framework)
+### Tạo database:
+http://laravel.com/docs/migrations
+http://laravel.com/docs/schema  
+Kiểm tra các file trong folder app/database/migrations để biết thêm chi tiết.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+### Quy tắc đặt tên column:
+1, Bắt buộc phải có column id ($table->increments('id'))
+2, primary key sẽ tự động set là id luôn, không dùng 2 hoặc nhiều cột làm key
+3, không cần quan tâm đến việc đặt foreign key
+4, đặt relationship:
+  - cột được tính là foreign key phải có tên là MODEL_id (với MODEL là tên class MODEL mình sẽ tạo, MODEL đó sẽ liên kết với relation table)
+  - với many to many relationship, table trung gian sẽ có tên MODEL1_MODEL2 (tên MODEL1 và MODEL2 được xếp theo thứ tự ABC, ví dụ role_user chứ không phải user_role). table trung gian sẽ có cột id, MODEL1_id và MODEL2_id
+  - nếu model có 2 từ (ví dụ BlogCategory) thì tên foreign key là blog_category_id
+5, các database dùng để lưu data nên có $table->timestamps();
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
 
-## Official Documentation
-
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
-
-### Contributing To Laravel
-
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+### Quy tắc Model:
+Check model trong folder app/model
+1, tên model ngắn gọn hết sức có thể, không dùng plural (ví dụ bảng users, thì model dùng User thôi)
+2, đầu class đặt `protected $table = 'table_name';` với table_name là tên bảng Model hướng tới
+3, tên function relationship phải đặt trùng tên model relation (in thường), nếu model chứa 2 từ (ví dụ BlogCategory) thì function sẽ tên là blogCategory
+4, nếu dùng hasMany thì đặt tên function là plural (ví dụ trong class Group sẽ có function users() để nhặt tất cả users thuộc group)

@@ -12,9 +12,8 @@ class CreateRoomsTable extends Migration {
 	 */
 	public function up() {
 		Schema::create('rooms', function($table) {
-			$table->increment('id');
+			$table->increments('id');
 			$table->string('room_code');
-			$table->boolean('active');
 			$table->timestamps();
 		});
 	}
@@ -24,9 +23,8 @@ class CreateRoomsTable extends Migration {
 	 *
 	 * @return void
 	 */
-	public function down()
-	{
-		//
+	public function down() {
+		Schema::drop('rooms');
 	}
 
 }

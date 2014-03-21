@@ -12,10 +12,10 @@ class CreateGroupsTable extends Migration {
 	 */
 	public function up() {
 		Schema::create('groups', function($table) {
-			$table->increment('id');
+			$table->increments('id');
 			$table->string('name')->unique();
 			$table->string('permission');
-			$table->boolean('staff');
+			$table->boolean('admin');
 			$table->timestamps();
 		});
 	}

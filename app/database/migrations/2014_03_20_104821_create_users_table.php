@@ -12,12 +12,11 @@ class CreateUsersTable extends Migration {
 	 */
 	public function up() {
 		Schema::create('users', function($table) {
-			$table->increment('id');
+			$table->increments('id');
 			$table->string('username')->unique();
 			$table->string('password');
 			$table->integer('group_id')->unsigned();
-			$table->integer('room_id')->unsigned()->nullable();
-			$table->boolean('active')->default(true);
+			$table->integer('room_id')->default(-1);
 			$table->timestamps();
 		});
 	}
