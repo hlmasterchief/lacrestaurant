@@ -5,11 +5,11 @@ class Dish extends Eloquent {
    	protected $table = 'dishes';
 
    	public function dishImages() {
-   		return $this->hasMany('DishImages');
+   		return $this->hasMany('DishImage');
     }
    
-   	public function category() {
-        return $this->belongsTo('Category');
+   	public function dishCategory() {
+        return $this->belongsTo('DishCategory');
     }
    
 }

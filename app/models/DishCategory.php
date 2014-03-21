@@ -1,8 +1,8 @@
 <?php
 
-class Category extends Eloquent {
+class DishCategory extends Eloquent {
 
-    protected $table = 'categories';
+    protected $table = 'dish_categories';
 
     public function dishes() {
     	return $this->hasMany('Dish');

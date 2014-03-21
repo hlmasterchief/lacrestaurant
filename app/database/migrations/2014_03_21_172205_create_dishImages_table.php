@@ -10,9 +10,8 @@ class CreateDishImagesTable extends Migration {
 	 *
 	 * @return void
 	 */
-	public function up()
-	{
-		Schema::create('dishImages', function($table) {
+	public function up() {
+		Schema::create('dish_images', function($table) {
 			$table->increments('id');
 			$table->integer('dish_id')->unsigned();
 			$table->string('link');
@@ -25,9 +24,8 @@ class CreateDishImagesTable extends Migration {
 	 *
 	 * @return void
 	 */
-	public function down()
-	{
-		Schema::drop('dishImages');
+	public function down() {
+		Schema::drop('dish_images');
 	}
 
 }

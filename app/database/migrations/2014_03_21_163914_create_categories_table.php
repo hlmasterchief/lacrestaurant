@@ -10,11 +10,10 @@ class CreateCategoriesTable extends Migration {
 	 *
 	 * @return void
 	 */
-	public function up()
-	{
-		Schema::create('categories', function($table) {
+	public function up() {
+		Schema::create('dish_categories', function($table) {
 			$table->increments('id');
-			$table->string('name')->unique();
+			$table->string('name');
 			$table->timestamps();
 		});
 	}
@@ -24,9 +23,8 @@ class CreateCategoriesTable extends Migration {
 	 *
 	 * @return void
 	 */
-	public function down()
-	{
-		Schema::drop('categories');
+	public function down() {
+		Schema::drop('dish_categories');
 	}
 
 }
