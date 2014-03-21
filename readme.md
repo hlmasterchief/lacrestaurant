@@ -19,6 +19,8 @@ Kiểm tra các file trong folder app/database/migrations để biết thêm chi
 
 ### Quy tắc Model:
 Check model trong folder app/model
+
+
 1. tên model ngắn gọn hết sức có thể, không dùng plural (ví dụ bảng users, thì model dùng User thôi)
 2. đầu class đặt `protected $table = 'table_name';` với table_name là tên bảng Model hướng tới
 3. tên function relationship phải đặt trùng tên model relation (in thường), nếu model chứa 2 từ (ví dụ BlogCategory) thì function sẽ tên là blogCategory
