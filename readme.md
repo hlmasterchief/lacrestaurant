@@ -11,9 +11,9 @@ Kiểm tra các file trong folder app/database/migrations để biết thêm chi
 2. primary key sẽ tự động set là id luôn, không dùng 2 hoặc nhiều cột làm key
 3. không cần quan tâm đến việc đặt foreign key
 4. đặt relationship:
-  - cột được tính là foreign key phải có tên là MODEL_id (với MODEL là tên class MODEL mình sẽ tạo, MODEL đó sẽ liên kết với relation table)
-  - với many to many relationship, table trung gian sẽ có tên MODEL1_MODEL2 (tên MODEL1 và MODEL2 được xếp theo thứ tự ABC, ví dụ role_user chứ không phải user_role). table trung gian sẽ có cột id, MODEL1_id và MODEL2_id
-  - nếu model có 2 từ (ví dụ BlogCategory) thì tên foreign key là blog_category_id
+  - cột được tính là foreign key phải có tên là MODEL\_id (với MODEL là tên class MODEL mình sẽ tạo, MODEL đó sẽ liên kết với relation table)
+  - với many to many relationship, table trung gian sẽ có tên MODEL1\_MODEL2 (tên MODEL1 và MODEL2 được xếp theo thứ tự ABC, ví dụ role\_user chứ không phải user\_role). table trung gian sẽ có cột id, MODEL1\_id và MODEL2\_id
+  - nếu model có 2 từ (ví dụ BlogCategory) thì tên foreign key là blog\_category\_id
 5. các database dùng để lưu data nên có $table->timestamps();
 
 
