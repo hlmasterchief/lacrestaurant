@@ -5,24 +5,17 @@ class UserController extends BaseController {
 	protected $layout = 'layout.master';
 
 	public function __construct() {
-		/* for csrf, anti attack */
         $this->beforeFilter('csrf', array('on' => 'post'));
+        $this->beforeFilter('auth', array('except' => array('getLogin', 'postLogin')));
+        $this->beforeFilter('logged', array('only' => array('getLogin', 'postLogin')));
     }
 
 	public function getIndex() {
-		if (Auth::check()) {
-			$this->layout->body = View::make('page.user')->with('user', Auth::user());
-		} else {
-			return Redirect::guest('user/login');
-		}
+		$this->layout->body = View::make('page.user')->with('user', Auth::user());
 	}
 
 	public function getLogin() {
-		if (Auth::check()) {
-			return Redirect::intended('user');
-		} else {
-			$this->layout->body = View::make('page.login');
-		}
+		$this->layout->body = View::make('page.login');
 	}
 
 	public function postLogin() {
@@ -52,12 +45,8 @@ class UserController extends BaseController {
 	}
 
 	public function getLogout() {
-		if (Auth::check()) {
-			Auth::logout();
-			return Redirect::intended('/');
-		} else {
-			return Redirect::to('user');
-		}
+		Auth::logout();
+		return Redirect::intended('user');
 	}
 
 }

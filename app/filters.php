@@ -33,12 +33,6 @@ App::after(function($request, $response)
 |
 */
 
-Route::filter('auth', function()
-{
-	if (Auth::guest()) return Redirect::guest('login');
-});
-
-
 Route::filter('auth.basic', function()
 {
 	return Auth::basic();
@@ -77,4 +71,23 @@ Route::filter('csrf', function()
 	{
 		throw new Illuminate\Session\TokenMismatchException;
 	}
+});
+
+/*
+|--------------------------------------------------------------------------
+| LAC Filters
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::filter('auth', function() {
+    if (Auth::guest()) return Redirect::guest('user/login');
+});
+
+Route::filter('logged', function() {
+    if (Auth::check()) return Redirect::to('user');
+});
+
+Route::filter('admin', function() {
+    if (!Auth::user()->is_admin()) return Redirect::to('user');
 });

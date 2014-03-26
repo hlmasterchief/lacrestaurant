@@ -8,19 +8,19 @@ class UserTableSeeder extends Seeder {
 
         $group = new Group;
         $group->name = "Admin";
-        $group->permission = "1,2,3,4";
+        $group->permission = "1,2,3,4,5,6";
         $group->admin = true;
         $group->save();
 
         $group = new Group;
         $group->name = "Staff";
-        $group->permission = "1,2";
+        $group->permission = "1,2,3,5,6";
         $group->admin = true;
         $group->save();
 
         $group = new Group;
         $group->name = "Customer";
-        $group->permission = "5";
+        $group->permission = "10";
         $group->admin = false;
         $group->save();
 
@@ -36,20 +36,20 @@ class UserTableSeeder extends Seeder {
 
         $user = new User;
         $user->username = "admin";
-        $user->password = Hash::make("yami5493");
+        $user->password = Hash::make("passnhulon");
         $user->group_id = $admin_group->id;
         $user->save();
 
         $user = new User;
         $user->username = "staff";
-        $user->password = Hash::make("yami5493");
+        $user->password = Hash::make("passnhulon");
         $user->group_id = $staff_group->id;
         $user->save();
 
         for ($i = 1; $i < 10; $i++) {
             $user = new User;
             $user->username = $i."S";
-            $user->password = Hash::make("yami5493");
+            $user->password = Hash::make("passnhulon");
             $user->group_id = $customer_group->id;
             $user->room_id  = Room::all()->first()->id;
             $user->save();

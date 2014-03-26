@@ -43,4 +43,32 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->group->admin;
 	}
 
+	public function permissionDishes() {
+		return in_array(1, $this->group->getFeaturesArray());
+	}
+
+	public function permissionMenu() {
+		return in_array(2, $this->group->getFeaturesArray());
+	}
+
+	public function permissionManageReserve() {
+		return in_array(3, $this->group->getFeaturesArray());
+	}
+
+	public function permissionManageUser() {
+		return in_array(4, $this->group->getFeaturesArray());
+	}
+
+	public function permissionManageFeedback() {
+		return in_array(5, $this->group->getFeaturesArray());
+	}
+
+	public function permissionManageNews() {
+		return in_array(6, $this->group->getFeaturesArray());
+	}
+
+	public function permissionReserve() {
+		return in_array(10, $this->group->getFeaturesArray());
+	}
+
 }

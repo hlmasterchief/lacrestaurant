@@ -24,6 +24,8 @@
 
         <!-- include javascript -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+        <script src="http://code.angularjs.org/1.2.15/angular-sanitize.min.js"></script>
         {{ HTML::script('js/bootstrap.min.js') }}
         {{ HTML::script('js/main.js') }}
         @yield('js', '')

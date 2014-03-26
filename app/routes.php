@@ -12,4 +12,14 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::controller('user', 'UserController');
+
+// user routes
+Route::get('user', 'UserController@getIndex');
+Route::get('user/login', 'UserController@getLogin');
+Route::post('user/login', 'UserController@postLogin');
+Route::get('user/logout', 'UserController@getLogout');
+
+// admin routes
+Route::get('user/admin', 'AdminController@getIndex');
+Route::get('user/admin/create_user', 'AdminController@getCreateUser');
+Route::post('user/admin/create_user', 'AdminController@postCreateUser');

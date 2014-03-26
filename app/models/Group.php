@@ -14,4 +14,12 @@ class Group extends Eloquent {
 		return $this->hasMany('User');
 	}
 	
+	public static function formSelect() {
+		$result = array();
+		foreach (Group::all() as $group) {
+			$result[$group->id] = $group->name;
+		}
+		return $result;
+	}
+
 }

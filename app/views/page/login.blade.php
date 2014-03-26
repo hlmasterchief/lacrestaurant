@@ -11,7 +11,7 @@
 </ul>
 
 @if(Session::has('message'))
-	<p class="alert">{{ Session::get('message') }}</p>
+	<p class="bg-primary">{{ Session::get('message') }}</p>
 @endif
 
 <div class="form-group">
