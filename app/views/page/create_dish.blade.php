@@ -14,10 +14,16 @@
 	<p class="bg-primary">{{ Session::get('message') }}</p>
 @endif
 
+@if(Session::has('dish'))
+    <p class="bg-info">{{ Session::get('dish') }}</p>
+@endif
+
 <div class="form-group">
-	{{ Form::text('name', array('class'=>'form-control', 'placeholder'=>'Name')) }}
-	{{ Form::text('price', array('class'=>'form-control', 'placeholder'=>'Price')) }}
-	{{ Form::textarea('description', array('class'=>'form-control', 'placeholder'=>'Description')) }}
+    {{ Form::text('name', null, array('class'=>'form-control', 'placeholder'=>'Name')) }}
+    {{ Form::text('price', null, array('class'=>'form-control', 'placeholder'=>'Price')) }}
+    {{ Form::text('new_category', null, array('class'=>'form-control', 'placeholder'=>'New Category (If needed)')) }}
+    {{ Form::select('dish_category_id', DishCategory::formSelect(), null, array('class'=>'form-control')) }}
+    {{ Form::textarea('description', null, array('class'=>'form-control', 'placeholder'=>'Description')) }}
 </div>
 {{ Form::submit('Submit', array('class'=>'btn btn-primary'))}}
 
