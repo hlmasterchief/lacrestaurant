@@ -61,4 +61,46 @@ class DishController extends BaseController {
         } // end validation
     }
 
+    public function getEditDish($id) {
+        $dish = Dish::find($id);
+        $this->layout->body = View::make('admin.edit_dish')->with('dish', $dish);
+    }
+
+    public function postEditDish($id) {
+        /* validate input */
+        $validator = Validator::make(Input::all(), array(
+            "name"        => "required|unique:dishes",
+            "price"       => "required|integer",
+            "description" => "required"
+        ));
+
+        /* if validated */
+        if ($validator->passes()) {
+            /* get input */
+            $dish = Dish::find($id);
+            $dish->name        = Input::get("name");
+            $dish->price       = Input::get("price");
+            $dish->description = Input::get("description");
+            if (Input::has("new_category")) {
+                $category = DishCategory::where("name", "=", Input::get("new_category"))->first();
+                if ($category) {
+                    $dish->dish_category_id = $category->id;
+                } else {
+                    $category = new DishCategory();
+                    $category->name = Input::get("new_category");
+                    $category->save();
+
+                    $dish->dish_category_id = $category->id;
+                }
+            } else {
+                $dish->dish_category_id = Input::get("dish_category_id");
+            }
+            $dish->save();
+
+            return Redirect::to("dish/edit_dish/$dish->id")->with('message', 'Dish edited!');
+        } else {
+            return Redirect::to("dish/edit_dish/$dish->id")->withErrors($validator);
+        } // end validation
+    }
+
 }

@@ -40,9 +40,35 @@ class MenuController extends BaseController {
             foreach (Input::get('dishes') as $dishId) 
                 $menu->dishes()->save(Dish::find((int) $dishId));
 
-            return Redirect::to('menu/create_menu')->with('message', 'Dish added!');
+            return Redirect::to('menu/create_menu')->with('message', 'Menu added!');
         } else {
             return Redirect::to('menu/create_menu')->withErrors($validator);
+        } // end validation
+    }
+
+    public function getEditMenu($id) {
+        $menu = Menu::find($id);
+        $this->layout->body = View::make('admin.edit_menu')->with('menu', $menu);
+    }
+
+    public function postEditMenu($id) {
+        /* validate input */
+        $validator = Validator::make(Input::all(), array(
+            "menu_date" =>  "required|date_format:Y-m-d",
+            "dishes"    =>  "required"
+        ));
+
+        /* if validated */
+        if ($validator->passes()) {
+            /* get input */
+            $menu = Menu::find($id);
+            $menu->menu_date = Input::get("menu_date");
+            $menu->dishes()->sync(Input::get('dishes'));
+            $menu->save();
+
+            return Redirect::to("menu/edit_menu/$id")->with('message', 'Menu edited!');
+        } else {
+            return Redirect::to("menu/edit_menu/$id")->withErrors($validator);
         } // end validation
     }
 

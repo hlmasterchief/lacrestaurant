@@ -1,6 +1,7 @@
 @section('body')
 
 <h2>Dish: {{ $dish->name }} <small>Price: {{ $dish->price }}</small></h2>
+<h3>{{ HTML::link("dish/edit_dish/$dish->id", "Edit Dish") }}</h3>
 <dl class="dl-horizontal">
     <dt>Category</dt>
     <dd>{{ $dish->dishCategory->name }}</dd>

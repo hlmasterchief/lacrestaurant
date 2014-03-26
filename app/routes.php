@@ -28,10 +28,14 @@ Route::post('user/create_user', 'AdminController@postCreateUser');
 Route::get('dish', 'DishController@getIndex');
 Route::get('dish/create_dish', 'DishController@getCreateDish');
 Route::post('dish/create_dish', 'DishController@postCreateDish');
+Route::get('dish/edit_dish/{id}', 'DishController@getEditDish');
+Route::post('dish/edit_dish/{id}', 'DishController@postEditDish');
 Route::get('dish/{id}', 'DishController@getDish');
 
 // menu routes
 Route::get('menu', 'MenuController@getIndex');
 Route::get('menu/create_menu', 'MenuController@getCreateMenu');
 Route::post('menu/create_menu', 'MenuController@postCreateMenu');
+Route::get('menu/edit_menu/{id}', 'MenuController@getEditMenu');
+Route::post('menu/edit_menu/{id}', 'MenuController@postEditMenu');
 Route::get('menu/{id}', 'MenuController@getMenu');
