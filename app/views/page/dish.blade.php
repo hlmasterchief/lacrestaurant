@@ -1,21 +1,20 @@
 @section('body')
 
-<table class="table table-striped">
-	@foreach(Dish::all() as $dish)
-	<tr>
-		<td>{{ $dish->id }}</td>
-		<td>{{ $dish->name }}</td>
-		<td>{{ $dish->price }}</td>
-        <td>{{ $dish->dishCategory->name }}</td>
-        <td>
-            <ul>
-                @foreach($dish->dishImages as $image)
-                    <li>{{ $image->link }}</li>
-                @endforeach
-            </ul>
-        </td>
-	</tr>
-	@endforeach
-</table>
+<h2>Dish: {{ $dish->name }} <small>Price: {{ $dish->price }}</small></h2>
+<dl class="dl-horizontal">
+    <dt>Category</dt>
+    <dd>{{ $dish->dishCategory->name }}</dd>
+    <dt>Images</dt>
+    <dd>    
+        <ul>
+            @foreach($dish->dishImages as $image)
+                <li>{{ HTML::image($image->link, $dish->name, array('style', 'width="300px"')) }}</li>
+            @endforeach
+        </ul>
+    </dd>
+    <dt>Description</dt>
+    <dd>{{ $dish->description }}</dd>
+</dl>
+
 
 @stop

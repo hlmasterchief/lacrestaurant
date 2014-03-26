@@ -24,6 +24,8 @@ Route::get('user/admin', 'AdminController@getIndex');
 Route::get('user/admin/create_user', 'AdminController@getCreateUser');
 Route::post('user/admin/create_user', 'AdminController@postCreateUser');
 
+// dish routes
 Route::get('dish', 'DishController@getIndex');
 Route::get('dish/create_dish', 'DishController@getCreateDish');
 Route::post('dish/create_dish', 'DishController@postCreateDish');
+Route::get('dish/{id}', 'DishController@getDish');
