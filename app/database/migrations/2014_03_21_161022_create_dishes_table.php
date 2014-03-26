@@ -14,7 +14,7 @@ class CreateDishesTable extends Migration {
 		Schema::create('dishes', function($table) {
 			$table->increments('id');
 			$table->string('name')->unique();
-			$table->integer('category_id')->unsigned();
+			$table->integer('dish_category_id')->unsigned();
 			$table->float('price');
 			$table->mediumText('description');
 			$table->timestamps();
