@@ -23,3 +23,5 @@ Route::get('user/logout', 'UserController@getLogout');
 Route::get('user/admin', 'AdminController@getIndex');
 Route::get('user/admin/create_user', 'AdminController@getCreateUser');
 Route::post('user/admin/create_user', 'AdminController@postCreateUser');
+
+Route::get('dish', 'DishController@getIndex');
