@@ -11,5 +11,9 @@ class Dish extends Eloquent {
     public function dishCategory() {
         return $this->belongsTo('DishCategory');
     }
+
+    public function menus() {
+        return $this->belongsToMany('Menu');
+    }
    
 }

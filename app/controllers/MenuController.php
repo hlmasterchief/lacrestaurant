@@ -1,0 +1,49 @@
+<?php
+
+class MenuController extends BaseController {
+
+    protected $layout = 'layout.master';
+
+    public function __construct() {
+        $this->beforeFilter('csrf', array('on' => 'post'));
+        $this->beforeFilter('auth');
+    }
+
+    public function getIndex() {
+        $this->layout->body = View::make('page.all_menu');
+    }
+
+    public function getMenu($id) {
+        $menu = Menu::find($id);
+        if (!$menu)
+            return Redirect::to('menu');
+        $this->layout->body = View::make('page.menu')->with('menu', $menu);
+    }
+
+    public function getCreateMenu() {
+        $this->layout->body = View::make('admin.create_menu');
+    }
+
+    public function postCreateMenu() {
+        /* validate input */
+        $validator = Validator::make(Input::all(), array(
+            "menu_date" =>  "required|date_format:Y-m-d",
+            "dishes"    =>  "required"
+        ));
+
+        /* if validated */
+        if ($validator->passes()) {
+            /* get input */
+            $menu = new Menu();
+            $menu->menu_date = Input::get("menu_date");
+            $menu->save();
+            foreach (Input::get('dishes') as $dishId) 
+                $menu->dishes()->save(Dish::find((int) $dishId));
+
+            return Redirect::to('menu/create_menu')->with('message', 'Dish added!');
+        } else {
+            return Redirect::to('menu/create_menu')->withErrors($validator);
+        } // end validation
+    }
+
+}

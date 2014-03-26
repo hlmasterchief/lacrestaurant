@@ -1,6 +1,6 @@
 @section('body')
 
-{{ Form::open(array('url'=>'user/admin/create_user', 'autocomplete' => 'off')) }}
+{{ Form::open(array('url'=>'user/create_user', 'autocomplete' => 'off')) }}
 
 <h2>Create User</h2>
 

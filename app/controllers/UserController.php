@@ -21,16 +21,16 @@ class UserController extends BaseController {
     public function postLogin() {
         /* validate input */
         $validator = Validator::make(Input::all(), array(
-            "username"  =>  "required",
-            "password"  =>  "required"
+            "username" =>  "required",
+            "password" =>  "required"
         ));
 
         /* if validated */
         if ($validator->passes()) {
             /* get input */
             $login = array(
-                "username"  =>  Input::get("username"),
-                "password"  =>  Input::get("password")
+                "username" =>  Input::get("username"),
+                "password" =>  Input::get("password")
             );
 
             /* check login */

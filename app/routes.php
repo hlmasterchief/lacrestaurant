@@ -21,11 +21,17 @@ Route::get('user/logout', 'UserController@getLogout');
 
 // admin routes
 Route::get('user/admin', 'AdminController@getIndex');
-Route::get('user/admin/create_user', 'AdminController@getCreateUser');
-Route::post('user/admin/create_user', 'AdminController@postCreateUser');
+Route::get('user/create_user', 'AdminController@getCreateUser');
+Route::post('user/create_user', 'AdminController@postCreateUser');
 
 // dish routes
 Route::get('dish', 'DishController@getIndex');
 Route::get('dish/create_dish', 'DishController@getCreateDish');
 Route::post('dish/create_dish', 'DishController@postCreateDish');
 Route::get('dish/{id}', 'DishController@getDish');
+
+// menu routes
+Route::get('menu', 'MenuController@getIndex');
+Route::get('menu/create_menu', 'MenuController@getCreateMenu');
+Route::post('menu/create_menu', 'MenuController@postCreateMenu');
+Route::get('menu/{id}', 'MenuController@getMenu');

@@ -9,6 +9,7 @@
         @section('css')
             {{ HTML::style('css/bootstrap.min.css') }}
             {{ HTML::style('css/main.css') }}
+            {{ HTML::style('css/bootstrap-datetimepicker.min.css') }}
         @show
 
         <!--[if lt IE 9]>
@@ -27,6 +28,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
         <script src="http://code.angularjs.org/1.2.15/angular-sanitize.min.js"></script>
         {{ HTML::script('js/bootstrap.min.js') }}
+        {{ HTML::script('js/moment.js') }}
+        {{ HTML::script('js/bootstrap-datetimepicker.min.js') }}
         {{ HTML::script('js/main.js') }}
         @yield('js', '')
     </body>

@@ -20,15 +20,15 @@ class DishController extends BaseController {
     }
 
     public function getCreateDish() {
-        $this->layout->body = View::make('page.create_dish');
+        $this->layout->body = View::make('admin.create_dish');
     }
 
     public function postCreateDish() {
         /* validate input */
         $validator = Validator::make(Input::all(), array(
-            "name"        =>    "required|unique:dishes",
-            "price"       =>    "required|integer",
-            "description" =>    "required"
+            "name"        => "required|unique:dishes",
+            "price"       => "required|integer",
+            "description" => "required"
         ));
 
         /* if validated */
