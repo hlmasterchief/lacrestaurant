@@ -11,7 +11,7 @@
 </ul>
 
 @if(Session::has('message'))
-	<p class="bg-primary">{{ Session::get('message') }}</p>
+    <p class="bg-primary">{{ Session::get('message') }}</p>
 @endif
 
 @if(Session::has('dish'))

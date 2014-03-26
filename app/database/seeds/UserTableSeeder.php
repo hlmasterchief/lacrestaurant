@@ -2,7 +2,7 @@
 class UserTableSeeder extends Seeder {
 
     public function run() {
-    	DB::table('groups')->delete();
+        DB::table('groups')->delete();
         DB::table('rooms')->delete();
         DB::table('users')->delete();
 

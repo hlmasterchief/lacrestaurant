@@ -1,11 +1,11 @@
 @section('body')
 
 <table class="table table-striped">
-	@foreach(Dish::all() as $dish)
-	<tr>
-		<td>{{ $dish->id }}</td>
-		<td>{{ $dish->name }}</td>
-		<td>{{ $dish->price }}</td>
+    @foreach(Dish::all() as $dish)
+    <tr>
+        <td>{{ $dish->id }}</td>
+        <td>{{ $dish->name }}</td>
+        <td>{{ $dish->price }}</td>
         <td>{{ $dish->dishCategory->name }}</td>
         <td>
             <ul>
@@ -14,8 +14,8 @@
                 @endforeach
             </ul>
         </td>
-	</tr>
-	@endforeach
+    </tr>
+    @endforeach
 </table>
 
 @stop

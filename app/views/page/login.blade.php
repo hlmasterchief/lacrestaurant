@@ -11,12 +11,12 @@
 </ul>
 
 @if(Session::has('message'))
-	<p class="bg-primary">{{ Session::get('message') }}</p>
+    <p class="bg-primary">{{ Session::get('message') }}</p>
 @endif
 
 <div class="form-group">
-	{{ Form::text('username', null, array('class'=>'form-control', 'placeholder'=>'Username')) }}
-	{{ Form::password('password', array('class'=>'form-control', 'placeholder'=>'Password')) }}
+    {{ Form::text('username', null, array('class'=>'form-control', 'placeholder'=>'Username')) }}
+    {{ Form::password('password', array('class'=>'form-control', 'placeholder'=>'Password')) }}
 </div>
 {{ Form::submit('Login', array('class'=>'btn btn-primary'))}}
 

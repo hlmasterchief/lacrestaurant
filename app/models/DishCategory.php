@@ -5,7 +5,7 @@ class DishCategory extends Eloquent {
     protected $table = 'dish_categories';
 
     public function dishes() {
-    	return $this->hasMany('Dish');
+        return $this->hasMany('Dish');
     }
 
     public function getCategoryLinkAttribute() {

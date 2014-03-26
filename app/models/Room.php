@@ -2,11 +2,11 @@
 
 class Room extends Eloquent {
 
-	protected $table = 'rooms';
+    protected $table = 'rooms';
 
-	public function users() {
-		return $this->hasMany('User');
-	}
+    public function users() {
+        return $this->hasMany('User');
+    }
 
     public static function formSelect() {
         $result = array();
@@ -16,5 +16,5 @@ class Room extends Eloquent {
         }
         return $result;
     }
-	
+    
 }

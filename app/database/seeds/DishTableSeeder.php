@@ -2,7 +2,7 @@
 class DishTableSeeder extends Seeder {
 
     public function run() {
-    	DB::table('dish_categories')->delete();
+        DB::table('dish_categories')->delete();
         DB::table('dish_images')->delete();
         DB::table('dishes')->delete();
 
