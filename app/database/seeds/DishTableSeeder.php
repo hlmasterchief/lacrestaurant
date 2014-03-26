@@ -2,58 +2,58 @@
 class DishTableSeeder extends Seeder {
 
     public function run() {
-    	DB::table('categories')->delete();
-        DB::table('dishImages')->delete();
+    	DB::table('dish_categories')->delete();
+        DB::table('dish_images')->delete();
         DB::table('dishes')->delete();
 
-        $group = new Group;
-        $group->name = "Admin";
-        $group->permission = "1,2,3,4";
-        $group->admin = true;
-        $group->save();
+        $dishCategory = new DishCategory;
+        $dishCategory->name = "category1";
+        $dishCategory->save();
 
-        $group = new Group;
-        $group->name = "Staff";
-        $group->permission = "1,2";
-        $group->admin = true;
-        $group->save();
+        $dishCategory = new DishCategory;
+        $dishCategory->name = "category2";
+        $dishCategory->save();
 
-        $group = new Group;
-        $group->name = "Customer";
-        $group->permission = "5";
-        $group->admin = false;
-        $group->save();
+        $dishCategory = new DishCategory;
+        $dishCategory->name = "category3";
+        $dishCategory->save();
 
-        for ($i = 1; $i < 10; $i++) {
-            $room = new Room;
-            $room->room_code = $i."S";
-            $room->save();
-        }
+        $dish = new Dish;
+        $dish->name = "item1";
+        $dish->category_id = 1;
+        $dish->price = 10;
+        $dish->description = "this is item1 by country1";
+        $dish->save();
 
-        $admin_group = Group::where('name', '=', 'Admin')->first();
-        $staff_group = Group::where('name', '=', 'Staff')->first();
-        $customer_group = Group::where('name', '=', 'Customer')->first();
+        $dish = new Dish;
+        $dish->name = "item2";
+        $dish->category_id = 2;
+        $dish->price = 20;
+        $dish->description = "this is item2 by country2";
+        $dish->save();
 
-        $user = new User;
-        $user->username = "admin";
-        $user->password = Hash::make("yami5493");
-        $user->group_id = $admin_group->id;
-        $user->save();
+        $dish = new Dish;
+        $dish->name = "item3";
+        $dish->category_id = 3;
+        $dish->price = 30;
+        $dish->description = "this is item3 by country3";
+        $dish->save();
 
-        $user = new User;
-        $user->username = "staff";
-        $user->password = Hash::make("yami5493");
-        $user->group_id = $staff_group->id;
-        $user->save();
+        $dishImage = new DishImage;
+        $dishImage->dish_id = 1;
+        $dishImage->link = "img1.1";
+        $dishImage->save();
 
-        for ($i = 1; $i < 10; $i++) {
-            $user = new User;
-            $user->username = $i."S";
-            $user->password = Hash::make("yami5493");
-            $user->group_id = $customer_group->id;
-            $user->room_id  = Room::all()->first()->id;
-            $user->save();
-        }
+        $dishImage = new DishImage;
+        $dishImage->dish_id = 1;
+        $dishImage->link = "img1.2";
+        $dishImage->save();
+
+        $dishImage = new DishImage;
+        $dishImage->dish_id = 2;
+        $dishImage->link = "img2.1";
+        $dishImage->save();
+        
     }
 
 }
