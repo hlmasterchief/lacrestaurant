@@ -6,7 +6,14 @@
 		<td>{{ $dish->id }}</td>
 		<td>{{ $dish->name }}</td>
 		<td>{{ $dish->price }}</td>
-        <td>{{ var_dump($dish->dishCategory) }}</td>
+        <td>{{ $dish->dishCategory->name }}</td>
+        <td>
+            <ul>
+                @foreach($dish->dishImages as $image)
+                    <li>{{ $image->link }}</li>
+                @endforeach
+            </ul>
+        </td>
 	</tr>
 	@endforeach
 </table>

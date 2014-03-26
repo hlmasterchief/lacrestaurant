@@ -12,7 +12,7 @@ class DishTableSeeder extends Seeder {
 
         $dish = new Dish;
         $dish->name = "item1";
-        $dish->category_id = $dishCategory->id;
+        $dish->dish_category_id = $dishCategory->id;
         $dish->price = 10;
         $dish->description = "this is item1 by country1";
         $dish->save();
@@ -33,7 +33,7 @@ class DishTableSeeder extends Seeder {
 
         $dish = new Dish;
         $dish->name = "item2";
-        $dish->category_id = $dishCategory->id;
+        $dish->dish_category_id = $dishCategory->id;
         $dish->price = 20;
         $dish->description = "this is item2 by country2";
         $dish->save();
@@ -44,7 +44,7 @@ class DishTableSeeder extends Seeder {
 
         $dish = new Dish;
         $dish->name = "item3";
-        $dish->category_id = $dishCategory->id;
+        $dish->dish_category_id = $dishCategory->id;
         $dish->price = 30;
         $dish->description = "this is item3 by country3";
         $dish->save();
