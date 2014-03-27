@@ -28,6 +28,10 @@
         </label></li>
         @endforeach
     </ul>
+
+    <br/>
+    {{ Form::textarea('recommendation', null, array('class'=>'form-control', 'placeholder'=>'Recommend menu today')) }}
+
 </div>
 {{ Form::submit('Create', array('class'=>'btn btn-primary'))}}
 

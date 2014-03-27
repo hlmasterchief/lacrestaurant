@@ -37,6 +37,12 @@ class MenuController extends BaseController {
             $menu = new Menu();
             $menu->menu_date = Input::get("menu_date");
             $menu->save();
+
+            $recommendation = new Recommendation();
+            $recommendation->menu_id = $menu->id;
+            $recommendation->recommendation = Input::get("recommendation");
+            $recommendation->save();
+
             foreach (Input::get('dishes') as $dishId) 
                 $menu->dishes()->save(Dish::find((int) $dishId));
 
@@ -65,6 +71,10 @@ class MenuController extends BaseController {
             $menu->menu_date = Input::get("menu_date");
             $menu->dishes()->sync(Input::get('dishes'));
             $menu->save();
+
+            $recommendation = Menu::find($id)->recommendation;
+            $recommendation = Input::get("recommendation");
+            $recommendation->save();
 
             return Redirect::to("menu/edit_menu/$id")->with('message', 'Menu edited!');
         } else {

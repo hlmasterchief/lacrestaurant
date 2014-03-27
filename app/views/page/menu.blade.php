@@ -8,4 +8,8 @@
     @endforeach
 </ul>
 
+<div>
+{{ Form::button('Recommendation', $recommendation->recommendation) }}
+</div>
+
 @stop

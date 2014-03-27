@@ -8,10 +8,14 @@ class Menu extends Eloquent {
         return $this->belongsToMany('Dish');
     }
 
+    public function recommendation() {
+   		return $this->belongsTo('Recommendation');
+   	}
+
     public function hasDish($id) {
         foreach ($this->dishes as $dish)
             if ($dish->id == $id) return true;
         return false;
     }
-   
+ 
 }
