@@ -30,7 +30,7 @@
     </ul>
 
     <br/>
-    {{ Form::textarea('recommendation', $recommendation->recommendation, array('class'=>'form-control', 'placeholder'=>'Recommend menu today')) }}
+    {{ Form::textarea('recommendation', $menu->recommendation->recommendation, array('class'=>'form-control', 'placeholder'=>'Recommend menu today')) }}
 
 </div>
 {{ Form::submit('Update', array('class'=>'btn btn-primary'))}}

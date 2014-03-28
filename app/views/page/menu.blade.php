@@ -9,11 +9,8 @@
 </ul>
 
 <div>
-    <ul>
-        @foreach($menu->recommendations as $recommendation)
-        <li>{{ $recommendation->recommendation }}</li>
-        @endforeach
-    </ul>
+    <h3>Recommendations</h3>
+    {{ $menu->recommendation->recommendation }}
 </div>
 
 @stop

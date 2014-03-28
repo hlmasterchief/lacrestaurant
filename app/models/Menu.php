@@ -8,8 +8,8 @@ class Menu extends Eloquent {
         return $this->belongsToMany('Dish');
     }
 
-    public function recommendations() {
-   		return $this->hasMany('Recommendation');
+    public function recommendation() {
+   		return $this->hasOne('Recommendation');
    	}
 
     public function hasDish($id) {

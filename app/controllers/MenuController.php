@@ -29,7 +29,7 @@ class MenuController extends BaseController {
         $validator = Validator::make(Input::all(), array(
             "menu_date"      =>  "required|date_format:Y-m-d",
             "dishes"         =>  "required",
-            "recommendation" => "required"
+            "recommendation" =>  "required"
         ));
 
         /* if validated */
@@ -63,7 +63,7 @@ class MenuController extends BaseController {
         $validator = Validator::make(Input::all(), array(
             "menu_date"      =>  "required|date_format:Y-m-d",
             "dishes"         =>  "required",
-            "recommendation" => "required"
+            "recommendation" =>  "required"
         ));
 
         /* if validated */
@@ -75,7 +75,7 @@ class MenuController extends BaseController {
             $menu->save();
 
             $recommendation = Menu::find($id)->recommendation;
-            $recommendation = Input::get("recommendation");
+            $recommendation->recommendation = Input::get("recommendation");
             $recommendation->save();
 
             return Redirect::to("menu/edit_menu/$id")->with('message', 'Menu edited!');

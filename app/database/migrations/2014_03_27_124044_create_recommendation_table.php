@@ -14,7 +14,7 @@ class CreateRecommendationTable extends Migration {
 		Schema::create('recommendations', function($table) {
             $table->increments('id');
             $table->integer('menu_id')->unsigned();
-            $table->mediumText('recommendations');
+            $table->mediumText('recommendation');
             $table->timestamps();
         });
 	}
