@@ -4,7 +4,7 @@ class MenuTableSeeder extends Seeder {
     public function run() {
         DB::table('menus')->delete();
         DB::table('dish_menu')->delete();
-        DB::table('recommendation')->delete();
+        DB::table('recommendations')->delete();
 
         $menu = new Menu();
         $menu->menu_date = "2014-03-30";
@@ -15,7 +15,7 @@ class MenuTableSeeder extends Seeder {
         }
 
         $recommendation = new Recommendation();
-        $recommendation->menu_id = 1;
+        $recommendation->menu_id = $menu->id;
         $recommendation->recommendation = "Today, we has abcxyz";
         $recommendation->save();
     }

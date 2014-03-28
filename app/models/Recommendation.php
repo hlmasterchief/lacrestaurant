@@ -2,10 +2,10 @@
 
 class Recommendation extends Eloquent {
 
-    protected $table = 'recommendation';
+    protected $table = 'recommendations';
 
     public function menu() {
-        return $this->hasOne('Menu');
+        return $this->belongsTo('Menu');
     }
    
 }

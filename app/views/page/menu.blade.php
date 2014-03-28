@@ -9,7 +9,11 @@
 </ul>
 
 <div>
-{{ Form::button('Recommendation', $recommendation->recommendation) }}
+    <ul>
+        @foreach($menu->recommendations as $recommendation)
+        <li>{{ $recommendation->recommendation }}</li>
+        @endforeach
+    </ul>
 </div>
 
 @stop

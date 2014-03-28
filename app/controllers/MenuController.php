@@ -27,8 +27,9 @@ class MenuController extends BaseController {
     public function postCreateMenu() {
         /* validate input */
         $validator = Validator::make(Input::all(), array(
-            "menu_date" =>  "required|date_format:Y-m-d",
-            "dishes"    =>  "required"
+            "menu_date"      =>  "required|date_format:Y-m-d",
+            "dishes"         =>  "required",
+            "recommendation" => "required"
         ));
 
         /* if validated */
@@ -60,8 +61,9 @@ class MenuController extends BaseController {
     public function postEditMenu($id) {
         /* validate input */
         $validator = Validator::make(Input::all(), array(
-            "menu_date" =>  "required|date_format:Y-m-d",
-            "dishes"    =>  "required"
+            "menu_date"      =>  "required|date_format:Y-m-d",
+            "dishes"         =>  "required",
+            "recommendation" => "required"
         ));
 
         /* if validated */

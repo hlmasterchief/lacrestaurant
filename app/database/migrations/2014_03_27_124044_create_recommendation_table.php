@@ -11,10 +11,10 @@ class CreateRecommendationTable extends Migration {
 	 * @return void
 	 */
 	public function up() {
-		Schema::create('recommendation', function($table) {
+		Schema::create('recommendations', function($table) {
             $table->increments('id');
             $table->integer('menu_id')->unsigned();
-            $table->mediumText('recommendation');
+            $table->mediumText('recommendations');
             $table->timestamps();
         });
 	}
@@ -25,7 +25,7 @@ class CreateRecommendationTable extends Migration {
 	 * @return void
 	 */
 	public function down() {
-		Schema::drop('recommendation');
+		Schema::drop('recommendations');
 	}
 
 }
