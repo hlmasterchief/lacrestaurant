@@ -11,31 +11,39 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+// Route::get('/', 'HomeController@index');
+
+Route::get('/', function() {
+    return View::make('singlepage');
+});
 
 // user routes
-Route::get('user', 'UserController@getIndex');
-Route::get('user/login', 'UserController@getLogin');
-Route::post('user/login', 'UserController@postLogin');
-Route::get('user/logout', 'UserController@getLogout');
+Route::get('admin/user', 'UserController@getIndex');
+Route::get('admin/user/login', 'UserController@getLogin');
+Route::post('admin/user/login', 'UserController@postLogin');
+Route::get('admin/user/logout', 'UserController@getLogout');
 
 // admin routes
-Route::get('user/admin', 'AdminController@getIndex');
-Route::get('user/create_user', 'AdminController@getCreateUser');
-Route::post('user/create_user', 'AdminController@postCreateUser');
+Route::get('admin', 'AdminController@getIndex');
+Route::get('admin/create_user', 'AdminController@getCreateUser');
+Route::post('admin/create_user', 'AdminController@postCreateUser');
 
 // dish routes
-Route::get('dish', 'DishController@getIndex');
-Route::get('dish/create_dish', 'DishController@getCreateDish');
-Route::post('dish/create_dish', 'DishController@postCreateDish');
-Route::get('dish/edit_dish/{id}', 'DishController@getEditDish');
-Route::post('dish/edit_dish/{id}', 'DishController@postEditDish');
-Route::get('dish/{id}', 'DishController@getDish');
+Route::get('admin/dish', 'DishController@getIndex');
+Route::get('admin/dish/create_dish', 'DishController@getCreateDish');
+Route::post('admin/dish/create_dish', 'DishController@postCreateDish');
+Route::get('admin/dish/edit_dish/{id}', 'DishController@getEditDish');
+Route::post('admin/dish/edit_dish/{id}', 'DishController@postEditDish');
+Route::get('admin/dish/{id}', 'DishController@getDish');
 
 // menu routes
-Route::get('menu', 'MenuController@getIndex');
-Route::get('menu/create_menu', 'MenuController@getCreateMenu');
-Route::post('menu/create_menu', 'MenuController@postCreateMenu');
-Route::get('menu/edit_menu/{id}', 'MenuController@getEditMenu');
-Route::post('menu/edit_menu/{id}', 'MenuController@postEditMenu');
-Route::get('menu/{id}', 'MenuController@getMenu');
+Route::get('admin/menu', 'MenuController@getIndex');
+Route::get('admin/menu/create_menu', 'MenuController@getCreateMenu');
+Route::post('admin/menu/create_menu', 'MenuController@postCreateMenu');
+Route::get('admin/menu/edit_menu/{id}', 'MenuController@getEditMenu');
+Route::post('admin/menu/edit_menu/{id}', 'MenuController@postEditMenu');
+Route::get('admin/menu/{id}', 'MenuController@getMenu');
+
+App::missing(function($exception) {
+    return View::make('singlepage');
+});
