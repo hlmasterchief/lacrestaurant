@@ -1,0 +1,27 @@
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+body {
+    background-color: #fff;
+}
+
+#background {
+
+}
+
+.sidebar {
+    position: absolute;
+    width: 160px;
+    top: 48px;
+    left: 64px;
+}
+
+.nav > li > a {
+    background-color: #000000;
+    color: #fff;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+}

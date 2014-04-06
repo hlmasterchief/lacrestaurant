@@ -6,6 +6,11 @@ var lacApp = angular.module(
         $interpolateProvider.endSymbol('%>');
     });
 
+// MainController
+lacApp.controller("MainController", function($scope, $http) {
+    
+});
+
 // HomeController
 lacApp.controller("HomeController", function($scope, $http) {
     
@@ -25,5 +30,4 @@ lacApp.config(function($routeProvider, $locationProvider) {
         });
 
     $locationProvider.html5Mode(true);
-    $locationProvider.hashPrefix('!');
 });

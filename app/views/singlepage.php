@@ -6,10 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Restaurant</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css">
-        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.4.2/pure-min.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css">
         <link rel="stylesheet" href="css/main.css">
+
+        <script type="text/ng-template" src="template/menubar.html"></script>
+
         <base href="/" />
 
         <!--[if lt IE 9]>
@@ -18,19 +21,16 @@
         <![endif]-->
     </head>
 
-    <body>
-        <div class="container">
-            <div id="views" ng-view></div>
-        </div>
+    <body ng-controller="MainController">
+        <div id="background"></div>
+        <div ng-include="'template/menubar.html'"></div>
+        <div id="views" ng-view></div>
 
         <!-- include javascript -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
-        <script src="http://code.angularjs.org/1.2.15/angular-route.min.js"></script>
-        <script src="http://code.angularjs.org/1.2.15/angular-animate.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/moment.js"></script>
-        <script src="js/bootstrap-datetimepicker.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
+        <script src="js/angular-route.min.js"></script>
+        <script src="js/angular-animate.min.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>
