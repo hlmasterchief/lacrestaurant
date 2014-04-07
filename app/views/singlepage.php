@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Restaurant</title>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.4.2/pure-min.css">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css">
@@ -22,9 +23,9 @@
     </head>
 
     <body ng-controller="MainController">
-        <div id="background"></div>
-        <div ng-include="'template/menubar.html'"></div>
-        <div id="views" ng-view></div>
+        <div id="content">
+            <div id="views" ng-view></div>
+        </div>
 
         <!-- include javascript -->
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
