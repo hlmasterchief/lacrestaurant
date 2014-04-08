@@ -70,10 +70,10 @@ body {
     line-height: 36px;
     margin-bottom: 4px;
     padding-left: 8px;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    -webkit-transition: all 0.15s ease;
+    -moz-transition: all 0.15s ease;
+    -o-transition: all 0.15s ease;
+    transition: all 0.15s ease;
 }
 
 .sidebar > .nav > li.hover-red:hover {

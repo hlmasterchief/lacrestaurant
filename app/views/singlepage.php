@@ -23,8 +23,11 @@
     </head>
 
     <body ng-controller="MainController">
-        <div id="content">
-            <div id="views" ng-view></div>
+        <div id="content" class="animated fadeIn">
+            <div id="background" class="background">
+                <div ng-include="'template/menubar.html'"></div>
+                <div id="views" ng-view></div>
+            </div>
         </div>
 
         <!-- include javascript -->
