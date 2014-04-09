@@ -1,0 +1,55 @@
+.menulist {
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 285px;
+    list-style: none;
+}
+
+.dish {
+    position: relative;
+    width: 840px;
+    height: 170px;
+    margin-bottom: 15px; 
+}
+
+.dish > .image-right {     
+    float: right;
+    width: 170px;
+    height: 160px;
+    margin-top: 20px;
+    margin-right: 60px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.dish > .text-left {
+    color: #FFF;
+    position: relative;
+    float: left;
+    width: 510px;
+    padding-top: 20px;
+    padding-left: 50px;    
+}
+
+.dish > .text-left > div {
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.dish > .text-left > span {
+    float: left;
+    margin-top: 20px;
+    font-size: 0.98em;
+    font-weight: 500; 
+    text-align: justify;
+}
+
+#dish1 { background-color: rgba(153,23,60, 0.8);}
+#image1 { background-image: url('http://studylogic.net/wp-content/uploads/2013/01/burger.jpg');}
+
+#dish2 { background-color: rgba(179,129,132, 0.8);}
+#image2 { background-image: url("http://blogs.uoregon.edu/natewoodburyaad250/files/2012/10/PSD_Food_illustrations_3190_pancakes_with_butter-1wi1tz5.jpg");}
+
+#dish3 { background-color: rgba(59,129,131, 0.8);}
+#image3 { background-image: url("http://1.bp.blogspot.com/-LB7f8H9LJnI/UTDpaiEtYrI/AAAAAAAAAZM/E_ZHIhTXm-o/s1600/url-1.jpeg");}

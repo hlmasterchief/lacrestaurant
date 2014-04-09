@@ -11,6 +11,7 @@
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/menu.css">
 
         <script type="text/ng-template" src="template/menubar.html"></script>
 
@@ -36,5 +37,6 @@
         <script src="js/angular-route.min.js"></script>
         <script src="js/angular-animate.min.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/menu.js"></script>
     </body>
 </html>
