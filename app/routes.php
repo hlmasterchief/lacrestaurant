@@ -44,6 +44,11 @@ Route::get('admin/menu/edit_menu/{id}', 'MenuController@getEditMenu');
 Route::post('admin/menu/edit_menu/{id}', 'MenuController@postEditMenu');
 Route::get('admin/menu/{id}', 'MenuController@getMenu');
 
+//about_us routes
+Route::get('about_us', 'AboutUsController@getIndex');
+Route::get('about_us/contact', 'AboutUsController@getContact');
+Route::get('about_us/feedback', 'AboutUsController@getFeedback');
+
 App::missing(function($exception) {
     return View::make('singlepage');
 });
