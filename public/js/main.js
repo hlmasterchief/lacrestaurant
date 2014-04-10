@@ -8,17 +8,17 @@ var lacApp = angular.module(
 
 // MainController
 lacApp.controller("MainController", function($scope, $http) {
-    
+    $scope.notAbout = false;
 });
 
 // HomeController
 lacApp.controller("HomeController", function($scope, $http) {
-    
+    console.log(angular.element($("body")).scope().notAbout = false);
 });
 
 // MenuController
 lacApp.controller("MenuController", function($scope, $http) {
-    
+    console.log(angular.element($("body")).scope().notAbout = true);
 });
 
 // route setting
