@@ -26,9 +26,15 @@
     width: 350px;
 }
 
+.contact > form > .container > select {
+    font-size: 0.89em;
+    width: 350px;
+    height: 25px;
+}
+
 .contact > form > .container > textarea {
     font-family: inherit;
     font-size: 0.89em;
     width: 350px;
-    height: 200px;
+    height: 150px;
 }

@@ -2,22 +2,25 @@
 <form method="post" accept-charset="UTF-8">
     <h2>CONTACT US</h2>
     <div class="description">Use the form below to send us your comments.</div><br>
-
     <div class="container">
         <label>Name:</label><br>
         <input type="text" name="name">
     </div>
-
     <div class="container">
         <label>Email Address:</label><br>
         <input type="text" name="email">
     </div>
-
+    <div class="container">
+        <label>Type:</label><br>
+        <select name="type">
+            <option value="Contact">Contact</option>
+            <option value="Feedback">Feedback</option>
+        </select>
+    </div>
     <div class="container">
         <label>Subject:</label><br>
         <input type="text" name="subject">
     </div>
-
     <div class="container">
         <label>Comments:</label><br>
         <textarea name="comment"></textarea>

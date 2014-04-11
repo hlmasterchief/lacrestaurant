@@ -42,10 +42,6 @@ lacApp.config(function($routeProvider, $locationProvider) {
             templateUrl : 'template/contact.html',
             controller  : 'AboutController'
         })
-        .when('/feedback', {
-            templateUrl : 'template/feedback.html',
-            controller  : 'AboutController'
-        })
         // redirect if route not found
         .otherwise({
             redirectTo: '/'
