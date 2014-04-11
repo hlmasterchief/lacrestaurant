@@ -109,6 +109,8 @@ body {
 .sidebar > .nav > li.logo {
     height: 120px;
     background-image: url('../img/marios-logo.png'); 
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .sidebar > .nav > li.sep {
