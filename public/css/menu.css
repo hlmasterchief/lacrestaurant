@@ -1,54 +1,163 @@
 .menulist {
-    position: relative;
+    position: absolute;
 /*    margin-top: 60px;
     margin-left: 285px;*/
-    top: 48px;
+    top: 88px;
     left: 200px;
     list-style: none;
-    width: 70%;
-    height: 18%;
+    width: 73%;
+    height: 68%;
 }
 
 .dish {
     position: relative;
-    width: 100%;
-    height: 100%;
-    margin-bottom: 15px; 
-    padding: 28px;
+    height: 100%; 
+    display: inline-block;
+    margin-left: -37%;
 }
 
-.dish > .image-right {     
+/*index for img position*/
+.item1 { z-index: 3; margin-left: 0%;}
+.item2 { z-index: 2;}
+.item3 { z-index: 1;}
+.item4 { z-index: 0;}
+/*end*/
+
+.dish > img { 
+    height: 100%; 
+    width: 100%;
+    background-color: rgba(83,119,122,0.08);
+    background-repeat: no-repeat;    
+    -webkit-box-shadow: 0 0 15px rgba(230,230,230,0.4);
+       -moz-box-shadow: 0 0 15px rgba(230,230,230,0.4);
+            box-shadow: 0 0 15px rgba(230,230,230,0.4);
+}
+
+.dish > .text-under {
+    display: none;
+}
+
+/*start menu2.html + menu3.html*/
+.menulist2 {
+    position: relative;
+    top: 98px;
+    left: 258px;
+    width: 80%;
+    height: 78%;
+}
+
+.menulist2 > .column {
+    position: relative;
+    margin-bottom: -25px;
+    margin-right: -25px;
+    height: 100%;
+    display: inline-block;
+    list-style: none;        
+}
+
+.dish2 {
+    position: relative;
+    margin-bottom: 13px;
+    width: 495px;
+    height: 30%;     
+}
+
+.bg1 { background-color: rgba(153,23,60,0.8);}
+.bg2 { background-color: rgba(66,66,66,0.8);}
+.bg3 { background-color: rgba(59,129,131,0.8);}
+.bg4 { background-color: rgba(81,149,72,0.8);}
+
+
+.dish2 > img { 
     float: right;
-    height: auto;
+    position: inherit;   
+    top: 12.5%;
+    left: 50px;
+    height: 77%;
     background-repeat: no-repeat;
     background-size: 100%;
 }
 
-.dish > .text-left {
-    color: #FFF;
-    position: relative;
-    float: left;  
+.dish2 > .text-left {    
+    position: inherit;
+    top: 10.5%;
+    left: 30px;
+    color: #fff;
 }
 
-.dish > .text-left > div {
+.dish2 > .text-left > div {
     display: inline-block;
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: 700;
 }
 
-.dish > .text-left > span {
+.dish2 > .text-left > span {
     float: left;
-    margin-top: 20px;
-    font-size: 0.98em;
+    position: inherit;    
+    margin-top: 5%;
+    font-size: 0.89em;
     font-weight: 500; 
     text-align: justify;
 }
+/*end*/
 
-#dish1 { background-color: rgba(153,23,60, 0.8);}
-#image1 { background-image: url('http://studylogic.net/wp-content/uploads/2013/01/burger.jpg');}
 
-#dish2 { background-color: rgba(179,129,132, 0.8);}
-#image2 { background-image: url("http://blogs.uoregon.edu/natewoodburyaad250/files/2012/10/PSD_Food_illustrations_3190_pancakes_with_butter-1wi1tz5.jpg");}
+/*only menu3*/
+.menulist3 {
+    top: 20px;
+}
 
-#dish3 { background-color: rgba(59,129,131, 0.8);}
-#image3 { background-image: url("http://1.bp.blogspot.com/-LB7f8H9LJnI/UTDpaiEtYrI/AAAAAAAAAZM/E_ZHIhTXm-o/s1600/url-1.jpeg");}
+.menulist3 > .column3 {
+    margin-right: -17px;
+    margin-bottom: -5px;
+}
+
+.dish3 {
+    height: 47%;
+    margin-bottom: 4%;
+    width: 480px;
+}
+
+.dish3 > img {
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: 0 0 18px rgba(255,255,255,0.3);
+       -moz-box-shadow: 0 0 18px rgba(255,255,255,0.3);
+            box-shadow: 0 0 18px rgba(255,255,255,0.3);
+}
+
+.dish3 > .text-under {
+    z-index: 1;
+    position: relative;
+    bottom: -100%;
+    width: 100%;
+    height: 30%;
+    color: #fff;
+    letter-spacing: 0;
+}
+
+.dish3 > .text-under > div {
+    margin-top: 1.05%;
+    margin-left: 9%;
+    width: 25%;
+    height: 50%;
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.dish3 > .text-under > p {
+    position: inherit;    
+    margin-top: -1.7%;
+    left: 9%;
+    width: 80%;
+    font-size: 0.89em;
+    font-weight: 500; 
+    line-height: 14px;
+    text-align: justify;
+    display: inline-block;
+}
+/*end*/

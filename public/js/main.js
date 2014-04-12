@@ -33,6 +33,15 @@ lacApp.config(function($routeProvider, $locationProvider) {
             templateUrl : 'template/menu.html',
             controller  : 'MenuController'
         })
+        .when('/menu2', {
+            templateUrl : 'template/menu2.html',
+            controller  : 'MainController'
+        })
+        .when('/menu3', {
+            templateUrl : 'template/menu3.html',
+            controller  : 'MainController'
+        })
+
         // redirect if route not found
         .otherwise({
             redirectTo: '/'
