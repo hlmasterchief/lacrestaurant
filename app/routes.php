@@ -17,6 +17,10 @@ Route::get('/', function() {
     return View::make('singlepage');
 });
 
+Route::get('ascii', function() {
+	return View::make('layout.master')->nest('body', 'ascii');
+});
+
 // user routes
 Route::get('admin/user', 'UserController@getIndex');
 Route::get('admin/user/login', 'UserController@getLogin');
