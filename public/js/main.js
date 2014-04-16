@@ -13,12 +13,12 @@ lacApp.controller("MainController", function($scope, $http) {
 
 // HomeController
 lacApp.controller("HomeController", function($scope, $http) {
-    console.log(angular.element($("body")).scope().notAbout = false);
+    
 });
 
 // MenuController
 lacApp.controller("MenuController", function($scope, $http) {
-    console.log(angular.element($("body")).scope().notAbout = true);
+    $(".content.right").css("width", $(window).width() - 320);
 });
 
 // route setting
@@ -39,4 +39,14 @@ lacApp.config(function($routeProvider, $locationProvider) {
         });
 
     $locationProvider.html5Mode(true);
+});
+
+// style
+$(function() {
+
+});
+
+// resize
+$(window).resize(function() {
+    $(".content.right").css("width", $(window).width() - 320);
 });
