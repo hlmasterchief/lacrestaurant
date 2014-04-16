@@ -4,52 +4,24 @@
 
 <div id="menu" class="content right menu pure-g">
 	
-	<div class="pure-u-1-2">
+	<div class="pure-u-1-2" ng-repeat="dish in dishes">
 		<div class="dish">
+
 			<div class="img-wrapper">
-				<img src="http://studylogic.net/wp-content/uploads/2013/01/burger.jpg"/>
+				<img src="<% dish.image_url %>"/>
 			</div>
+
 			<div class="description">
 				<div class="head">
-					<p>Burger</p>
-					<small>$9.99</small>
+					<p>DISH NAME</p>
+					<small>$GIÁ</small>
 				</div>
+				
 				<div class="body">
-					<p>This is description div! It's very bad to eat this cold.</p>
+					<p>DESCRIPTION.</p>
 				</div>
 			</div>
-		</div>
-	</div>
 
-	<div class="pure-u-1-2">
-		<div class="dish">
-			<div class="img-wrapper">
-				<img src="http://blogs.uoregon.edu/natewoodburyaad250/files/2012/10/PSD_Food_illustrations_3190_pancakes_with_butter-1wi1tz5.jpg"/>
-			</div>
-			<div class="description">
-				<div class="head">
-					<p>Pancake</p>
-					<small>$4.99</small>
-				</div>
-				<div class="body">
-					<p>This is description div! They look like shit when cooled down.</p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="pure-u-1-2">
-		<div class="dish">
-		</div>
-	</div>
-
-	<div class="pure-u-1-2">
-		<div class="dish">
-		</div>
-	</div>
-
-	<div class="pure-u-1-2">
-		<div class="dish">
 		</div>
 	</div>
 

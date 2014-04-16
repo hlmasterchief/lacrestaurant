@@ -18,7 +18,16 @@ lacApp.controller("HomeController", function($scope, $http) {
 
 // MenuController
 lacApp.controller("MenuController", function($scope, $http) {
+    $scope.dishes = null;
+
     $(".content.right").css("width", $(window).width() - 320);
+    $http({method: "GET", url: "/menu", params: {"_request": "ajax"}}).
+        success(function(data, status) {
+            $scope.dishes = data;
+        }).
+        error(function(data, status) {
+            // lỗi ở đây
+        });
 });
 
 // route setting
