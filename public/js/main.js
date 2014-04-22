@@ -37,7 +37,7 @@ lacApp.controller("MenuController", function($scope, $http) {
     $scope.fetch = function(getdate) {
         $scope.date = getdate.format("DD - MM - YYYY");
         var datadate = getdate.format("YYYY-MM-DD");
-        $scope.url = "date_menu/2014-03-30";
+        $scope.url = "date_menu/" + datadate;
 
         $http({method: "GET", url: $scope.url}).
             success(function(data, status) {

@@ -21,16 +21,8 @@ class MenuController extends BaseController {
     }
 
     public function getMenuDate($date) {
-        return Menu::with('dishes.dishImages')->where('menu_date', "=", $date)->first()->dishes;
+        return Menu::with('dishes.dishImages')->where('menu_date', "=", $date)->first()->dishes->toJson();
     }
-
-    //fetch menu list
-    public function menu() {
-        //if (Input::get('_request', 'http') == "ajax") {
-            return Menu::all()->toJson();
-        // }
-    }
-
 
     public function getCreateMenu() {
         $this->layout->body = View::make('admin.create_menu');
