@@ -21,7 +21,12 @@ class MenuController extends BaseController {
     }
 
     public function getMenuDate($date) {
-        return Menu::with('dishes.dishImages')->where('menu_date', "=", $date)->first()->dishes->toJson();
+        $data = Menu::with('dishes.dishImages')->where('menu_date', "=", $date)->first();
+        if ($data) {
+            return $data->dishes->toJson();
+        } else {
+            return "";
+        }
     }
 
     public function getCreateMenu() {
