@@ -1,28 +1,31 @@
-<div id="date" class="content right date">
+<div id="menu">
 
+<div id="date" class="animated fadeIn menu-date">
+	<i class="fa fa-angle-left" ng-click="previousday()"></i> 
+	<span><%date%></span>
+	<i class="fa fa-angle-right" ng-click="nextday()"></i>
 </div>
 
-<div id="menu" class="content right menu pure-g">
-	
+<div class="content right menu pure-g">	
 	<div class="pure-u-1-2" ng-repeat="dish in dishes">
 		<div class="dish">
-
 			<div class="img-wrapper">
-				<img src="<% dish.image_url %>"/>
+				<!-- <img src="<% dish.link %>"/> -->
 			</div>
 
 			<div class="description">
 				<div class="head">
-					<p>DISH NAME</p>
-					<small>$GIÁ</small>
+					<p><% dish.name %></p>
+					<small>$<% dish.price %></small>
 				</div>
 				
 				<div class="body">
-					<p>DESCRIPTION.</p>
+					<p><% dish.description %></p>
 				</div>
 			</div>
 
 		</div>
 	</div>
+</div>
 
 </div>

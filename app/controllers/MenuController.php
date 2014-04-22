@@ -5,8 +5,8 @@ class MenuController extends BaseController {
     protected $layout = 'layout.master';
 
     public function __construct() {
-        $this->beforeFilter('csrf', array('on' => 'post'));
-        $this->beforeFilter('auth');
+        // $this->beforeFilter('csrf', array('on' => 'post'));
+        // $this->beforeFilter('auth');
     }
 
     public function getIndex() {
@@ -19,6 +19,18 @@ class MenuController extends BaseController {
             return Redirect::to('menu');
         $this->layout->body = View::make('page.menu')->with('menu', $menu);
     }
+
+    public function getMenuDate($date) {
+        return Menu::with('dishes.dishImages')->where('menu_date', "=", $date)->first()->dishes;
+    }
+
+    //fetch menu list
+    public function menu() {
+        //if (Input::get('_request', 'http') == "ajax") {
+            return Menu::all()->toJson();
+        // }
+    }
+
 
     public function getCreateMenu() {
         $this->layout->body = View::make('admin.create_menu');

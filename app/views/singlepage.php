@@ -37,5 +37,6 @@
         <script src="js/angular-route.min.js"></script>
         <script src="js/angular-animate.min.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/moment.js"></script>
     </body>
 </html>
