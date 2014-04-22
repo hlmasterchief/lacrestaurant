@@ -194,4 +194,8 @@ body {
         margin-left: 32px;
         margin-right: 56px;
     }
+
+    .menu-date {
+        margin-left: 4%;
+    }
 }
