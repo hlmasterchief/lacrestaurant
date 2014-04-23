@@ -2,7 +2,7 @@
 
     <div class="header">
         <h2>CONTACT US</h2>
-        <p>Use the form below to send us your comments.</p>
+        <small>Use the form below to send us your comments.</small>
     </div>
 
     <form method="post" class="pure-form" autocomplete="off">
@@ -19,7 +19,8 @@
 
         <textarea class="pure-input-1 input" name="comment" placeholder="Your comments"></textarea>
         
-        <button class="pure-button input" type="submit">Send</button>
+        <div class="input" ng-click="submit()">
+        <button class="pure-button" type="submit">Send</button></div>
     </form>
 
 </div>

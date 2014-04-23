@@ -51,8 +51,10 @@ lacApp.controller("MenuController", function($scope, $http) {
 });
 
 // AboutController
-lacApp.controller("AboutController", function($scope, $http) {
-    
+lacApp.controller("ContactController", function($scope, $http) {
+    $scope.submit = function() {
+        $("div.input").html("The form has sent");
+    }; 
 });
 
 // route setting
@@ -69,7 +71,7 @@ lacApp.config(function($routeProvider, $locationProvider) {
         })
         .when('/contact', {
             templateUrl : 'template/contact.html',
-            controller  : 'AboutController'
+            controller  : 'ContactController'
         })
         // redirect if route not found
         .otherwise({

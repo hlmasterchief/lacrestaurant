@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="css/main.css">
 
         <link rel="stylesheet" href="css/menu.css">
-        <link rel="stylesheet" href="css/about.css">
+        <link rel="stylesheet" href="css/contact.css">
 
         <script type="text/ng-template" src="template/menubar.html"></script>
 

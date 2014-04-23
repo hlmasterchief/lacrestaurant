@@ -1,44 +1,48 @@
 .contact {
     position: absolute;
     padding: 0;
-    width: 57%;
     top: 78px;
     left: 300px;
-    color: #fff;
 }
 
 .contact > .header {
-    position: relative;
-    width: 324px;
-    padding: 5px 18px;
+    width: 310px;
+    padding: 8px 0px 16px 32px;
     background-color: rgba(231, 76, 60,0.8);
     line-height: 10px;
+    color: #fff;
 }
 
-.contact > .header > p {
-    font-size: 0.89em;
-}
-
-.contact > .pure-form {
+.contact > form {
     position: relative;
     top: 40px;
     width: 500px;
-    padding: 26px 32px 58px 32px;
+    padding: 26px 32px 48px 32px;
     background-color: rgba(231, 76, 60,0.8);
 }
 
-.contact > .pure-form > .input {
+.contact > form > .input {
     display: block;
     height: 44px;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
     border-radius: 0px; 
 }
 
-.contact > .pure-form > textarea.input {
+.contact > form > select.input > option {
+    padding: 10px 0 0 16px;
+    height: 30px;
+}
+
+.contact > form > textarea.input {
     height: 180px;
 }
 
-.contact > .pure-form > button.input {
+.contact > form > div {
+    color: #fff;
+    float: right;
+}
+
+.contact > form > div > button {
     background-color: #111;
     color: #fff;
     font-weight: 600;
