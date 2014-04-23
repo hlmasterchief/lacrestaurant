@@ -1,40 +1,47 @@
 .contact {
     position: absolute;
-    width: 380px;
-    top: 128px;
+    padding: 0;
+    width: 57%;
+    top: 78px;
     left: 300px;
-    background-color: rgba(231,76,60, 0.86);
-    padding-right: 16px;
-    padding-left: 24px;
-    color: #ecf0f1;
+    color: #fff;
 }
 
-.contact > form > h2 {
-    margin-bottom: 0px;
-}
-.contact > form > .description {
-    font-size: 0.8em;
-}
-
-.contact > form > .container > label {
-    font-size: 1em;
-    font-weight: bold;
+.contact > .header {
+    position: relative;
+    width: 324px;
+    padding: 5px 18px;
+    background-color: rgba(231, 76, 60,0.8);
+    line-height: 10px;
 }
 
-.contact > form > .container > input[type="text"] {
+.contact > .header > p {
     font-size: 0.89em;
-    width: 350px;
 }
 
-.contact > form > .container > select {
-    font-size: 0.89em;
-    width: 350px;
-    height: 25px;
+.contact > .pure-form {
+    position: relative;
+    top: 40px;
+    width: 500px;
+    padding: 26px 32px 58px 32px;
+    background-color: rgba(231, 76, 60,0.8);
 }
 
-.contact > form > .container > textarea {
-    font-family: inherit;
-    font-size: 0.89em;
-    width: 350px;
-    height: 150px;
+.contact > .pure-form > .input {
+    display: block;
+    height: 44px;
+    margin-bottom: 18px;
+    border-radius: 0px; 
+}
+
+.contact > .pure-form > textarea.input {
+    height: 180px;
+}
+
+.contact > .pure-form > button.input {
+    background-color: #111;
+    color: #fff;
+    font-weight: 600;
+    width: 80px;
+    float: right;
 }

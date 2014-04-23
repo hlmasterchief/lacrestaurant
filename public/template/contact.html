@@ -1,33 +1,25 @@
 <div class="contact">
-<form method="post" accept-charset="UTF-8">
-    <h2>CONTACT US</h2>
-    <div class="description">Use the form below to send us your comments.</div><br>
-    <div class="container">
-        <label>Name:</label><br>
-        <input type="text" name="name">
+
+    <div class="header">
+        <h2>CONTACT US</h2>
+        <p>Use the form below to send us your comments.</p>
     </div>
-    <div class="container">
-        <label>Email Address:</label><br>
-        <input type="text" name="email">
-    </div>
-    <div class="container">
-        <label>Type:</label><br>
-        <select name="type">
+
+    <form method="post" class="pure-form" autocomplete="off">
+        <input class="pure-input-1 input" type="text" name="name" placeholder="Name">
+
+        <input class="pure-input-1 input" type="email" name="email" placeholder="Email">
+
+        <select class="pure-input-1 input" name="type">
             <option value="Contact">Contact</option>
             <option value="Feedback">Feedback</option>
         </select>
-    </div>
-    <div class="container">
-        <label>Subject:</label><br>
-        <input type="text" name="subject">
-    </div>
-    <div class="container">
-        <label>Comments:</label><br>
-        <textarea name="comment"></textarea>
-    </div>
-    <br>
-    <div class="container">
-        <button type="submit">Submit</button>
-    </div>
-</form>
+
+        <input class="pure-input-1 input" type="text" name="subject" placeholder="Subject">
+
+        <textarea class="pure-input-1 input" name="comment" placeholder="Your comments"></textarea>
+        
+        <button class="pure-button input" type="submit">Send</button>
+    </form>
+
 </div>

@@ -59,6 +59,16 @@ body {
     font-size: 0.89em;
 }
 
+.about-us > p > a { 
+    color: #fff;
+    text-decoration: none;
+}
+
+.about-us > p > a:hover { 
+    color: #2c3e50;
+    font-style: italic;
+}
+
 .sidebar > .nav {
     list-style: none;
     padding-left: 20px;
