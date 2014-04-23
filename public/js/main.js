@@ -50,6 +50,11 @@ lacApp.controller("MenuController", function($scope, $http) {
     angular.element($("#menu")).scope().fetch($date);
 });
 
+// AboutController
+lacApp.controller("AboutController", function($scope, $http) {
+    
+});
+
 // route setting
 lacApp.config(function($routeProvider, $locationProvider) {
     $routeProvider
@@ -61,6 +66,10 @@ lacApp.config(function($routeProvider, $locationProvider) {
         .when('/menu', {
             templateUrl : 'template/menu.html',
             controller  : 'MenuController'
+        })
+        .when('/contact', {
+            templateUrl : 'template/contact.html',
+            controller  : 'AboutController'
         })
         // redirect if route not found
         .otherwise({
