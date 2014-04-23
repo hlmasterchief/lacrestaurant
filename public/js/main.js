@@ -50,11 +50,27 @@ lacApp.controller("MenuController", function($scope, $http) {
     angular.element($("#menu")).scope().fetch($date);
 });
 
+<<<<<<< HEAD
 // AboutController
 lacApp.controller("ContactController", function($scope, $http) {
     $scope.submit = function() {
         $("div.input").html("The form has sent");
     }; 
+=======
+// ContactController
+lacApp.controller("ContactController", function($scope, $http) {
+    $scope.msg = "";
+
+    $scope.post = function() {
+        $http({method: "POST", url: '/contact'}).
+            success(function(data, status) {
+                $scope.msg = "Success!"
+            }).
+            error(function(data, status) {
+                $scope.msg = data;
+            });
+    };
+>>>>>>> 2c4e104eee565920836cbc414a897a5766d71a0f
 });
 
 // route setting
