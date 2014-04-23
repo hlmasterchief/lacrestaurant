@@ -41,7 +41,7 @@ class ContactController extends BaseController {
             $contact->save();
             return "";
         } else {
-            return $validator->messages()->toJson();
+            return $validator->messages();
         } // end validation
     }
 
