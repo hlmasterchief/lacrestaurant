@@ -50,9 +50,19 @@ lacApp.controller("MenuController", function($scope, $http) {
     angular.element($("#menu")).scope().fetch($date);
 });
 
-// AboutController
-lacApp.controller("AboutController", function($scope, $http) {
-    
+// ContactController
+lacApp.controller("ContactController", function($scope, $http) {
+    $scope.msg = "";
+
+    $scope.post = function() {
+        $http({method: "POST", url: '/contact'}).
+            success(function(data, status) {
+                $scope.msg = "Success!"
+            }).
+            error(function(data, status) {
+                $scope.msg = data;
+            });
+    };
 });
 
 // route setting
@@ -69,7 +79,7 @@ lacApp.config(function($routeProvider, $locationProvider) {
         })
         .when('/contact', {
             templateUrl : 'template/contact.html',
-            controller  : 'AboutController'
+            controller  : 'ContactController'
         })
         // redirect if route not found
         .otherwise({
