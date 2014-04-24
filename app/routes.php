@@ -53,7 +53,7 @@ Route::get('date_menu/{date}', 'MenuController@getMenuDate');
 // contact routes
 Route::get('admin/contact', 'ContactController@getIndex');
 Route::get('admin/contact/{id}', 'ContactController@getContact');
-Route::post('contact', 'ContactController@postContact');
+Route::post('contact', 'ContactController@postCreateContact');
 
 App::missing(function($exception) {
     return View::make('singlepage');

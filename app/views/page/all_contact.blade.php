@@ -6,7 +6,7 @@
     @foreach(Contact::all() as $contact)
     <tr>
         <td>{{ $contact->id }}</td>
-        <td>{{ HTML::link("contact/$contact->id", $contact->subject) }}</td>
+        <td>{{ HTML::link("admin/contact/$contact->id", $contact->subject) }}</td>
         <td>{{ $contact->type }}</td>
         <td>{{ $contact->name }}</td>
     </tr>
