@@ -9,14 +9,14 @@ class ContactController extends BaseController {
     }
 
     public function getIndex() {
-        $this->layout->body = View::make('page.all_contact');
+        $this->layout->body = View::make('admin.all_contact');
     }
 
     public function getContact($id) {
         $contact = Contact::find($id);
         if (!$contact)
             return Redirect::to('contact');
-        $this->layout->body = View::make('page.contact')->with('contact', $contact);
+        $this->layout->body = View::make('admin.contact')->with('contact', $contact);
     }
 
     public function postCreateContact() {
