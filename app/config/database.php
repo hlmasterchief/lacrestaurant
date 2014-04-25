@@ -58,7 +58,7 @@ return array(
 			'database'  => 'sw1',
 			'username'  => 'root',
 			'password'  => 'Yami050493',
-			'password'  => 'anan',
+			//'password'  => 'anan',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
