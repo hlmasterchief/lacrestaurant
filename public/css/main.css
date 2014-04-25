@@ -197,9 +197,10 @@ body {
 }
 
 @media (max-width: 1150px) {
-    .pure-u-1-2 {
+    .pure-u-1-2, {
         width: 100%;
     }
+ 
     .dish {
         margin-left: 32px;
         margin-right: 56px;

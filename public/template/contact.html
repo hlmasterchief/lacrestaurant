@@ -2,24 +2,24 @@
 
     <div class="header">
         <h2>CONTACT US</h2>
-        <small>Use the form below to send us your comments.</small>
+        <p>Use the form below to send us your comments.</p>
     </div>
 
     <form method="post" class="pure-form" autocomplete="off">
-        <input class="pure-input-1 input" type="text" name="name" placeholder="Name">
+        <input class="pure-input-1-2" type="text" name="name" placeholder="Name">
 
-        <input class="pure-input-1 input" type="email" name="email" placeholder="Email">
+        <input class="pure-input-1-2 right" type="email" name="email" placeholder="Email">
 
-        <select class="pure-input-1 input" name="type">
+        <select class="pure-input-1-2" name="type">
             <option value="0">Contact</option>
             <option value="1">Feedback</option>
         </select>
 
-        <input class="pure-input-1 input" type="text" name="subject" placeholder="Subject">
+        <input class="pure-input-1-2 right" type="text" name="subject" placeholder="Subject">
 
-        <textarea class="pure-input-1 input" name="comment" placeholder="Your comments"></textarea>
+        <textarea class="pure-input-1" name="comment" placeholder="Your comments"></textarea>
 
-        <div class="input">
+        <div>
             <button class="pure-button" ng-click="post()">Send</button>
         </div>
     </form>

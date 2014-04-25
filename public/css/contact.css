@@ -1,40 +1,41 @@
 .contact {
     position: absolute;
-    padding: 0;
-    top: 78px;
+    top: 96px;
     left: 300px;
+    width: 60%;
+    padding: 30px;
+    background-color: rgba(231, 76, 60,0.8);
 }
 
 .contact > .header {
-    width: 310px;
-    padding: 8px 0px 16px 32px;
-    background-color: rgba(231, 76, 60,0.8);
     line-height: 10px;
     color: #fff;
 }
 
-.contact > form {
-    position: relative;
-    top: 40px;
-    width: 500px;
-    padding: 26px 32px 48px 32px;
-    background-color: rgba(231, 76, 60,0.8);
+.contact h2 {
+    margin-top: 0px;
 }
 
-.contact > form > .input {
-    display: block;
+.contact > .pure-form > .pure-input-1-2 {
+    width: 48.8%;
     height: 44px;
     margin-bottom: 14px;
     border-radius: 0px; 
 }
 
-.contact > form > select.input > option {
+.contact > form {
+    margin-top: 30px;
+}
+
+.contact > form > select > option {
     padding: 10px 0 0 16px;
     height: 30px;
 }
 
-.contact > form > textarea.input {
+.contact > form > textarea {
     height: 180px;
+    border-radius: 0px;
+    margin-bottom: 20px;
 }
 
 .contact > form > div {
@@ -46,6 +47,15 @@
     background-color: #111;
     color: #fff;
     font-weight: 600;
-    width: 80px;
     float: right;
+}
+
+.contact > form > .right {
+    float: right;
+}
+
+@media (max-width: 1150px) {
+    .contact > .pure-form > .pure-input-1-2 {
+        width: 100%;
+    }
 }
