@@ -59,6 +59,16 @@ body {
     font-size: 0.89em;
 }
 
+.about-us > p > a { 
+    color: #fff;
+    text-decoration: none;
+}
+
+.about-us > p > a:hover { 
+    color: #000;
+    font-style: italic;
+}
+
 .sidebar > .nav {
     list-style: none;
     padding-left: 20px;
@@ -190,6 +200,7 @@ body {
     .pure-u-1-2 {
         width: 100%;
     }
+ 
     .dish {
         margin-left: 32px;
         margin-right: 56px;

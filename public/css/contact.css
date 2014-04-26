@@ -1,0 +1,55 @@
+.contact {
+    position: absolute;
+    top: 96px;
+    left: 300px;
+    width: 60%;
+    padding: 30px;
+    background-color: rgba(231, 76, 60,0.8);
+    color: #fff;
+}
+
+.contact > .header {
+    line-height: 10px;
+}
+
+.contact h2 {
+    margin-top: 0px;
+}
+
+.contact > .pure-form > .pure-input-1-2 {
+    width: 48.8%;
+    height: 44px;
+    margin-bottom: 14px;
+    border-radius: 0px; 
+}
+
+.contact > form {
+    margin-top: 30px;
+}
+
+.contact > form > select > option {
+    padding: 10px 0 0 16px;
+    height: 30px;
+}
+
+.contact > form > textarea {
+    height: 180px;
+    border-radius: 0px;
+    margin-bottom: 20px;
+}
+
+.contact > form > button {
+    background-color: #111;
+    color: #fff;
+    font-weight: 600;
+}
+
+.contact > form > .right {
+    float: right;
+}
+
+@media (max-width: 1150px) {
+    .contact > .pure-form > .pure-input-1-2 {
+        width: 100%;
+    }
+}
