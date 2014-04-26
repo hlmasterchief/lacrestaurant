@@ -1,0 +1,26 @@
+<div class="animated fadeInDown contact">
+
+    <div class="header">
+        <h2>CONTACT US</h2>
+        <p>Use the form below to send us your comments.</p>
+    </div>
+
+    <form class="pure-form" autocomplete="off" ng-submit="post()">
+        <input class="pure-input-1-2" type="text" name="name" placeholder="Your name" ng-model="contact.name">
+
+        <input class="pure-input-1-2 right" type="email" name="email" placeholder="Email" ng-model="contact.email">
+
+        <select class="pure-input-1-2" name="type" ng-model="contact.type">
+            <option value="0">Contact</option>
+            <option value="1">Feedback</option>
+        </select>
+
+        <input class="pure-input-1-2 right" type="text" name="subject" placeholder="Subject" ng-model="contact.subject">
+
+        <textarea class="pure-input-1" name="comment" placeholder="Your comments" ng-model="contact.comment"></textarea>
+
+        <strong><% msg %></strong>
+        <button class="right pure-button" type="submit">Send</button>
+    </form>
+
+</div>
