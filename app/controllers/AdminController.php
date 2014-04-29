@@ -35,9 +35,9 @@ class AdminController extends BaseController {
             $user->save();
 
             /* check login */
-            return Redirect::to('user/admin/create_user')->with('message', "User created!")->with('user', $user);
+            return Redirect::to('admin/create_user')->with('message', "User created!")->with('user', $user);
         } else {
-            return Redirect::to('user/admin/create_user')->withErrors($validator);
+            return Redirect::to('admin/create_user')->withErrors($validator);
         } // end validation
     }
 

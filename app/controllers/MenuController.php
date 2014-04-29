@@ -16,7 +16,7 @@ class MenuController extends BaseController {
     public function getMenu($id) {
         $menu = Menu::find($id);
         if (!$menu)
-            return Redirect::to('menu');
+            return Redirect::to('admin/menu');
         $this->layout->body = View::make('page.menu')->with('menu', $menu);
     }
 
@@ -25,7 +25,7 @@ class MenuController extends BaseController {
         if ($data) {
             return $data->dishes->toJson();
         } else {
-            return "";
+            return Response::json(array('message'=>'Menu data not found'), 404);;
         }
     }
 
@@ -56,9 +56,9 @@ class MenuController extends BaseController {
             foreach (Input::get('dishes') as $dishId) 
                 $menu->dishes()->save(Dish::find((int) $dishId));
 
-            return Redirect::to('menu/create_menu')->with('message', 'Menu added!');
+            return Redirect::to('admin/menu/create_menu')->with('message', 'Menu added!');
         } else {
-            return Redirect::to('menu/create_menu')->withErrors($validator);
+            return Redirect::to('admin/menu/create_menu')->withErrors($validator);
         } // end validation
     }
 
@@ -87,9 +87,9 @@ class MenuController extends BaseController {
             $recommendation->recommendation = Input::get("recommendation");
             $recommendation->save();
 
-            return Redirect::to("menu/edit_menu/$id")->with('message', 'Menu edited!');
+            return Redirect::to("admin/menu/edit_menu/$id")->with('message', 'Menu edited!');
         } else {
-            return Redirect::to("menu/edit_menu/$id")->withErrors($validator);
+            return Redirect::to("admin/menu/edit_menu/$id")->withErrors($validator);
         } // end validation
     }
 

@@ -1,6 +1,6 @@
 @section('body')
 
-{{ Form::open(array('url'=>"dish/edit_dish/$dish->id")) }}
+{{ Form::open(array('url'=>"admin/dish/edit_dish/$dish->id")) }}
 
 <h2>Edit Dish</h2>
 

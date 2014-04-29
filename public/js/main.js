@@ -44,7 +44,7 @@ lacApp.controller("MenuController", function($scope, $http) {
                 $scope.dishes = data;
             }).
             error(function(data, status) {
-                $scope.msg = "Cannot show menu.";
+                $scope.msg = data.message;
             });
     };
     angular.element($("#menu")).scope().fetch($date);
@@ -69,6 +69,50 @@ lacApp.controller("ContactController", function($scope, $http) {
     };
 });
 
+// NewsController
+lacApp.controller("NewsController", function($scope, $http) {
+    $scope.news = {};
+    $scope.message = "";
+    $status = 0;
+    $id = 0;
+
+    $scope.fetch = function() {
+        $http({method: "GET", url: 'admin/news', params: {'_request': 'ajax'}}).
+            success(function(data, status) {
+                $scope.news = data.sort(function(a,b) {
+                    return b.id > a.id;
+                });
+            }).
+            error(function(data, status) {
+                $scope.message = "Cannot fetch news.";
+            });
+    };
+
+    $scope.full = function() {
+        $status = 1;
+
+        $hide = "#short" + $id.toString();
+        $show = "#full" + $id.toString();
+        $($hide).hide();
+        $($show).show();
+    };
+
+    $scope.short = function() {
+        $status = 0;
+
+        $show = "#short" + $id.toString();
+        $hide = "#full" + $id.toString();
+        $($hide).hide();
+        $($show).show();
+    };
+
+    $scope.change = function() {
+        $id = this.info.id;
+        if ($status == 1) $scope.short();
+        else if ($status == 0) $scope.full();
+    };
+});
+
 // route setting
 lacApp.config(function($routeProvider, $locationProvider) {
     $routeProvider
@@ -84,6 +128,10 @@ lacApp.config(function($routeProvider, $locationProvider) {
         .when('/contact', {
             templateUrl : 'template/contact.html',
             controller  : 'ContactController'
+        })
+        .when('/news', {
+            templateUrl : 'template/news.html',
+            controller  : 'NewsController'
         })
         // redirect if route not found
         .otherwise({

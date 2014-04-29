@@ -9,13 +9,17 @@ class NewsController extends BaseController {
     }
 
     public function getIndex() {
-        $this->layout->body = View::make('page.all_news');
+        if (Input::get('_request', 'http') == "http") {
+            $this->layout->body = View::make('page.all_news');
+        } elseif (Input::get('_request', 'http') == "ajax") {
+            return News::all()->toJson();
+        }
     }
 
     public function getNews($id) {
         $news = News::find($id);
         if (!$news)
-            return Redirect::to('news');
+            return Redirect::to('admin/news');
         $this->layout->body = View::make('page.news')->with('news', $news);
     }
 
@@ -38,10 +42,10 @@ class NewsController extends BaseController {
             $news->description = Input::get("description");
             $news->save();
 
-            return Redirect::to('news/create_news')->with('message', 'News added!')
+            return Redirect::to('admin/news/create_news')->with('message', 'News added!')
                                                    ->with('news', $news);
         } else {
-            return Redirect::to('news/create_news')->withErrors($validator);
+            return Redirect::to('admin/news/create_news')->withErrors($validator);
         } // end validation
     }
 
@@ -65,9 +69,9 @@ class NewsController extends BaseController {
             $news->description = Input::get("description");
             $news->save();
 
-            return Redirect::to("news/edit_news/$news->id")->with('message', 'News edited!');
+            return Redirect::to("admin/ews/edit_news/$news->id")->with('message', 'News edited!');
         } else {
-            return Redirect::to("news/edit_news/$news->id")->withErrors($validator);
+            return Redirect::to("admin/news/edit_news/$news->id")->withErrors($validator);
         } // end validation
     }
 

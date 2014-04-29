@@ -15,7 +15,7 @@ class DishController extends BaseController {
     public function getDish($id) {
         $dish = Dish::find($id);
         if (!$dish)
-            return Redirect::to('dish');
+            return Redirect::to('admin/dish');
         $this->layout->body = View::make('page.dish')->with('dish', $dish);
     }
 
@@ -54,10 +54,10 @@ class DishController extends BaseController {
             }
             $dish->save();
 
-            return Redirect::to('dish/create_dish')->with('message', 'Dish added!')
+            return Redirect::to('admin/dish/create_dish')->with('message', 'Dish added!')
                                                    ->with('dish', $dish);
         } else {
-            return Redirect::to('dish/create_dish')->withErrors($validator);
+            return Redirect::to('admin/dish/create_dish')->withErrors($validator);
         } // end validation
     }
 
@@ -97,9 +97,9 @@ class DishController extends BaseController {
             }
             $dish->save();
 
-            return Redirect::to("dish/edit_dish/$dish->id")->with('message', 'Dish edited!');
+            return Redirect::to("admin/dish/edit_dish/$dish->id")->with('message', 'Dish edited!');
         } else {
-            return Redirect::to("dish/edit_dish/$dish->id")->withErrors($validator);
+            return Redirect::to("admin/dish/edit_dish/$dish->id")->withErrors($validator);
         } // end validation
     }
 
