@@ -2,15 +2,19 @@
 
 class AdminController extends BaseController {
 
-    protected $layout = 'layout.master';
+    protected $layout = 'layout.admin';
 
     public function __construct() {
-        $this->beforeFilter('auth');
-        $this->beforeFilter('admin');
+        // $this->beforeFilter('auth');
+        // $this->beforeFilter('admin');
     }
 
+    // public function getIndex() {
+    //     return Redirect::to('admin/user');
+    // }
+
     public function getIndex() {
-        return Redirect::to('admin/user');
+        $this->layout->content = View::make('admin.dashboard');
     }
 
     public function getCreateUser() {

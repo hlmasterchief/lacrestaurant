@@ -1,0 +1,155 @@
+a {
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+}
+
+.pure-menu.pure-menu-open.pure-menu-fixed {
+    color: #fff;
+    background-color: #2a3137;
+    border: none;
+}
+
+.admin-navbar {
+    height: 52px;
+    line-height: 52px;
+}
+
+.admin-navbar > .pure-menu-heading {
+    font-size: 1em;
+    color: #ffffff;
+    padding-left: 24px;
+}
+
+.admin-navbar > ul > li > a {
+    background: none;
+    /*color: #666666;*/
+    color: #ffffff;
+}
+
+.admin-navbar > ul > li > a:hover {
+    background: none;
+    /*color: #222222;*/
+    color: #2ecc71;
+}
+
+.admin-navbar ul {
+    float: right;
+}
+
+.menu {
+    position: fixed;
+    background-color: #2a2a2a;
+    height: 100%;
+    width: 220px;
+}
+
+.menu > .container {
+    padding-top: 12px;
+    padding-left: 24px;
+    color: #6a6a6a;
+}
+
+.menu h5 {
+    text-transform: uppercase;
+}
+
+.menu ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.menu li {
+    height: 48px;
+    font-size: 0.9em;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #95a5a6;
+}
+
+.menu a:hover {
+    color: #dfe4e4;
+}
+
+.menu li.active a {
+    color: #dfe4e4;
+}
+
+.menu li.active i {
+    color: #2ecc71;
+}
+
+.menu .icon {
+    width: 24px;
+    display: inline-block;
+}
+
+.menu .text {
+    width: 160px;
+    padding-bottom: 12px;
+    border-bottom: solid #333333 1px;
+    display: inline-block;
+}
+
+.content {
+    margin-top: 52px;
+    margin-left: 220px;
+    min-width: 800px;
+}
+
+.content > .container {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 46px;
+}
+
+.statistic .tag {
+    width: 100%;
+    height: 130px;
+    max-width: 260px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.statistic .tag-red {
+    background-color: #e74c3c;
+}
+
+.statistic .tag-green {
+    background-color: #2ecc71;
+}
+
+.statistic .tag-blue {
+    background-color: #3498db;
+}
+
+.statistic .tag .container {
+    position: relative;
+    padding: 16px
+}
+
+.statistic .tag .icon {
+    padding-left: 8px;
+    line-height: 90px;
+    font-size: 64px;
+    display: inline-block;
+}
+
+.statistic .tag .text {
+    position: absolute;
+    display: inline-block;
+    top: 25%;
+    left: 42%;
+}
+
+.statistic .tag .text .title {
+    font-size: 0.9em;
+}
+
+.statistic .tag .text .value {
+    font-weight: bold;
+    font-size: 2em;
+}
