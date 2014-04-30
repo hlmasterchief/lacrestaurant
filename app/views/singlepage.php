@@ -32,6 +32,11 @@
                 <div id="views" ng-view></div>
             </div>
         </div>
+        <div class="overlay-ajax">
+            <div class="ajax-loading">
+                <div class="ajax-text">PLEASE WAIT...</div>
+            </div>
+        </div>
 
         <!-- include javascript -->
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>

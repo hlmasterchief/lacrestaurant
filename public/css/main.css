@@ -210,3 +210,40 @@ body {
         margin-left: 4%;
     }
 }
+
+.overlay-ajax {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    display: none;
+    z-index: 1000000;
+    width: 100%;
+    height: 100%;
+}
+
+.ajax-loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 1000001;
+}
+
+.ajax-text {
+    width: 200px;
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 0;
+    background-color: rgba(231,76,60, 0.86);
+    color: #ffffff;
+    z-index: 1000002;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+}

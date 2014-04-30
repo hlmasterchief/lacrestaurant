@@ -39,13 +39,17 @@ lacApp.controller("MenuController", function($scope, $http) {
         var datadate = getdate.format("YYYY-MM-DD");
         $scope.url = "date_menu/" + datadate;
 
-        $http({method: "GET", url: $scope.url}).
-            success(function(data, status) {
-                $scope.dishes = data;
-            }).
-            error(function(data, status) {
-                $scope.msg = "Cannot show menu.";
-            });
+        $(".overlay-ajax").fadeIn(200, function() {
+            $http({method: "GET", url: $scope.url}).
+                success(function(data, status) {
+                    $scope.dishes = data;
+                    $(".overlay-ajax").fadeOut(100);
+                }).
+                error(function(data, status) {
+                    $scope.msg = "Cannot show menu.";
+                    $(".overlay-ajax").fadeOut(100);
+                });
+        });
     };
     angular.element($("#menu")).scope().fetch($date);
 });
@@ -57,15 +61,20 @@ lacApp.controller("ContactController", function($scope, $http) {
     $scope.contact.type = 0;
 
     $scope.post = function() {
-        $("strong").addClass("animated fadeIn");
-
-        $http({method: "POST", url: 'admin/contact', data: $scope.contact}).
-            success(function(data, status) {
-                $scope.msg = data.message;
-            }).
-            error(function(data, status) {
-                $scope.msg = data.message;
-            });
+        $("#msg").addClass("animated fadeIn");
+        $(".overlay-ajax").fadeIn(200, function() {
+            $http({method: "POST", url: 'admin/contact', data: $scope.contact}).
+                success(function(data, status) {
+                    $scope.msg = data.message;
+                    $scope.contact = {};
+                    $scope.contact.type = 0;
+                    $(".overlay-ajax").fadeOut(100);
+                }).
+                error(function(data, status) {
+                    $scope.msg = data.message;
+                    $(".overlay-ajax").fadeOut(100);
+                });
+        });
     };
 });
 
