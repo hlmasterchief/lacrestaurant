@@ -1,14 +1,11 @@
 <div class="animated fadeInDown content right news" ng-init="fetch()">
 
-	<div class="info info<% info.id %>" ng-repeat="info in news" ng-click="change()">
+	<div class="info" ng-repeat="info in news" ng-click="change()">
 		<div class="header">
-			<h2 class="title"><% info.title %></h2>
-			<em><% info.created_date %></em><em>Published at <% info.created_time %> GMT</em>
+			<span class="title"><% info.title %></span>
+			<span class="newsdate"><em><% info.created_date %></em><em>Published at <% info.created_time %> GMT</em></span>
 		</div>
-		<p><% info.short_content %>
-		<span id="short<% info.id %>" class="short"> ... See more</span>
-		<span id="full<% info.id %>" class="hide"><% info.full_content %></span>
-		</p>
+		<p id="<% info.id %>"><% info.description %></p>
 		</br>
 	</div>
 

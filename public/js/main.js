@@ -82,7 +82,7 @@ lacApp.controller("NewsController", function($scope, $http) {
                 });
 
                 for (var index in $scope.news) {
-                    $scope.news[index].status = 1; 
+                    $scope.news[index].status = 1;             
                 }
             }).
             error(function(data, status) {
@@ -91,17 +91,13 @@ lacApp.controller("NewsController", function($scope, $http) {
     };
 
     $scope.change = function() {
-        this.info.shortId = "#short" + this.info.id;
-        this.info.fullId  = "#full" + this.info.id;
 
         if (this.info.status == 1) {
-            $(this.info.shortId).hide();
-            $(this.info.fullId).show();
+            $("#" + this.info.id).slideDown(700);
             this.info.status = 0;
 
         } else if (this.info.status == 0) {
-            $(this.info.shortId).show();
-            $(this.info.fullId).hide();
+            $("#" + this.info.id).slideUp(500);
             this.info.status = 1;
         }
 
