@@ -81,13 +81,13 @@ Route::filter('csrf', function()
 */
 
 Route::filter('auth', function() {
-    if (Auth::guest()) return Redirect::guest('user/login');
+    if (Auth::guest()) return Redirect::guest('admin/user/login');
 });
 
 Route::filter('logged', function() {
-    if (Auth::check()) return Redirect::to('user');
+    if (Auth::check()) return Redirect::to('admin/user');
 });
 
 Route::filter('admin', function() {
-    if (!Auth::user()->is_admin()) return Redirect::to('user');
+    if (!Auth::user()->is_admin()) return Redirect::to('admin/user');
 });

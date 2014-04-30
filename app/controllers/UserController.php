@@ -35,18 +35,18 @@ class UserController extends BaseController {
 
             /* check login */
             if (Auth::attempt($login)) {
-                return Redirect::intended('user');
+                return Redirect::intended('admin/user');
             } else {
-                return Redirect::to('user/login')->with('message', trans('user.login_fail'));
+                return Redirect::to('admin/user/login')->with('message', trans('user.login_fail'));
             } // end auth
         } else {
-            return Redirect::to('user/login')->withErrors($validator);
+            return Redirect::to('admin/user/login')->withErrors($validator);
         } // end validation
     }
 
     public function getLogout() {
         Auth::logout();
-        return Redirect::intended('user');
+        return Redirect::intended('admin/user');
     }
 
 }
