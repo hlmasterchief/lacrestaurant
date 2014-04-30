@@ -73,8 +73,6 @@ lacApp.controller("ContactController", function($scope, $http) {
 lacApp.controller("NewsController", function($scope, $http) {
     $scope.news = {};
     $scope.message = "";
-    $status = 0;
-    $id = 0;
 
     $scope.fetch = function() {
         $http({method: "GET", url: 'admin/news', params: {'_request': 'ajax'}}).
@@ -82,34 +80,31 @@ lacApp.controller("NewsController", function($scope, $http) {
                 $scope.news = data.sort(function(a,b) {
                     return b.id > a.id;
                 });
+
+                for (var index in $scope.news) {
+                    $scope.news[index].status = 1; 
+                }
             }).
             error(function(data, status) {
                 $scope.message = "Cannot fetch news.";
             });
     };
 
-    $scope.full = function() {
-        $status = 1;
-
-        $hide = "#short" + $id.toString();
-        $show = "#full" + $id.toString();
-        $($hide).hide();
-        $($show).show();
-    };
-
-    $scope.short = function() {
-        $status = 0;
-
-        $show = "#short" + $id.toString();
-        $hide = "#full" + $id.toString();
-        $($hide).hide();
-        $($show).show();
-    };
-
     $scope.change = function() {
-        $id = this.info.id;
-        if ($status == 1) $scope.short();
-        else if ($status == 0) $scope.full();
+        this.info.shortId = "#short" + this.info.id;
+        this.info.fullId  = "#full" + this.info.id;
+
+        if (this.info.status == 1) {
+            $(this.info.shortId).hide();
+            $(this.info.fullId).show();
+            this.info.status = 0;
+
+        } else if (this.info.status == 0) {
+            $(this.info.shortId).show();
+            $(this.info.fullId).hide();
+            this.info.status = 1;
+        }
+
     };
 });
 

@@ -53,6 +53,6 @@
 	font-style: italic;
 }
 
-.info > p > span.full {
+.info > p > span.hide {
 	display: none;
 }
