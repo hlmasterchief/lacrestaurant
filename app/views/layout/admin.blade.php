@@ -9,7 +9,7 @@
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.4.2/pure-min.css">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/admin.css">
+        <link rel="stylesheet" href="/css/admin.css">
 
         <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -30,7 +30,7 @@
             <div class="container">
                 <h5>Main Menu</h5>
                 <ul>
-                    <li class="active"><a href="#">
+                    <li class="active"><a href="/admin">
                         <span class="icon"><i class="fa fa-home"></i></span>
                         <span class="text">Dashboard</span>
                     </a></li>
@@ -50,9 +50,9 @@
                         <span class="icon"><i class="fa fa-rss-square"></i></span>
                         <span class="text">Manage News</span>
                     </a></li>
-                    <li><a href="#">                        
+                    <li><a href="/admin/manage_users">                        
                         <span class="icon"><i class="fa fa-user"></i></span>
-                        <span class="text">Manage Users</span>
+                        <span class="text">Manage Staffs</span>
                     </a></li>
                     <li><a href="#">
                         <span class="icon"><i class="fa fa-comments"></i></span>
@@ -71,7 +71,7 @@
         <!-- include javascript -->
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
-        <script src="js/admin.js"></script>
-        <script src="js/moment.js"></script>
+        <script src="/js/admin.js"></script>
+        <script src="/js/moment.js"></script>
     </body>
 </html>

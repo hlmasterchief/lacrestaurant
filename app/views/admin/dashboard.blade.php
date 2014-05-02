@@ -1,5 +1,16 @@
 @section('content')
 
+<section class="header">
+<div class="title">
+    <h3>Dashboard</h3>
+    <small>Recent activities and statistics.</small>
+</div>
+<div class="container">
+    <span class="left"><i class="fa fa-cogs"></i> <a href="/admin">Admin</a> <span class="current">/ Dashboard</span></span>
+    <span class="right"><span class="current">{{ date("D M d, Y G:i a") }}</span></span>
+</div>
+</section>
+
 <section class="statistic">
 <div class="pure-g">
     <div class="pure-u-1-3">

@@ -29,8 +29,7 @@ Route::get('admin/user/logout', 'UserController@getLogout');
 
 // admin routes
 Route::get('admin', 'AdminController@getIndex');
-Route::get('admin/create_user', 'AdminController@getCreateUser');
-Route::post('admin/create_user', 'AdminController@postCreateUser');
+Route::get('admin/manage_users', 'AdminController@getManageUsers');
 
 // dish routes
 Route::get('admin/dish', 'DishController@getIndex');

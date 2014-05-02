@@ -17,6 +17,10 @@ class AdminController extends BaseController {
         $this->layout->content = View::make('admin.dashboard');
     }
 
+    public function getManageUsers() {
+        $this->layout->content = View::make('admin.manage_users');
+    }
+
     public function getCreateUser() {
         $this->layout->body = View::make('admin.create_user');
     }
