@@ -20,6 +20,9 @@ a {
     font-size: 1em;
     color: #ffffff;
     padding-left: 24px;
+    float: left;
+    line-height: 52px;
+    padding-top: 0;
 }
 
 .admin-navbar > ul > li > a {
@@ -103,7 +106,7 @@ a {
 .content > .container {
     padding-left: 10px;
     padding-right: 10px;
-    padding-top: 46px;
+    padding-top: 32px;
 }
 
 .statistic .tag {
@@ -135,12 +138,12 @@ a {
     padding-left: 8px;
     line-height: 90px;
     font-size: 64px;
-    display: inline-block;
+    /*display: inline-block;*/
 }
 
 .statistic .tag .text {
     position: absolute;
-    display: inline-block;
+    /*display: inline-block;*/
     top: 25%;
     left: 42%;
 }

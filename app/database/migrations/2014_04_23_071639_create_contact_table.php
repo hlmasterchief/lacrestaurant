@@ -18,6 +18,7 @@ class CreateContactTable extends Migration {
             $table->tinyInteger('type');
             $table->string('subject');
             $table->mediumText('comment');
+            $table->boolean('is_read')->default(false);
             $table->timestamps();
         });
 	}

@@ -51,11 +51,11 @@
 
                 <div class="text">                    
                     <div class="value">
-                    100
+                    {{ Contact::countUnread() }}
                     </div>
 
                     <div class="title">
-                    Feedbacks
+                    New Feedbacks
                     </div>
                 </div>
             </div>
