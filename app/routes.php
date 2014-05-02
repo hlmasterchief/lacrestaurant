@@ -28,8 +28,9 @@ Route::post('admin/user/login', 'UserController@postLogin');
 Route::get('admin/user/logout', 'UserController@getLogout');
 
 // admin routes
-Route::get('admin', 'AdminController@getIndex');
-Route::get('admin/manage_users', 'AdminController@getManageUsers');
+Route::get('/admin', 'AdminController@getIndex');
+Route::get('/admin/users', 'AdminController@getManageUsers');
+Route::get('/admin/users/create', 'AdminController@getCreateUser');
 
 // dish routes
 Route::get('admin/dish', 'DishController@getIndex');
@@ -56,4 +57,15 @@ Route::post('admin/contact', 'ContactController@postCreateContact');
 
 App::missing(function($exception) {
     return View::make('singlepage');
+});
+
+HTML::macro('is_active', function($route) {    
+    if( (Request::is($route."/*") AND $route != "admin") OR Request::is($route) ) {
+        $active = " class = 'active'";
+    }
+    else {
+        $active = '';
+    }
+ 
+    return $active;
 });

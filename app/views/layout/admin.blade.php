@@ -30,31 +30,31 @@
             <div class="container">
                 <h5>Main Menu</h5>
                 <ul>
-                    <li class="active"><a href="/admin">
+                    <li {{ HTML::is_active("admin") }}><a href="/admin">
                         <span class="icon"><i class="fa fa-home"></i></span>
                         <span class="text">Dashboard</span>
                     </a></li>
-                    <li><a href="#">
+                    <li {{ HTML::is_active("admin/reserves") }}><a href="#">
                         <span class="icon"><i class="fa fa-phone-square"></i></span>
                         <span class="text">Manage Reservation</span>
                     </a></li>
-                    <li><a href="#">                        
+                    <li {{ HTML::is_active("admin/dishes") }}><a href="#">                        
                         <span class="icon"><i class="fa fa-cutlery"></i></span>
                         <span class="text">Manage Dishes</span>
                     </a></li>
-                    <li><a href="#">                        
+                    <li {{ HTML::is_active("admin/menu") }}><a href="#">                        
                         <span class="icon"><i class="fa fa-book"></i></span>
                         <span class="text">Manage Menu</span>
                     </a></li>
-                    <li><a href="#">                        
+                    <li {{ HTML::is_active("admin/news") }}><a href="#">                        
                         <span class="icon"><i class="fa fa-rss-square"></i></span>
                         <span class="text">Manage News</span>
                     </a></li>
-                    <li><a href="/admin/manage_users">                        
+                    <li {{ HTML::is_active("admin/users") }}><a href="/admin/users">                        
                         <span class="icon"><i class="fa fa-user"></i></span>
                         <span class="text">Manage Staffs</span>
                     </a></li>
-                    <li><a href="#">
+                    <li {{ HTML::is_active("admin/feedbacks") }}><a href="#">
                         <span class="icon"><i class="fa fa-comments"></i></span>
                         <span class="text">Manage Feedback</span>
                     </a></li>
