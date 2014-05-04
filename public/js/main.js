@@ -38,7 +38,6 @@ lacApp.controller("MenuController", function($scope, $http) {
         $scope.date = getdate.format("DD - MM - YYYY");
         var datadate = getdate.format("YYYY-MM-DD");
         $scope.url = "date_menu/" + datadate;
-
         $(".overlay-ajax").fadeIn(200, function() {
             $http({method: "GET", url: $scope.url}).
                 success(function(data, status) {
@@ -46,7 +45,7 @@ lacApp.controller("MenuController", function($scope, $http) {
                     $(".overlay-ajax").fadeOut(100);
                 }).
                 error(function(data, status) {
-                    $scope.msg = "Cannot show menu.";
+                    $scope.msg = data.message;
                     $(".overlay-ajax").fadeOut(100);
                 });
         });
@@ -78,6 +77,41 @@ lacApp.controller("ContactController", function($scope, $http) {
     };
 });
 
+// NewsController
+lacApp.controller("NewsController", function($scope, $http) {
+    $scope.news = {};
+    $scope.message = "";
+
+    $scope.fetch = function() {
+        $http({method: "GET", url: 'admin/news', params: {'_request': 'ajax'}}).
+            success(function(data, status) {
+                $scope.news = data.sort(function(a,b) {
+                    return b.id > a.id;
+                });
+
+                for (var index in $scope.news) {
+                    $scope.news[index].status = 1;             
+                }
+            }).
+            error(function(data, status) {
+                $scope.message = "Cannot fetch news.";
+            });
+    };
+
+    $scope.change = function() {
+
+        if (this.info.status == 1) {
+            $("#" + this.info.id).slideDown(700);
+            this.info.status = 0;
+
+        } else if (this.info.status == 0) {
+            $("#" + this.info.id).slideUp(500);
+            this.info.status = 1;
+        }
+
+    };
+});
+
 // route setting
 lacApp.config(function($routeProvider, $locationProvider) {
     $routeProvider
@@ -93,6 +127,10 @@ lacApp.config(function($routeProvider, $locationProvider) {
         .when('/contact', {
             templateUrl : 'template/contact.html',
             controller  : 'ContactController'
+        })
+        .when('/news', {
+            templateUrl : 'template/news.html',
+            controller  : 'NewsController'
         })
         // redirect if route not found
         .otherwise({

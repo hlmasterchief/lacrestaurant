@@ -4,16 +4,8 @@
     left: 300px;
     width: 60%;
     padding: 30px;
-    background-color: rgba(231, 76, 60,0.8);
+    background-color: rgba(153,23,60,0.8);
     color: #fff;
-}
-
-.contact > .header {
-    line-height: 10px;
-}
-
-.contact h2 {
-    margin-top: 0px;
 }
 
 .contact > .pure-form > .pure-input-1-2 {

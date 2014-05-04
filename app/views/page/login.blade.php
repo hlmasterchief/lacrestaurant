@@ -1,6 +1,6 @@
 @section('body')
 
-{{ Form::open(array('url'=>'user/login', 'autocomplete' => 'off')) }}
+{{ Form::open(array('url'=>'admin/user/login', 'autocomplete' => 'off')) }}
 
 <h2>Please Login</h2>
 

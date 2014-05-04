@@ -15,7 +15,7 @@ class ContactController extends BaseController {
     public function getContact($id) {
         $contact = Contact::find($id);
         if (!$contact)
-            return Redirect::to('contact');
+            return Redirect::to('admin/contact');
         $this->layout->body = View::make('admin.contact')->with('contact', $contact);
     }
 
