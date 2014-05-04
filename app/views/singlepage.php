@@ -14,6 +14,8 @@
 
         <link rel="stylesheet" href="css/menu.css">
         <link rel="stylesheet" href="css/contact.css">
+        <link rel="stylesheet" href="css/reserve.css">
+        <link rel="stylesheet" href="css/jquery.datetimepicker.css">
 
         <script type="text/ng-template" src="template/menubar.html"></script>
 
@@ -45,5 +47,6 @@
         <script src="js/angular-animate.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/moment.js"></script>
+        <script src="js/jquery.datetimepicker.js"></script>
     </body>
 </html>

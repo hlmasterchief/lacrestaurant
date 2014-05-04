@@ -16,35 +16,41 @@
     margin-top: 0px;
 }
 
-.contact > .pure-form > .pure-input-1-2 {
+form.pure-form > .pure-input-1-2 {
     width: 48.8%;
     height: 44px;
     margin-bottom: 14px;
     border-radius: 0px; 
 }
 
-.contact > form {
+form.pure-form > .pure-input-1 {
+    height: 44px;
+    margin-bottom: 14px;
+    border-radius: 0px; 
+}
+
+form.pureform {
     margin-top: 30px;
 }
 
-.contact > form > select > option {
+form.pure-form > select > option {
     padding: 10px 0 0 16px;
     height: 30px;
 }
 
-.contact > form > textarea {
+form.pure-form > textarea.pure-input-1 {
     height: 180px;
     border-radius: 0px;
     margin-bottom: 20px;
 }
 
-.contact > form > button {
+form.pure-form > button {
     background-color: #111;
     color: #fff;
     font-weight: 600;
 }
 
-.contact > form > .right {
+form.pure-form > .right {
     float: right;
 }
 

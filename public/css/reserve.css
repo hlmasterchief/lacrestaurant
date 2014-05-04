@@ -1,0 +1,205 @@
+.content.right {
+	position: absolute;
+	background-color: rgba(153,23,60,0.8);
+	width: 68%;
+	color: #fff;
+}
+
+.maincontainer {
+	margin: 0;
+	padding: 0 40px 60px 30px;	
+}
+
+h2.header {
+	position: relative;
+	top: 15px;
+	font-weight: bold;
+}
+
+.reserve {
+	position: relative;
+	width: 280px;
+	margin: 0;
+	display: inline-block;
+}
+
+.reserve > p {
+	position: inherit;
+	top: 18px;
+	font-size: 0.9em;
+	text-align: justify;
+}
+
+.reserve > form.pure-form {
+	position: inherit;
+	top: 10px;
+	width: 280px;
+}
+
+.reserve > form.pure-form > input {
+	padding-left: 50px;
+	display: block;
+}
+
+.reserve > form.pure-form > textarea {
+	height: 140px;
+}
+
+.reserve > form.pure-form > button {
+	margin-top: 10px;
+	height: 40px;
+	display: block;
+}
+
+.reserve > form > div.number-list {
+	position: absolute;
+	left: 0;
+	margin-top: 44px;
+	padding: 2px 10px 8px 10px;
+	width: 280px;
+	box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.506);
+	background: #FFFFFF;
+	border: 1px solid #cccccc;
+	color: #333333;
+	display: block;
+	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	z-index: 9999;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align: justify;
+	display: none;
+}
+
+.reserve > form > div.number-list > i {
+	font-size: 1.4em; 
+	margin-left: 46%;
+	color: #999999;
+}
+
+.reserve > form > div.number-list > i:hover {
+	color: #111111;
+}
+
+.reserve > form > div.number-list > ul {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0;
+	border-top: solid 1px #dddddd;
+	border-left: solid 1px #cccccc;
+	border-right: solid 1px #cccccc;
+	list-style: none;
+}
+
+.reserve > form > div.number-list > ul > li {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	border-bottom: solid 1px #dddddd;
+	border-left: solid 1px #dddddd;
+	border-right: solid 1px #dddddd;
+	background: #F5F5F5;
+	font-size: 0.9em;
+	text-align: center;
+	cursor: pointer;
+}
+
+.reserve > form > div.number-list > ul > li:hover {
+	background: #aab7b7;
+	color: #ffffff;
+}
+
+.reserve > form > div.number-list > ul > li.active {
+	background: #33AAFF;
+	color: #ffffff;
+}
+
+.recomment {
+	position: absolute;
+	top: 0;
+	left: 356px;
+	height: 100%;
+	padding: 15px 36px 40px 0;
+}
+
+.recomment > p {
+	position: relative;
+	top: 24px;
+	/*font-size: 0.9em;*/
+	text-align: justify;
+} 
+
+.recomment > .contactus {
+	position: absolute;
+	top: 58%;
+	height: 26%;
+	padding-right: 30px;
+	display: block;
+}
+
+.contactus > p {
+	font-weight: 600;
+	text-align: justify;
+}
+
+.contactus > p > abbr,.contactus > p > a > abbr {
+	border-bottom: none;
+	color: #F8B195;
+	cursor: pointer;
+}
+
+.address {
+	position: absolute;
+	bottom: 0;
+}
+
+.address > h3 {
+	margin-bottom: -6px;
+	font-weight: 800;
+	/*display: inline-block;*/
+}
+
+.address > h3 > a,.contactus > p > a {
+	text-decoration: none;
+	color: #F8B195;
+}
+
+.address > h3 > a {
+	border-bottom: 1px dotted #F8B195;
+}
+
+.address > h3 > a:hover,.contactus > p > a > abbr:hover {
+	color: #fad0bf;
+}
+
+.address > p {
+	position: relative;
+	margin-bottom: 0;
+	font-size: 0.9em;
+	font-weight: 600;
+}
+/*#msg {
+	position: absolute;
+	left: 30px;
+	bottom: 14px;
+	font-weight: 600;
+	font-size: 0.96em;
+	text-align: justify;
+}*/
+
+#datetimepicker1 {
+	background: #fff url('../img/calendar.png') no-repeat 10px center;
+}
+
+#datetimepicker2 {
+	background: #fff url('../img/clock.png') no-repeat 10px center;
+}
+
+#people {
+	background: #fff url('../img/people.png') no-repeat 10px center;
+}
+
+@media (max-width: 1150px) {
+    .recomment > .contactus {
+    	top: 53%;
+    	height: 30%;
+    }
+}

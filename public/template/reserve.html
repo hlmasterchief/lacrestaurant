@@ -1,0 +1,51 @@
+<div class="animated fadeInDown content right">
+	<div class="maincontainer">
+
+		<div class="reserve">
+			<h2 class="header">MAKE A RESERVATION</h2>
+			<p>Select date, time and numbers of people</p>
+
+			<form class="pure-form pure-g" autocomplete="off" ng-submit="post()">
+
+		        <input id="datetimepicker1" class="pure-input-1" type="text" placeholder="" ng-model="reserve.date">
+		        <input id="datetimepicker2" class="pure-input-1" type="text" placeholder="" ng-model="reserve.time">
+
+		        <input id="people" class="pure-input-1" type="text" ng-model="reserve.numbers">
+		        <div class="number-list pure-u-1">
+		        	<i class="fa fa-caret-up"></i>
+		        	<ul>
+		        		<li>1 Person</li>
+		        		<li class="active">2 People</li>
+		        		<li>3 People</li>
+		        		<li>4 People</li>
+		        	</ul>
+		        	<i class="fa fa-caret-down"></i>
+		        	<br />
+		        	<small>If you want to reserve for more than 4 people, please type numbers in the above box.</small>
+		        </div>
+		        
+		        <textarea class="pure-input-1" placeholder="Requirements" ng-model="contact.requirements"></textarea>
+
+		        <button class="pure-button pure-u-2-5" type="submit">Reserve</button>
+		    </form>
+		</div>
+
+		<div class="recomment">	
+	    	<h2>RECOMMENDATION</h2>
+	    	<p id="recommendation"><% recommendation.short_content %>Ea impedit nisi atque et aut et libero. Ullam et officiis natus quae. Et numquam cumque et molestiae. Fugiat necessitatibus dignissimos libero ut sit accusamus. Nihil assumenda soluta enim temporibus. Sint consequatur provident vel vel et consequatur laborum.</p>
+
+	    	<div class="contactus">
+	    		<p>You can make the reservations online with the left form or contact us by <abbr title="0123456789">phone</abbr> and <a href="mailto:lac@gmail.com"><abbr title="lac@gmail.com">email</abbr></a>.</p>
+
+	    		<div class="address">
+		    		<h3><a href="contact">CONTACT US</a></h3>
+		    		<p>MON - FRI 8:00-21:00
+		    		<br />SAT - SUN 10:00-22:00</p>
+	    		</div>
+	    	</div>
+		</div>
+
+	</div>
+
+	<strong id="msg"><% msg %></strong>
+</div>

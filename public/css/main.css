@@ -59,13 +59,13 @@ body {
     font-size: 0.89em;
 }
 
-.about-us > p > a { 
+.about-us > p > a, .address > small > a { 
     color: #fff;
     text-decoration: none;
 }
 
-.about-us > p > a:hover { 
-    color: #000;
+.about-us > p > a:hover,.address > small > a:hover { 
+    color: #95a5a6;
     font-style: italic;
 }
 

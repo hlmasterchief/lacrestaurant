@@ -78,6 +78,41 @@ lacApp.controller("ContactController", function($scope, $http) {
     };
 });
 
+// ReserveController
+lacApp.controller("ReserveController", function($scope, $http) {
+
+    // js for form
+    jQuery('#datetimepicker1').datetimepicker({
+        timepicker: false,
+        format:'d.m.Y'
+    });
+    jQuery('#datetimepicker2').datetimepicker({
+        datepicker:false,
+        format:'H:i'
+    });
+
+    k = 0;
+    $("#people").click(function() {
+        k = 1;
+    });
+    $(".maincontainer").click(function() {
+        change();
+    });
+
+    function change() {
+        if (($("div.number-list").css("display") == "none") && (k == 1)) $("div.number-list").show();
+        else {
+            $("div.number-list").hide();
+            k = 0;
+        }
+    }
+
+    //
+    if ($(window).width() > 1150) {
+        $("#recommendation").html($scope.recommendation);
+    };
+});
+
 // route setting
 lacApp.config(function($routeProvider, $locationProvider) {
     $routeProvider
@@ -94,6 +129,11 @@ lacApp.config(function($routeProvider, $locationProvider) {
             templateUrl : 'template/contact.html',
             controller  : 'ContactController'
         })
+        .when('/reserve', {
+            templateUrl : 'template/reserve.html',
+            controller  : 'ReserveController'
+        })
+
         // redirect if route not found
         .otherwise({
             redirectTo: '/'
