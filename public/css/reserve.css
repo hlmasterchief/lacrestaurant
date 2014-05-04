@@ -129,7 +129,7 @@ h2.header {
 
 .recomment > .contactus {
 	position: absolute;
-	top: 58%;
+	top: 56%;
 	height: 26%;
 	padding-right: 30px;
 	display: block;
@@ -176,14 +176,15 @@ h2.header {
 	font-size: 0.9em;
 	font-weight: 600;
 }
-/*#msg {
+
+#msg {
 	position: absolute;
 	left: 30px;
 	bottom: 14px;
 	font-weight: 600;
 	font-size: 0.96em;
 	text-align: justify;
-}*/
+}
 
 #datetimepicker1 {
 	background: #fff url('../img/calendar.png') no-repeat 10px center;

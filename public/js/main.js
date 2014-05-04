@@ -107,11 +107,10 @@ lacApp.controller("ReserveController", function($scope, $http) {
         }
     }
 
-    //
+    // effect
     if ($(window).width() > 1150) {
         $("#recommendation").html($scope.recommendation);
-    };
-});
+    }
 
 // route setting
 lacApp.config(function($routeProvider, $locationProvider) {
