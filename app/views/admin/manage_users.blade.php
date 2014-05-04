@@ -20,22 +20,18 @@
         <table class="data">
         <thead>
             <tr>
-                <th class="id"></th>
-                <th width="23%">Username</th>
-                <th width="23%">Full Name</th>
-                <th width="19%" class="birthday">Birthday</th>
-                <th width="35%">E-mail Address</th>
+                <th>Username</th>
+                <th width="96px" class="birthday">Birthday</th>
+                <th width="200px" class="center">Contact Details</th>
                 <th class="action">Actions</th>
             </tr>
         </thead>
         <tbody>
             @foreach($users as $user)
             <tr>
-                <td class="id">{{$user->id}}</td>
-                <td>{{$user->username}}</td>
-                <td>{{$user->realname}}</td>
+                <td><a href="#">{{$user->username}}</a></td>
                 <td class="birthday">{{$user->birthday}}</td>
-                <td>{{$user->email}}</td>
+                <td class="center">{{$user->realname}}<small>{{$user->email}}</small></td>
                 <td class="action"><a href="#"><i class="fa fa-pencil-square-o"></i></a> <a href="#"><i class="fa fa-trash-o"></i></a></td>
             </tr>
             @endforeach

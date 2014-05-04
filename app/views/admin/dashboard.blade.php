@@ -62,7 +62,7 @@
 
                 <div class="text">                    
                     <div class="value">
-                    {{ Contact::countUnread() }}
+                    {{ Contact::all()->count() }}
                     </div>
 
                     <div class="title">

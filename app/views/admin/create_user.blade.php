@@ -21,13 +21,13 @@
         <div class="message">
             <span class="info">{{ Session::get('message') }}</span>
             @foreach($errors->all() as $error)
-            <span class="info">{{ $error }}</span>
+            <span class="info error">{{ $error }}</span>
             @endforeach
         </div>
         @endif
 
         <div class="form-container">
-        {{ Form::open(array('url' => 'admin/create_user', 'class' => 'pure-form pure-form-stacked')) }}
+        {{ Form::open(array('url' => 'admin/users/create', 'class' => 'pure-form pure-form-stacked')) }}
             <div class="pure-g">
             <div class="pure-u-1-2">
             {{ Form::text('username', null, array('class'=>'form-control', 'placeholder'=>'Username')) }}

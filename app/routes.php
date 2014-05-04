@@ -29,9 +29,13 @@ Route::get('admin/user/logout', 'UserController@getLogout');
 
 // admin routes
 Route::get('/admin', 'AdminController@getIndex');
+Route::get('/admin/menu', 'AdminController@getManageMenu');
 Route::get('/admin/dishes', 'AdminController@getManageDishes');
 Route::get('/admin/users', 'AdminController@getManageUsers');
 Route::get('/admin/users/create', 'AdminController@getCreateUser');
+Route::post('/admin/users/create', 'AdminController@postCreateUser');
+Route::get('/admin/news', 'AdminController@getManageNews');
+Route::get('/admin/feedback', 'AdminController@getManageFeedback');
 
 // dish routes
 Route::get('admin/dish', 'DishController@getIndex');
@@ -42,7 +46,6 @@ Route::post('admin/dish/edit_dish/{id}', 'DishController@postEditDish');
 Route::get('admin/dish/{id}', 'DishController@getDish');
 
 // menu routes
-Route::get('admin/menu', 'MenuController@getIndex');
 Route::get('admin/menu/create_menu', 'MenuController@getCreateMenu');
 Route::post('admin/menu/create_menu', 'MenuController@postCreateMenu');
 Route::get('admin/menu/edit_menu/{id}', 'MenuController@getEditMenu');
@@ -55,14 +58,6 @@ Route::get('date_menu/{date}', 'MenuController@getMenuDate');
 Route::get('admin/contact', 'ContactController@getIndex');
 Route::get('admin/contact/{id}', 'ContactController@getContact');
 Route::post('admin/contact', 'ContactController@postCreateContact');
-
-// news routes
-Route::get('admin/news', 'NewsController@getIndex');
-Route::get('admin/news/create_news', 'NewsController@getCreateNews');
-Route::post('admin/news/create_news', 'NewsController@postCreateNews');
-Route::get('admin/news/edit_news/{id}', 'NewsController@getEditNews');
-Route::post('admin/news/edit_news/{id}', 'NewsController@postEditNews');
-Route::get('admin/news/{id}', 'NewsController@getNews');
 
 App::missing(function($exception) {
     return View::make('singlepage');

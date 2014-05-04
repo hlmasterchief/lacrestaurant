@@ -12,4 +12,8 @@ class News extends Eloquent {
     public function getCreatedTimeAttribute() {
     	return date("H:i",strtotime($this->created_at));
     }
+
+    public function user() {
+        return $this->belongsTo('User');
+    }
 }
