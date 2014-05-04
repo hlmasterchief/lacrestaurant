@@ -11,16 +11,11 @@ class DishTableSeeder extends Seeder {
         $dishCategory->save();
 
         $dish = new Dish;
-        $dish->name = "item1";
+        $dish->name = "Boiled Eggs";
         $dish->dish_category_id = $dishCategory->id;
         $dish->price = 10;
         $dish->description = "this is item1 by country1";
         $dish->save();
-
-        $dishImage = new DishImage;
-        $dishImage->dish_id = $dish->id;
-        $dishImage->link = "http://besthomechef.com.au/wp/wp-content/uploads/2012/11/hard-boiled-eggs.jpg";
-        $dishImage->save();
 
         $dishImage = new DishImage;
         $dishImage->dish_id = $dish->id;
@@ -32,18 +27,23 @@ class DishTableSeeder extends Seeder {
         $dishCategory->save();
 
         $dish = new Dish;
-        $dish->name = "item2";
+        $dish->name = "Pancake";
         $dish->dish_category_id = $dishCategory->id;
         $dish->price = 20;
         $dish->description = "this is item2 by country2";
         $dish->save();
+
+        $dishImage = new DishImage;
+        $dishImage->dish_id = $dish->id;
+        $dishImage->link = "http://besthomechef.com.au/wp/wp-content/uploads/2012/11/hard-boiled-eggs.jpg";
+        $dishImage->save();
 
         $dishCategory = new DishCategory;
         $dishCategory->name = "category3";
         $dishCategory->save();
 
         $dish = new Dish;
-        $dish->name = "item3";
+        $dish->name = "Pasta Bolognese";
         $dish->dish_category_id = $dishCategory->id;
         $dish->price = 30;
         $dish->description = "this is item3 by country3";
@@ -53,7 +53,42 @@ class DishTableSeeder extends Seeder {
         $dishImage->dish_id = $dish->id;
         $dishImage->link = "http://besthomechef.com.au/wp/wp-content/uploads/2012/11/hard-boiled-eggs.jpg";
         $dishImage->save();
-        
+
+        $dish = new Dish;
+        $dish->name = "Beef Stroganoff";
+        $dish->dish_category_id = $dishCategory->id;
+        $dish->price = 30;
+        $dish->description = "this is item3 by country3";
+        $dish->save();
+
+        $dishImage = new DishImage;
+        $dishImage->dish_id = $dish->id;
+        $dishImage->link = "http://besthomechef.com.au/wp/wp-content/uploads/2012/11/hard-boiled-eggs.jpg";
+        $dishImage->save();
+
+        $dish = new Dish;
+        $dish->name = "Beef Wellington";
+        $dish->dish_category_id = $dishCategory->id;
+        $dish->price = 30;
+        $dish->description = "this is item3 by country3";
+        $dish->save();
+
+        $dishImage = new DishImage;
+        $dishImage->dish_id = $dish->id;
+        $dishImage->link = "http://besthomechef.com.au/wp/wp-content/uploads/2012/11/hard-boiled-eggs.jpg";
+        $dishImage->save();
+
+        $dish = new Dish;
+        $dish->name = "Caesar Salad";
+        $dish->dish_category_id = $dishCategory->id;
+        $dish->price = 30;
+        $dish->description = "this is item3 by country3";
+        $dish->save();
+
+        $dishImage = new DishImage;
+        $dishImage->dish_id = $dish->id;
+        $dishImage->link = "http://besthomechef.com.au/wp/wp-content/uploads/2012/11/hard-boiled-eggs.jpg";
+        $dishImage->save();
     }
 
 }

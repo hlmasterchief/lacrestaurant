@@ -29,6 +29,7 @@ Route::get('admin/user/logout', 'UserController@getLogout');
 
 // admin routes
 Route::get('/admin', 'AdminController@getIndex');
+Route::get('/admin/dishes', 'AdminController@getManageDishes');
 Route::get('/admin/users', 'AdminController@getManageUsers');
 Route::get('/admin/users/create', 'AdminController@getCreateUser');
 

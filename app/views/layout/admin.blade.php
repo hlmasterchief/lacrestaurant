@@ -38,7 +38,7 @@
                         <span class="icon"><i class="fa fa-phone-square"></i></span>
                         <span class="text">Manage Reservation</span>
                     </a></li>
-                    <li {{ HTML::is_active("admin/dishes") }}><a href="#">                        
+                    <li {{ HTML::is_active("admin/dishes") }}><a href="/admin/dishes">                        
                         <span class="icon"><i class="fa fa-cutlery"></i></span>
                         <span class="text">Manage Dishes</span>
                     </a></li>
@@ -65,6 +65,9 @@
         <div class="content">
             <div class="container">
                 @yield('content', 'MOTHERFUCKER')
+            </div>
+
+            <div class="footer">
             </div>
         </div>
 

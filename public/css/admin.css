@@ -11,6 +11,60 @@ body {
     font-size: 95%;
 }
 
+.footer-data {
+    height: 32px;
+}
+
+.pagination {
+    float: right;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination li {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    background-color: #fcfcfc;
+    border: solid 1px #e5e5e5;
+    text-align: center;
+}
+
+.pagination a {
+    color: #5c5c5c;
+}
+
+.pagination a:hover {
+    color: #2ecc71;
+}
+
+.pagination .disabled {
+    color: #afafaf;
+}
+
+.pagination .active {
+    background-color: #f2f2f2;
+    color: #2c2c2c;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.data-footer {
+    height: 32px;
+}
+
+.footer {
+    height: 32px;
+}
+
 .pure-menu.pure-menu-open.pure-menu-fixed {
     color: #fff;
     background-color: #2a3137;
@@ -256,7 +310,7 @@ table.data th, td {
 }
 
 table.data th {
-    height: 36px;
+    height: 48px;
     line-height: 36px;
     color: #4e4e4e;
     background-color: #fafafa;
@@ -265,6 +319,7 @@ table.data th {
 table.data td {
     padding-top: 6px;
     padding-bottom: 6px;
+    height: 32px;
 }
 
 table.data .id {
@@ -296,21 +351,46 @@ table.data .birthday {
 }
 
 .create-staff .form-container {
-    width: 340px;
+    width: 680px;
     margin: 0 auto;
     border: solid 1px #e5e5e5;
     padding-bottom: 0.5em;
 }
 
 .create-staff .pure-form {
-    width: 320px;
+    width: 680px;
     margin: 0 auto;
 }
+
+.create-staff .pure-u-1-2 {
+    margin: 0 1%;
+    width: 48%;
+}
+
+.create-staff .message {
+    width: 680px;
+    margin: 0 auto;
+    margin-bottom: 12px;
+    border: solid 1px #e5e5e5;
+}
+
+.create-staff .info {
+    color: #5a5a5a;
+    font-size: 0.9em;
+    padding: 4px 12px;
+    display: block;
+}
+
+/*.create-staff .pure-button {
+    width: 98%;
+    margin-left: 1%;
+}*/
 
 .pure-form input[type=text], 
 .pure-form input[type=email],
 .pure-form input[type=password] {
     border-radius: 0;
+    height: 48px;
 }
 
 .pure-form-stacked input[type=text], 
@@ -321,4 +401,50 @@ table.data .birthday {
 
 .pure-button {
     border-radius: 0;
+}
+
+.create-staff .pure-button {
+    height: 48px;
+}
+
+.dishes-list .pure-u-1-2 {
+    margin: 6px 1%;
+    width: 48%;
+}
+
+.dishes-list .tag {
+    height: 2em;
+    line-height: 2em;
+    background-color: #fcfcfc;
+    border: solid 1px #e5e5e5;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    color: #2e2e2e;
+}
+
+.dishes-list .title {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: normal;
+    text-transform: uppercase;
+    float: left;
+}
+
+.dishes-list .action {
+    float: right;
+    font-size: 1.2em;
+}
+
+.dishes-list .action a {
+    color: #2c3e50;
+}
+
+.dishes-list .action a:hover {
+    color: #2ecc71;
+}
+
+.dishes-list .footer-data {
+    margin: 0 1%;
 }

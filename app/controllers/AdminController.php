@@ -17,8 +17,14 @@ class AdminController extends BaseController {
         $this->layout->content = View::make('admin.dashboard');
     }
 
+    public function getManageDishes() {
+        $this->layout->content = View::make('admin.manage_dishes')
+                                    ->with('dishes', Dish::orderBy('id', 'desc')->paginate(20));
+    }
+
     public function getManageUsers() {
-        $this->layout->content = View::make('admin.manage_users');
+        $this->layout->content = View::make('admin.manage_users')
+                                    ->with('users', User::orderBy('id', 'desc')->paginate(10));
     }
 
     public function getCreateUser() {

@@ -17,13 +17,29 @@
         <i class="fa fa-user"></i> Create Staff Account
     </div>
     <div class="box-content">
+        @if(Session::has('message'))
+        <div class="message">
+            <span class="info">{{ Session::get('message') }}</span>
+            @foreach($errors->all() as $error)
+            <span class="info">{{ $error }}</span>
+            @endforeach
+        </div>
+        @endif
+
         <div class="form-container">
         {{ Form::open(array('url' => 'admin/create_user', 'class' => 'pure-form pure-form-stacked')) }}
+            <div class="pure-g">
+            <div class="pure-u-1-2">
             {{ Form::text('username', null, array('class'=>'form-control', 'placeholder'=>'Username')) }}
             {{ Form::password('password', array('class'=>'form-control', 'placeholder'=>'Password')) }}
-            {{ Form::text('realname', null, array('class'=>'form-control', 'placeholder'=>'Full Name')) }}
             {{ Form::email('email', null, array('class'=>'form-control', 'placeholder'=>'E-mail Address')) }}
+            </div>
+            <div class="pure-u-1-2">
+            {{ Form::text('realname', null, array('class'=>'form-control', 'placeholder'=>'Full Name')) }}
+            {{ Form::text('birthday', null, array('class'=>'form-control', 'placeholder'=>'Birthday')) }}
             {{ Form::submit('Create Account', array('class' => 'pure-button pure-button-primary')) }}
+            </div>
+            </div>
         {{ Form::close() }}
         </div>
     </div>

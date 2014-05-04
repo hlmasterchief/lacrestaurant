@@ -29,25 +29,22 @@
             </tr>
         </thead>
         <tbody>
+            @foreach($users as $user)
             <tr>
-                <td class="id">1</td>
-                <td>admin</td>
-                <td>Cuong Nguyen</td>
-                <td class="birthday">1993-05-04</td>
-                <td>cuongnt.hn@gmail.com</td>
+                <td class="id">{{$user->id}}</td>
+                <td>{{$user->username}}</td>
+                <td>{{$user->realname}}</td>
+                <td class="birthday">{{$user->birthday}}</td>
+                <td>{{$user->email}}</td>
                 <td class="action"><a href="#"><i class="fa fa-pencil-square-o"></i></a> <a href="#"><i class="fa fa-trash-o"></i></a></td>
             </tr>
-            <tr>
-                <td class="id">2</td>
-                <td>admin</td>
-                <td>Cuong Nguyen</td>
-                <td class="birthday">1993-05-04</td>
-                <td>cuongnt.hn@gmail.com</td>
-                <td class="action"><a href="#"><i class="fa fa-pencil-square-o"></i></a> <a href="#"><i class="fa fa-trash-o"></i></a></td>
-            </tr>
+            @endforeach
         </tbody>
         </table>
-        <span class="float-right"><a href="/admin/users/create" class="pure-button pure-button-primary float-right">Create Staff Account</a></span>
+        <div class="footer-data">
+            <a href="/admin/users/create" class="pure-button pure-button-primary float-left">Create New Account</a>
+            {{$users->links()}}
+        </div>
     </div>
 </div>
 </section>
