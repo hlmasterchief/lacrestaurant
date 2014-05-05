@@ -37,9 +37,12 @@ Route::post('/admin/users/create', 'AdminController@postCreateUser');
 Route::get('/admin/users/edit/{id?}', 'AdminController@getEditUser');
 Route::post('/admin/users/edit/{id?}', 'AdminController@postEditUser');
 Route::get('/admin/users/delete/{id?}', 'AdminController@getDeleteUser');
-Route::post('/admin/users/delete/{id}', 'AdminController@postDeleteUser');
+Route::post('/admin/users/delete/{id?}', 'AdminController@postDeleteUser');
 Route::get('/admin/news', 'AdminController@getManageNews');
 Route::get('/admin/feedback', 'AdminController@getManageFeedback');
+Route::get('/admin/feedback/{id}', 'AdminController@getReadFeedback');
+Route::get('/admin/feedback/delete/{id?}', 'AdminController@getDeleteFeedback');
+Route::post('/admin/feedback/delete/{id?}', 'AdminController@postDeleteFeedback');
 
 // dish routes
 Route::get('admin/dish', 'DishController@getIndex');

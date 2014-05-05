@@ -20,7 +20,7 @@
 
     <body>
         <div class="admin-navbar pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
-            <a href="#" class="pure-menu-heading"><i class="fa fa-cogs"></i> LAC RESTAURANT</a>
+            <a href="/admin" class="pure-menu-heading"><i class="fa fa-cogs"></i> LAC RESTAURANT</a>
             <ul>
                 <li><a href="#"><i class="fa fa-user"></i> t3ngcu00</a></li>
                 <li><a href="#"><i class="fa fa-sign-out"></i> Sign Out</a></li>
@@ -65,7 +65,7 @@
 
         <div class="content">
             <div class="container">
-                @yield('content', 'MOTHERFUCKER')
+                @yield('content', 'MOTHERUFACKER')
             </div>
 
             <div class="footer">

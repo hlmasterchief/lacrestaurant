@@ -294,6 +294,45 @@ body {
     text-decoration: none;
 }
 
+.inside-box {
+    border: solid 1px #e5e5e5;
+    margin-bottom: 12px;
+}
+
+.inside-box .inside-box-header {
+    color: #3e3e3e;
+    font-size: 1.4em;
+    padding-left: 12px;
+    padding-right: 12px;
+    height: 42px;
+    line-height: 42px;
+    color: #fafafa;
+    background-color: #2a323f;
+}
+
+.inside-box .contact-information {
+    padding: 12px;
+    border-bottom: solid 1px #e5e5e5;
+}
+
+.inside-box .contact-information .name {
+    display: block;
+}
+
+.inside-box .contact-information small {
+    color: #6a6a6a;
+    display: block;
+}
+
+.inside-box .inside-box-content {
+    padding: 12px;
+}
+
+.inside-box .inside-box-header .current {
+    color: #fcfcfc;
+    font-size: 0.8em;
+}
+
 table.data {
     width: 100%;
     border: solid 1px #e5e5e5;
@@ -320,6 +359,10 @@ table.data td {
     padding-top: 6px;
     padding-bottom: 6px;
     height: 32px;
+}
+
+table.data tr:nth-child(even) {
+    background-color: #fbfbfb;
 }
 
 table.data a {
@@ -373,6 +416,10 @@ table.data .creator {
 
 table.data .created-date {
     width: 130px;
+}
+
+table.data tfoot {
+    color: #5f5f5f;
 }
 
 .create-staff input {
@@ -460,7 +507,7 @@ table.data .created-date {
     height: 48px;
 }
 
-.dishes-list .title {
+.box-content .title {
     margin: 0;
     font-size: 1.2em;
     font-weight: normal;

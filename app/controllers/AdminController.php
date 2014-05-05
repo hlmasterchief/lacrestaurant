@@ -67,6 +67,24 @@ class AdminController extends BaseController {
         $this->layout->body = View::make('admin.delete_user')->with('user', $query);
     }
 
+    public function getReadFeedback($id = null) {
+        if (!isset($id) or is_null($id))
+            return Redirect::to('/admin/feedback');
+        $query = Contact::find($id);
+        if (is_null($query))
+            return Redirect::to('/admin/feedback');
+        $this->layout->body = View::make('admin.read_feedback')->with('feedback', $query);
+    }
+
+    public function getDeleteFeedback($id = null) {
+        if (!isset($id) or is_null($id))
+            return Redirect::to('/admin/feedback');
+        $query = Contact::find($id);
+        if (is_null($query))
+            return Redirect::to('/admin/feedback');
+        $this->layout->body = View::make('admin.delete_feedback')->with('feedback', $query);
+    }
+
     public function postCreateUser() {
         /* validate input */
         $validator = Validator::make(Input::all(), array(
@@ -139,6 +157,17 @@ class AdminController extends BaseController {
 
         $user->delete();
         return Redirect::to('/admin/users');
+    }
+
+    public function postDeleteFeedback($id = null) {
+        if (!isset($id) or is_null($id))
+            return Redirect::to('/admin/feedback');
+        $feedback = Contact::find($id);
+        if (is_null($feedback))
+            return Redirect::to('/admin/feedback');
+
+        $feedback->delete();
+        return Redirect::to('/admin/feedback');
     }
 
 }

@@ -2,19 +2,19 @@
 
 <section class="header">
 <div class="title">
-    <h3>Manage Feedback</h3>
-    <small>Manage customer feedback and contacts.</small>
+    <h3>Delete Feedback</h3>
+    <small>Delete feedback confirmation.</small>
 </div>
 <div class="container">
-    <span class="left"><i class="fa fa-cogs"></i> <a href="/admin">Admin</a> <span class="current">/ Manage Feedback</span></span>
+    <span class="left"><i class="fa fa-cogs"></i> <a href="/admin">Admin</a> / <a href="/admin/feedback">Manage Feedback</a> <span class="current">/ Delete Feedback</span></span>
     <span class="right"><span class="current">{{ date("D M d, Y G:i a") }}</span></span>
 </div>
 </section>
 
-<section class="dishes-list">
+<section class="staff-list">
 <div class="box">
     <div class="box-header">
-        <i class="fa fa-comments"></i> Feedback List
+        <i class="fa fa-users"></i> Delete Feedback
     </div>
     <div class="box-content">
         <table class="data">
@@ -23,22 +23,21 @@
                 <th>Subject</th>
                 <th width="96px" class="center">Type</th>
                 <th width="200px" class="center">Customer</th>
-                <th class="action">Actions</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($feedbacks as $feedback)
             <tr>
-                <td><a href="/admin/feedback/{{$feedback->id}}" class="title">{{$feedback->subject}}</a><small>Created Date: {{$feedback->getCreatedDateAttribute()}}</small></td>
+                <td><a href="#" class="title">{{$feedback->subject}}</a><small>Created Date: {{$feedback->getCreatedDateAttribute()}}</small></td>
                 <td class="center">{{$feedback->getType()}}</td>
                 <td class="center">{{$feedback->name}}<small>{{$feedback->email}}</small></td>
-                <td class="action"><a href="/admin/feedback/delete/{{$feedback->id}}"><i class="fa fa-trash-o"></i></a></td>
             </tr>
-            @endforeach
         </tbody>
         </table>
         <div class="footer-data">
-            {{$feedbacks->links()}}
+            {{ Form::open(array('url' => 'admin/feedback/delete/'.$feedback->id, 'class' => 'pure-form pure-form-stacked')) }}
+            {{ Form::submit('Delete Feedback', array('class' => 'pure-button pure-button-primary float-left')) }}
+            {{ Form::close() }}
+            <a href="/admin/feedback" class="pure-button pure-button-primary float-left">Cancel</a>
         </div>
     </div>
 </div>
