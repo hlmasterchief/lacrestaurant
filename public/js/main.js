@@ -112,6 +112,30 @@ lacApp.controller("NewsController", function($scope, $http) {
     };
 });
 
+// ReservationController
+lacApp.controller("ReservationController", function($scope, $http) {
+    $scope.msg = "";
+    $scope.reservation = {};
+    $scope.reservation.user_id = Auth::user()->id;
+
+    $scope.post = function() {
+        $("#msg").addClass("animated fadeIn");
+        $(".overlay-ajax").fadeIn(200, function() {
+            $http({method: "POST", url: 'admin/reservation', data: $scope.reservation}).
+                success(function(data, status) {
+                    $scope.msg = data.message;
+                    $scope.reservation = {};
+                    $scope.reservation.user_id = Auth::user()->id;
+                    $(".overlay-ajax").fadeOut(100);
+                }).
+                error(function(data, status) {
+                    $scope.msg = data.message;
+                    $(".overlay-ajax").fadeOut(100);
+                });
+        });
+    };
+});
+
 // route setting
 lacApp.config(function($routeProvider, $locationProvider) {
     $routeProvider
@@ -131,6 +155,10 @@ lacApp.config(function($routeProvider, $locationProvider) {
         .when('/news', {
             templateUrl : 'template/news.html',
             controller  : 'NewsController'
+        })
+        .when('/reservation', {
+            templateUrl : 'template/reservation.html',
+            controller  : 'RerservationController'
         })
         // redirect if route not found
         .otherwise({

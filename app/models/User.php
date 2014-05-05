@@ -33,6 +33,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return $this->belongsTo('Room');
     }
 
+    // relationship with model Reservation
+    public function reservations() {
+        return $this->hasMany('Reservation');
+    }
+
     // check if User is in any Room
     public function is_customer() {
         return ($this->room_id > -1);
