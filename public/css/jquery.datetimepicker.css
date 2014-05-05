@@ -7,7 +7,7 @@
 	border-top: 1px solid #CCCCCC;
 	color: #333333;
 	display: block;
-	font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	padding: 2px 0 8px 0;
 	position: absolute;
 	z-index: 9999;
@@ -28,10 +28,10 @@
 /*For IE8 or lower*/
 .xdsoft_datetimepicker button {
     border:none !important;
-}
 
+}
 .xdsoft_noselect{
-	width: 280px;
+	width: 264px;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;

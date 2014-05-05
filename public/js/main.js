@@ -80,37 +80,88 @@ lacApp.controller("ContactController", function($scope, $http) {
 
 // ReserveController
 lacApp.controller("ReserveController", function($scope, $http) {
+    $scope.reservation = {};
+    $scope.message = "";
+    $scope.reservation.date = moment().format("DD - MM - YYYY"); 
+    $scope.reservation.time = "19:00";
+    $scope.reservation.numbers = "2 People";
 
-    // js for form
-    jQuery('#datetimepicker1').datetimepicker({
-        timepicker: false,
-        format:'d.m.Y'
-    });
-    jQuery('#datetimepicker2').datetimepicker({
-        datepicker:false,
-        format:'H:i'
-    });
+    for (var i = 0; i < 14; i++) {
+        var time = i + 8;
+        $("div.time > ul").append("<li>" + time + ":00</li>");
+        $("div.time > ul > li:nth-child(12)").addClass("active");
+    } 
 
-    k = 0;
+    // list action
+    t = 0;
+    p = 0;
+    $("#time").click(function() {
+        t = 1;
+    });
     $("#people").click(function() {
-        k = 1;
+        p = 1;
     });
     $(".maincontainer").click(function() {
         change();
     });
 
     function change() {
-        if (($("div.number-list").css("display") == "none") && (k == 1)) $("div.number-list").show();
+        if (($("div.time").css("display") == "none") && (t == 1)) {
+            $("div.time").show();
+            $("div.people").hide();
+            t = 0;
+        }
+        else if (($("div.people").css("display") == "none") && (p == 1)) {
+            $("div.people").show();
+            $("div.time").hide();
+            p = 0;
+        }
         else {
             $("div.number-list").hide();
-            k = 0;
+            t = 0; p = 0;
         }
-    }
+    } 
+    
+    $("div.time > ul > li").click(function(){
+        $("#time").val($(this).text());
 
-    // effect
-    if ($(window).width() > 1150) {
-        $("#recommendation").html($scope.recommendation);
-    }
+        $("div.time > ul > li").each(function() {
+            $(this).attr("class","inactive");
+        });
+        $(this).attr("class","active");
+    });
+
+    $("div.people > ul > li").click(function(){
+        $("#people").val($(this).text());
+
+        $("div.people > ul > li").each(function() {
+            $(this).attr("class","inactive");
+        });
+        $(this).attr("class","active");
+    }); 
+
+    // ajax post
+    $scope.post = function() {
+        $("#msg").addClass("animated fadeIn");
+        $(".overlay-ajax").fadeIn(200, function() {
+            $http({method: "POST", url: 'admin/reservation', data: $scope.reservation}).
+                success(function(data, status) {
+                    $scope.msg = data.message;
+                    $scope.reservation = {};
+                    $scope.reservation.date = moment().format("DD - MM - YYYY"); 
+                    $scope.reservation.time = "19:00";
+                    $scope.reservation.numbers = "2 People";
+                    $(".overlay-ajax").fadeOut(100);
+                }).
+                error(function(data, status) {
+                    $scope.msg = data.message;
+                    $(".overlay-ajax").fadeOut(100);
+                });
+        });
+    };
+
+
+});
 
 // route setting
 lacApp.config(function($routeProvider, $locationProvider) {
