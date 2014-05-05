@@ -2,11 +2,11 @@
 
 <section class="header">
 <div class="title">
-    <h3>Manage Staff</h3>
-    <small>Staffs list and manage account for staffs.</small>
+    <h3>Delete Account</h3>
+    <small>Delete account confirmation.</small>
 </div>
 <div class="container">
-    <span class="left"><i class="fa fa-cogs"></i> <a href="/admin">Admin</a> <span class="current">/ Manage Staffs</span></span>
+    <span class="left"><i class="fa fa-cogs"></i> <a href="/admin">Admin</a> / <a href="/admin/users">Manage Staff</a> <span class="current">/ Delete Staff Account</span></span>
     <span class="right"><span class="current">{{ date("D M d, Y G:i a") }}</span></span>
 </div>
 </section>
@@ -14,7 +14,7 @@
 <section class="staff-list">
 <div class="box">
     <div class="box-header">
-        <i class="fa fa-users"></i> Staffs List
+        <i class="fa fa-users"></i> Delete Account
     </div>
     <div class="box-content">
         <table class="data">
@@ -27,19 +27,19 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($users as $user)
             <tr>
-                <td><a href="/admin/users/edit/{{$user->id}}">{{$user->username}}</a></td>
+                <td>{{$user->username}}</td>
                 <td class="birthday">{{$user->birthday}}</td>
                 <td class="center">{{$user->realname}}<small>{{$user->email}}</small></td>
-                <td class="action"><a href="/admin/users/edit/{{$user->id}}"><i class="fa fa-pencil-square-o"></i></a> <a href="/admin/users/delete/{{$user->id}}"><i class="fa fa-trash-o"></i></a></td>
+                <td class="action"><a href="/admin/users/edit/{{$user->id}}"><i class="fa fa-pencil-square-o"></i></a></td>
             </tr>
-            @endforeach
         </tbody>
         </table>
         <div class="footer-data">
-            <a href="/admin/users/create" class="pure-button pure-button-primary float-left">Create New Account</a>
-            {{$users->links()}}
+            {{ Form::open(array('url' => 'admin/users/delete/'.$user->id, 'class' => 'pure-form pure-form-stacked')) }}
+            {{ Form::submit('Delete Account', array('class' => 'pure-button pure-button-primary float-left')) }}
+            {{ Form::close() }}
+            <a href="/admin/users" class="pure-button pure-button-primary float-left">Cancel</a>
         </div>
     </div>
 </div>

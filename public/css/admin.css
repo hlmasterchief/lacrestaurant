@@ -437,6 +437,7 @@ table.data .created-date {
 
 .pure-button {
     border-radius: 0;
+    margin-right: 0.5em;
 }
 
 .pure-button-primary, a.pure-button-primary {

@@ -49,6 +49,24 @@ class AdminController extends BaseController {
         $this->layout->body = View::make('admin.create_user');
     }
 
+    public function getEditUser($id = null) {
+        if (!isset($id) or is_null($id))
+            return Redirect::to('/admin/users');
+        $query = User::find($id);
+        if (is_null($query))
+            return Redirect::to('/admin/users');
+        $this->layout->body = View::make('admin.edit_user')->with('user', $query);
+    }
+
+    public function getDeleteUser($id = null) {
+        if (!isset($id) or is_null($id))
+            return Redirect::to('/admin/users');
+        $query = User::find($id);
+        if (is_null($query))
+            return Redirect::to('/admin/users');
+        $this->layout->body = View::make('admin.delete_user')->with('user', $query);
+    }
+
     public function postCreateUser() {
         /* validate input */
         $validator = Validator::make(Input::all(), array(
@@ -75,12 +93,52 @@ class AdminController extends BaseController {
             $user->room_id  = -1;
             $user->save();
 
-            /* check login */
             return Redirect::to('admin/users/create')->with('message', "Successfully created new user!");
         } else {
             return Redirect::to('admin/users/create')
                     ->with('message', "")->withErrors($validator);
         } // end validation
+    }
+
+    public function postEditUser($id = null) {
+        if (!isset($id) or is_null($id))
+            return Redirect::to('/admin/users');
+        $user = User::find($id);
+        if (is_null($user))
+            return Redirect::to('/admin/users');
+
+        /* validate input */
+        $validator = Validator::make(Input::all(), array(
+            "email"     =>  "required",
+            "birthday"  =>  "required|date_format:Y-m-d",
+            "realname"  =>  "required"
+        ));
+
+        /* if validated */
+        if ($validator->passes()) {
+            if (Input::has('password') && Input::get('password') != "")
+                $user->password = Hash::make(Input::get('password'));
+            $user->email    = Input::get('email');
+            $user->realname = Input::get('realname');
+            $user->birthday = Input::get('birthday');
+            $user->save();
+
+            return Redirect::to('admin/users/edit/' . $id)->with('message', "Successfully edited user!");
+        } else {
+            return Redirect::to('admin/users/edit/' . $id)
+                    ->with('message', "")->withErrors($validator);
+        } // end validation
+    }
+
+    public function postDeleteUser($id = null) {
+        if (!isset($id) or is_null($id))
+            return Redirect::to('/admin/users');
+        $user = User::find($id);
+        if (is_null($user))
+            return Redirect::to('/admin/users');
+
+        $user->delete();
+        return Redirect::to('/admin/users');
     }
 
 }
