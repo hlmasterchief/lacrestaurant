@@ -82,15 +82,20 @@ lacApp.controller("ContactController", function($scope, $http) {
 lacApp.controller("ReserveController", function($scope, $http) {
     $scope.reservation = {};
     $scope.message = "";
-    $scope.reservation.date = moment().format("DD - MM - YYYY"); 
+    $scope.reservation.datadate = moment().format("DD - MM - YYYY"); 
+    $scope.reservation.date = moment().format("YYYY-MM-DD")
     $scope.reservation.time = "19:00";
     $scope.reservation.numbers = "2 People";
 
+    // print time list
     for (var i = 0; i < 14; i++) {
         var time = i + 8;
         $("div.time > ul").append("<li>" + time + ":00</li>");
         $("div.time > ul > li:nth-child(12)").addClass("active");
     } 
+
+    // datepicker
+    $( "#reservedate" ).datepicker();
 
     // list action
     t = 0;
