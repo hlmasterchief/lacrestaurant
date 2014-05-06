@@ -12,3 +12,18 @@ $(function() {
 $(window).resize(function() {
     $(".content").css("width", $(window).width() - 220);
 });
+
+$("#select-img").click(function() {
+    $("#input-img").click();
+    return false;
+});
+
+$("#input-img").change(function() {
+    if (this.files && this.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            $("#demo-img").html("<img src=\"" + e.target.result +"\" />");
+        }
+        reader.readAsDataURL(this.files[0]);
+    }
+});

@@ -6,6 +6,7 @@ class AdminController extends BaseController {
 
     public function __construct() {
         $this->beforeFilter('auth', array('except' => array('getLogin', 'postLogin')));
+        $this->beforeFilter('admin', array('except' => array('getLogin', 'postLogin')));
     }
 
     public function getIndex() {
@@ -79,7 +80,7 @@ class AdminController extends BaseController {
                                     ->with('feedbacks', $query);
     }
 
-    public function getCreateNews($id = null) {
+    public function getCreateNews() {
         $this->layout->content = View::make('admin.create_news');
     }
 
@@ -286,6 +287,121 @@ class AdminController extends BaseController {
 
         $feedback->delete();
         return Redirect::to('/admin/feedback');
+    }
+
+    public function getCreateDish() {
+        $this->layout->content = View::make('admin.create_dish');
+    }
+
+    public function postCreateDish() {
+        /* validate input */
+        $validator = Validator::make(Input::all(), array(
+            "name"        => "required|unique:dishes",
+            "price"       => "required|numeric",
+            "description" => "required"
+        ));
+
+        /* if validated */
+        if ($validator->passes()) {
+            $dish = new Dish();
+            $img  = new DishImage();
+
+            $dish->name        = Input::get('name');
+            $dish->description = Dish::nl2br(Input::get('description'));
+            $dish->price       = Input::get('price');
+
+            if (Input::hasFile('image')) {
+                $destination = public_path() . "/upload-img";
+                $filename    = md5(time());
+                $extension   = Input::file('image')->getClientOriginalExtension();
+
+                Input::file('image')->move($destination, $filename.".".$extension);
+            }
+
+            $dish->save();
+
+            if (Input::hasFile('image')) {
+                $img->dish_id = $dish->id;
+                $img->link    = "/upload-img/".$filename.".".$extension;
+                $img->save();
+            }
+
+            return Redirect::to('admin/dishes/create')->with('message', "Successfully created a new dish!");
+        } else {
+            return Redirect::to('admin/dishes/create')
+                    ->with('message', "")->withErrors($validator);
+        } // end validation
+    }
+
+    public function getEditDish($id = null) {
+        if (!isset($id) or is_null($id))
+            return Redirect::to('/admin/dishes');
+        $query = Dish::find($id);
+        if (is_null($query))
+            return Redirect::to('/admin/dishes');
+        $this->layout->content = View::make('admin.edit_dish')->with('dish', $query);
+    }
+
+    public function postEditDish($id = null) {
+        if (!isset($id) or is_null($id))
+            return Redirect::to('/admin/dishes');
+        $dish = Dish::find($id);
+        if (is_null($dish))
+            return Redirect::to('/admin/dishes');
+        $img  = $dish->dishImage;
+        /* validate input */
+        $validator = Validator::make(Input::all(), array(
+            "name"        => "required",
+            "price"       => "required|numeric",
+            "description" => "required"
+        ));
+
+        /* if validated */
+        if ($validator->passes()) {
+            $dish->name        = Input::get('name');
+            $dish->description = Dish::nl2br(Input::get('description'));
+            $dish->price       = Input::get('price');
+
+            if (Input::hasFile('image')) {
+                $destination = public_path() . "/upload-img";
+                $filename    = md5(time());
+                $extension   = Input::file('image')->getClientOriginalExtension();
+
+                Input::file('image')->move($destination, $filename.".".$extension);
+            }
+
+            $dish->save();
+
+            if (Input::hasFile('image')) {
+                $img->link    = "/upload-img/".$filename.".".$extension;
+                $img->save();
+            }
+
+            return Redirect::to('admin/dishes/edit/'.$dish->id)->with('message', "Successfully edited dish!");
+        } else {
+            return Redirect::to('admin/dishes/edit/'.$dish->id)
+                    ->with('message', "")->withErrors($validator);
+        } // end validation
+    }
+
+    public function getDeleteDish($id = null) {
+        if (!isset($id) or is_null($id))
+            return Redirect::to('/admin/dishes');
+        $query = Dish::find($id);
+        if (is_null($query))
+            return Redirect::to('/admin/dishes');
+        $this->layout->content = View::make('admin.delete_dish')->with('dish', $query);
+    }
+
+    public function postDeleteDish($id = null) {
+        if (!isset($id) or is_null($id))
+            return Redirect::to('/admin/dishes');
+        $dish = Dish::find($id);
+        if (is_null($dish))
+            return Redirect::to('/admin/dishes');
+
+        $dish->delete();
+        return Redirect::to('/admin/dishes');
     }
 
 }

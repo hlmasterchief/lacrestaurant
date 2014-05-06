@@ -298,20 +298,35 @@ body {
     margin: 0 auto;
     margin-bottom: 12px;
     border: solid 1px #e5e5e5;
+    padding: 4px 12px;
 }
 
 .box .box-content .info {
     color: #5a5a5a;
     font-size: 0.9em;
-    padding: 4px 12px;
+    /*padding: 4px 12px;*/
     display: block;
 }
 
 .box .box-content .info.error {
     color: #9f9f9f;
     font-size: 0.9em;
-    padding: 4px 12px;
+    /*padding: 4px 12px;*/
     display: block;
+}
+
+.box .box-content .message .img-wrapper {
+    width: auto;
+    max-height: 300px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.box .box-content .message .img-wrapper img {
+    margin: 0 auto;
+    position: relative;
+    width: auto;
+    max-height: 300px;
 }
 
 /*.box .box-content input {
@@ -399,7 +414,7 @@ table.data td {
     height: 32px;
 }
 
-table.data tr:nth-child(even) {
+table.data tbody tr:nth-child(even) {
     background-color: #fbfbfb;
 }
 
@@ -554,11 +569,48 @@ table.data tfoot {
     width: 100%;
 }
 
+.create-dish input[type=text] {
+    height: 48px;
+    width: 100%;
+}
 
+.create-dish input[type=text].price {
+    width: 56px;
+    display: inline-block;
+}
 
+.create-dish .dollar {
+    padding-right: 4px;
+    font-weight: bold;
+}
 
+.file-button {
+    width: 200px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 0 auto;
+}
 
+.file-button input {
+    visibility: hidden;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    border: none;
+/*    opacity: 0.0;
+    filter: alpha(opacity=0);*/
+    cursor: pointer;
+    z-index: 10001;
+}
 
+.file-button button {
+    width: 200px;
+    cursor: pointer;
+    z-index: 1000;
+}
 
 
 

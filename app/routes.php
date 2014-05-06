@@ -37,6 +37,15 @@ Route::get('/admin/menu', 'AdminController@getManageMenu');
 
 Route::get('/admin/dishes', 'AdminController@getManageDishes');
 
+Route::get('/admin/dishes/create', 'AdminController@getCreateDish');
+Route::post('/admin/dishes/create', 'AdminController@postCreateDish');
+
+Route::get('/admin/dishes/edit/{id?}', 'AdminController@getEditDish');
+Route::post('/admin/dishes/edit/{id?}', 'AdminController@postEditDish');
+
+Route::get('/admin/dishes/delete/{id?}', 'AdminController@getDeleteDish');
+Route::post('/admin/dishes/delete/{id?}', 'AdminController@postDeleteDish');
+
 
 Route::get('/admin/users', 'AdminController@getManageUsers');
 

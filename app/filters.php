@@ -89,5 +89,5 @@ Route::filter('logged', function() {
 });
 
 Route::filter('admin', function() {
-    if (!Auth::user()->is_admin()) return Redirect::to('admin/user');
+    if (!Auth::user()->is_admin()) return Redirect::to('/');
 });
