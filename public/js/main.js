@@ -82,9 +82,9 @@ lacApp.controller("ContactController", function($scope, $http) {
 lacApp.controller("ReserveController", function($scope, $http) {
     $scope.reservation = {};
     $scope.message = "";
-    $scope.reservation.date = moment().format("DD/MM/YYYY"); 
+    $scope.reservation.datadate = moment().format("DD/MM/YYYY"); 
     $scope.reservation.time = "19:00";
-    $scope.reservation.numbers = "2 People";
+    $scope.reservation.datanumbers = "2 People";
 
     // print time list
     for (var i = 0; i < 14; i++) {
@@ -170,15 +170,20 @@ lacApp.controller("ReserveController", function($scope, $http) {
 
     // ajax post
     $scope.post = function() {
+        var datadate = $scope.reservation.datadate.split("/");
+        $scope.reservation.date = datadate[2] + "-" + datadate[1] + "-" + datadate[0];
+        $scope.reservation.numbers = parseInt($scope.reservation.datanumbers);
+
         $("#msg").addClass("animated fadeIn");
         $(".overlay-ajax").fadeIn(200, function() {
+
             $http({method: "POST", url: 'admin/reservation', data: $scope.reservation}).
                 success(function(data, status) {
                     $scope.msg = data.message;
                     $scope.reservation = {};
-                    $scope.reservation.date = moment().format("DD/MM/YYYY"); 
+                    $scope.reservation.datadate = moment().format("DD/MM/YYYY"); 
                     $scope.reservation.time = "19:00";
-                    $scope.reservation.numbers = "2 People";
+                    $scope.reservation.datanumbers = "2 People";
                     $(".overlay-ajax").fadeOut(100);
                 }).
                 error(function(data, status) {
