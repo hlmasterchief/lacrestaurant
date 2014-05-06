@@ -13,37 +13,59 @@
 
 // Route::get('/', 'HomeController@index');
 
+// singlepage render, thằng nào xóa bố đấm phát chết luôn
 Route::get('/', function() {
     return View::make('singlepage');
 });
 
+// làm trò con bò
 Route::get('ascii', function() {
 	return View::make('layout.master')->nest('body', 'ascii');
 });
 
 // admin routes
 Route::get('/admin', 'AdminController@getIndex');
+
+
 Route::get('/admin/login', 'AdminController@getLogin');
 Route::post('/admin/login', 'AdminController@postLogin');
 Route::get('/admin/logout', 'AdminController@getLogout');
+
+
 Route::get('/admin/menu', 'AdminController@getManageMenu');
+
+
 Route::get('/admin/dishes', 'AdminController@getManageDishes');
+
+
 Route::get('/admin/users', 'AdminController@getManageUsers');
+
+
 Route::get('/admin/users/create', 'AdminController@getCreateUser');
 Route::post('/admin/users/create', 'AdminController@postCreateUser');
+
 Route::get('/admin/users/edit/{id?}', 'AdminController@getEditUser');
 Route::post('/admin/users/edit/{id?}', 'AdminController@postEditUser');
+
 Route::get('/admin/users/delete/{id?}', 'AdminController@getDeleteUser');
 Route::post('/admin/users/delete/{id?}', 'AdminController@postDeleteUser');
+
+
 Route::get('/admin/news', 'AdminController@getManageNews');
+
 Route::get('/admin/news/create', 'AdminController@getCreateNews');
 Route::post('/admin/news/create', 'AdminController@postCreateNews');
+
 Route::get('/admin/news/edit/{id?}', 'AdminController@getEditNews');
 Route::post('/admin/news/edit/{id?}', 'AdminController@postEditNews');
+
 Route::get('/admin/news/delete/{id?}', 'AdminController@getDeleteNews');
 Route::post('/admin/news/delete/{id?}', 'AdminController@postDeleteNews');
+
+
 Route::get('/admin/feedback', 'AdminController@getManageFeedback');
 Route::get('/admin/feedback/{id}', 'AdminController@getReadFeedback');
+
 Route::get('/admin/feedback/delete/{id?}', 'AdminController@getDeleteFeedback');
 Route::post('/admin/feedback/delete/{id?}', 'AdminController@postDeleteFeedback');
 
