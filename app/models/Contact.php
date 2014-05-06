@@ -4,18 +4,12 @@ class Contact extends Eloquent {
 
     protected $table = 'contacts';
 
-    public static function getUnread() {
-        $result = array();
-        foreach (Contact::all() as $contact) {
-            if (!$contact->is_read) {
-                $result[] = $contact;
-            }
-        }
-        return $result;
+    public function getType() {
+        return $this->type === 0 ? "Contact" : "Feedback";
     }
 
-    public static function countUnread() {
-        return count(Contact::getUnread());
+    public function getCreatedDateAttribute() {
+        return date("F j, Y",strtotime($this->created_at));
     }
    
 }

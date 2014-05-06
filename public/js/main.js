@@ -38,7 +38,6 @@ lacApp.controller("MenuController", function($scope, $http) {
         $scope.date = getdate.format("DD - MM - YYYY");
         var datadate = getdate.format("YYYY-MM-DD");
         $scope.url = "date_menu/" + datadate;
-
         $(".overlay-ajax").fadeIn(200, function() {
             $http({method: "GET", url: $scope.url}).
                 success(function(data, status) {
@@ -46,7 +45,7 @@ lacApp.controller("MenuController", function($scope, $http) {
                     $(".overlay-ajax").fadeOut(100);
                 }).
                 error(function(data, status) {
-                    $scope.msg = "Cannot show menu.";
+                    $scope.msg = data.message;
                     $(".overlay-ajax").fadeOut(100);
                 });
         });
@@ -78,12 +77,12 @@ lacApp.controller("ContactController", function($scope, $http) {
     };
 });
 
+
 // ReserveController
 lacApp.controller("ReserveController", function($scope, $http) {
     $scope.reservation = {};
     $scope.message = "";
-    $scope.reservation.datadate = moment().format("DD - MM - YYYY"); 
-    $scope.reservation.date = moment().format("YYYY-MM-DD")
+    $scope.reservation.date = moment().format("DD/MM/YYYY"); 
     $scope.reservation.time = "19:00";
     $scope.reservation.numbers = "2 People";
 
@@ -95,11 +94,25 @@ lacApp.controller("ReserveController", function($scope, $http) {
     } 
 
     // datepicker
-    $( "#reservedate" ).datepicker();
+    $( "#datepicker" ).datepicker({
+        dayNamesMin: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        onSelect: function(date, obj) {
+            $("#reservedate").val(date);
+        },
+        dateFormat: "dd/mm/yy"
+    });
 
-    // list action
-    t = 0;
-    p = 0;
+    // form action
+    d = 0; t = 0; p = 0; key = 0;
+
+    $("#reservedate").click(function(){
+        d = 1;
+    });
+
+    $("#datepicker").click(function(){
+        key = 1;
+    });
+
     $("#time").click(function() {
         t = 1;
     });
@@ -111,7 +124,12 @@ lacApp.controller("ReserveController", function($scope, $http) {
     });
 
     function change() {
-        if (($("div.time").css("display") == "none") && (t == 1)) {
+        if (($("#datepicker").css("display") == "none") && (d == 1)) {
+            $("#datepicker").show();
+            $("div.number-list").hide();
+            d = 0;
+        }
+        else if (($("div.time").css("display") == "none") && (t == 1)) {
             $("div.time").show();
             $("div.people").hide();
             t = 0;
@@ -121,9 +139,14 @@ lacApp.controller("ReserveController", function($scope, $http) {
             $("div.time").hide();
             p = 0;
         }
+        else if (key) {
+            $("#datepicker").show();
+            key = 0;
+        }
         else {
+            $("#datepicker").hide();
             $("div.number-list").hide();
-            t = 0; p = 0;
+            d = 0; t = 0; p = 0;
         }
     } 
     
@@ -153,7 +176,7 @@ lacApp.controller("ReserveController", function($scope, $http) {
                 success(function(data, status) {
                     $scope.msg = data.message;
                     $scope.reservation = {};
-                    $scope.reservation.date = moment().format("DD - MM - YYYY"); 
+                    $scope.reservation.date = moment().format("DD/MM/YYYY"); 
                     $scope.reservation.time = "19:00";
                     $scope.reservation.numbers = "2 People";
                     $(".overlay-ajax").fadeOut(100);
@@ -164,8 +187,41 @@ lacApp.controller("ReserveController", function($scope, $http) {
                 });
         });
     };
+});
 
+// NewsController
+lacApp.controller("NewsController", function($scope, $http) {
+    $scope.news = {};
+    $scope.message = "";
 
+    $scope.fetch = function() {
+        $http({method: "GET", url: 'admin/news', params: {'_request': 'ajax'}}).
+            success(function(data, status) {
+                $scope.news = data.sort(function(a,b) {
+                    return b.id > a.id;
+                });
+
+                for (var index in $scope.news) {
+                    $scope.news[index].status = 1;             
+                }
+            }).
+            error(function(data, status) {
+                $scope.message = "Cannot fetch news.";
+            });
+    };
+
+    $scope.change = function() {
+
+        if (this.info.status == 1) {
+            $("#" + this.info.id).slideDown(700);
+            this.info.status = 0;
+
+        } else if (this.info.status == 0) {
+            $("#" + this.info.id).slideUp(500);
+            this.info.status = 1;
+        }
+
+    };
 });
 
 // route setting
@@ -187,6 +243,10 @@ lacApp.config(function($routeProvider, $locationProvider) {
         .when('/reserve', {
             templateUrl : 'template/reserve.html',
             controller  : 'ReserveController'
+        })
+        .when('/news', {
+            templateUrl : 'template/news.html',
+            controller  : 'NewsController'
         })
 
         // redirect if route not found

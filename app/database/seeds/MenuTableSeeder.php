@@ -23,8 +23,13 @@ class MenuTableSeeder extends Seeder {
         }
 
         $recommendation = new Recommendation();
-        $recommendation->menu_id = $menu->id;
-        $recommendation->recommendation = "Today, we has abcxyz";
+        $recommendation->menu_id = 1;
+        $recommendation->recommendation = "Today, we has abcxyz for menu 1";
+        $recommendation->save();
+
+        $recommendation = new Recommendation();
+        $recommendation->menu_id = 2;
+        $recommendation->recommendation = "Today, we has abcxyz for menu 2";
         $recommendation->save();
     }
 

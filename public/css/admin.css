@@ -5,6 +5,66 @@ a {
     transition: all 0.25s ease-out;
 }
 
+body {
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 95%;
+}
+
+.footer-data {
+    height: 32px;
+}
+
+.pagination {
+    float: right;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pagination li {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    background-color: #fcfcfc;
+    border: solid 1px #e5e5e5;
+    text-align: center;
+}
+
+.pagination a {
+    color: #5c5c5c;
+}
+
+.pagination a:hover {
+    color: #2ecc71;
+}
+
+.pagination .disabled {
+    color: #afafaf;
+}
+
+.pagination .active {
+    background-color: #2a323f;
+    color: #fcfcfc;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.data-footer {
+    height: 32px;
+}
+
+.footer {
+    height: 32px;
+}
+
 .pure-menu.pure-menu-open.pure-menu-fixed {
     color: #fff;
     background-color: #2a3137;
@@ -205,4 +265,406 @@ a {
 .statistic .tag .text .value {
     font-weight: bold;
     font-size: 2em;
+}
+
+.create-staff {
+    margin-bottom: 16px;
+}
+
+.box {
+    border: solid 1px #e5e5e5;
+}
+
+.box .box-header {
+    border-bottom: solid 1px #e5e5e5;   
+    background-color: #fcfcfc;
+    height: 36px;
+    line-height: 36px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 0.92em;
+    font-weight: 600;
+}
+
+.box .box-content {
+    padding: 12px;
+}
+
+.box .box-content a {
+    text-decoration: none;
+}
+
+.inside-box {
+    border: solid 1px #e5e5e5;
+    margin-bottom: 12px;
+}
+
+.inside-box .inside-box-header {
+    color: #3e3e3e;
+    font-size: 1.4em;
+    padding-left: 12px;
+    padding-right: 12px;
+    height: 42px;
+    line-height: 42px;
+    color: #fafafa;
+    background-color: #2a323f;
+}
+
+.inside-box .contact-information {
+    padding: 12px;
+    border-bottom: solid 1px #e5e5e5;
+}
+
+.inside-box .contact-information .name {
+    display: block;
+}
+
+.inside-box .contact-information small {
+    color: #6a6a6a;
+    display: block;
+}
+
+.inside-box .inside-box-content {
+    padding: 12px;
+}
+
+.inside-box .inside-box-header .current {
+    color: #fcfcfc;
+    font-size: 0.8em;
+}
+
+table.data {
+    width: 100%;
+    border: solid 1px #e5e5e5;
+    table-layout: fixed;
+    margin-bottom: 12px;
+}
+
+table.data th, td {
+    text-align: left;
+    padding-left: 12px;
+    padding-right: 12px;
+    overflow: hidden;
+}
+
+table.data th {
+    height: 42px;
+    line-height: 36px;
+    color: #fafafa;
+    background-color: #2a323f;
+}
+
+table.data td {
+    border: solid 1px #e5e5e5;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    height: 32px;
+}
+
+table.data tr:nth-child(even) {
+    background-color: #fbfbfb;
+}
+
+table.data a {
+    color: #4a4a4a;
+}
+
+table.data a:hover {
+    color: #2ecc71;
+}
+
+table.data .id {
+    width: 36px;
+    padding: 0;
+    text-align: center;
+}
+
+table.data .action {
+    width: 56px;
+    text-align: center;
+}
+
+table.data .action a {
+    color: #4a4a4a;
+    font-size: 1.2em;
+}
+
+table.data .action a:hover {
+    color: #2ecc71;
+}
+
+table.data .birthday {
+    text-align: center;
+}
+
+table.data .center {
+    text-align: center;
+}
+
+table.data small {
+    color: #6a6a6a;
+    display: block;
+}
+
+table.data .price {
+    width: 72px;
+}
+
+table.data .creator {
+    width: 160px;
+}
+
+table.data .created-date {
+    width: 130px;
+}
+
+table.data tfoot {
+    color: #5f5f5f;
+}
+
+.create-staff input {
+    width: 100%;
+}
+
+.create-staff .form-container {
+    width: 680px;
+    margin: 0 auto;
+    border: solid 1px #e5e5e5;
+    padding-bottom: 0.5em;
+}
+
+.create-staff .pure-form {
+    width: 680px;
+    margin: 0 auto;
+}
+
+.create-staff .pure-u-1-2 {
+    margin: 0 1%;
+    width: 48%;
+}
+
+.create-staff .message {
+    width: 680px;
+    margin: 0 auto;
+    margin-bottom: 12px;
+    border: solid 1px #e5e5e5;
+}
+
+.create-staff .info {
+    color: #5a5a5a;
+    font-size: 0.9em;
+    padding: 4px 12px;
+    display: block;
+}
+
+.create-staff .info.error {
+    color: #9f9f9f;
+    font-size: 0.9em;
+    padding: 4px 12px;
+    display: block;
+}
+
+/*.create-staff .pure-button {
+    width: 98%;
+    margin-left: 1%;
+}*/
+
+.pure-form input[type=text], 
+.pure-form input[type=email],
+.pure-form input[type=password] {
+    border-radius: 0;
+    height: 48px;
+}
+
+.pure-form-stacked input[type=text], 
+.pure-form-stacked input[type=email],
+.pure-form-stacked input[type=password] {
+    margin: 0.5em 0;
+}
+
+.pure-button {
+    border-radius: 0;
+    margin-right: 0.5em;
+}
+
+.pure-button-primary, a.pure-button-primary {
+    background-color: #2a323f;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+}
+
+.pure-button-primary:hover, a.pure-button-primary:hover {
+    background-color: #2a2a2a;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+}
+
+.create-staff .pure-button {
+    height: 48px;
+}
+
+.box-content .title {
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: normal;
+    text-transform: uppercase;
+    display: block;
+    color: #2f2f2f;
+}
+
+.daily-menu .xdsoft_datetimepicker {
+    width: 100%;
+}
+
+.daily-menu .xdsoft_datetimepicker .xdsoft_datepicker {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* datepicker */
+.lac-skin {
+    font-size: 90%;
+}
+
+.lac-skin .ui-widget {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+    background: #2a323f;
+    border: solid 1px #e5e5e5;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+.lac-skin .ui-datepicker {
+    padding: 0;
+    width: 100%;
+}
+
+.lac-skin .ui-datepicker-header {
+    border: none;
+    background: transparent;
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.lac-skin .ui-datepicker-header .ui-state-hover {
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+.lac-skin .ui-datepicker .ui-datepicker-title {
+    margin-top: .4em;
+    margin-bottom: .3em;
+    color: #e9f0f4;
+}
+
+.lac-skin .ui-datepicker .ui-datepicker-prev-hover,
+.lac-skin .ui-datepicker .ui-datepicker-next-hover,
+.lac-skin .ui-datepicker .ui-datepicker-next,
+.lac-skin .ui-datepicker .ui-datepicker-prev {
+    top: .9em;
+    border:none;
+}
+
+.lac-skin .ui-datepicker .ui-datepicker-prev-hover {
+    left: 2px;
+}
+
+.lac-skin .ui-datepicker .ui-datepicker-next-hover {
+    right: 2px;
+}
+
+.lac-skin .ui-datepicker .ui-datepicker-next span,
+.lac-skin .ui-datepicker .ui-datepicker-prev span {
+    background-image: url(/css/ui-lightness/images/ui-icons_ffffff_256x240.png);
+    background-position: -32px 0;
+    margin-top: 0;
+    top: 0;
+    font-weight: normal;
+}
+
+.lac-skin .ui-datepicker .ui-datepicker-prev span {
+    background-position: -96px 0;
+}
+
+.lac-skin .ui-datepicker table {
+    margin: 0;
+}
+
+.lac-skin .ui-datepicker th {
+    padding: 1em 0;
+    color: #e9f0f4;
+    font-size: 13px;
+    font-weight: normal;
+    border: none;
+    border-top: none;
+    background-color: #2a323f;
+    width: 14.27%;
+}
+
+.lac-skin .ui-datepicker td {
+    background-color: #fcfcfc;
+    border: none;
+    padding: 0;
+}
+
+.lac-skin td .ui-state-default {
+    background: transparent;
+    border: none;
+    text-align: center;
+    padding: .5em;
+    margin: 0;
+    font-weight: normal;
+    color: #2f2f2f;
+    font-size: 16px;
+    height: 48px;
+    line-height: 48px;
+}
+
+.lac-skin .ui-state-disabled  {
+    opacity: 1;
+}
+
+.lac-skin .ui-state-disabled .ui-state-default {
+    color: #fba49e;
+}
+
+.lac-skin td .ui-state-active {
+    background: #2a323f;
+    color: #ffffff;
+}
+
+.lac-skin td .ui-state-hover {
+    background: #2f2f2f;
+    color: #ffffff;
+}
+
+.lac-skin .ui-state-disabled .ui-state-default {
+    color: #fba49e;
 }

@@ -16,7 +16,7 @@ class MenuController extends BaseController {
     public function getMenu($id) {
         $menu = Menu::find($id);
         if (!$menu)
-            return Redirect::to('menu');
+            return Redirect::to('admin/menu');
         $this->layout->body = View::make('page.menu')->with('menu', $menu);
     }
 
@@ -25,7 +25,7 @@ class MenuController extends BaseController {
         if ($data) {
             return $data->dishes->toJson();
         } else {
-            return "";
+            return Response::json(array('message'=>'Menu data not found'), 404);;
         }
     }
 

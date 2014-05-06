@@ -15,6 +15,7 @@ h2.header,.contactus > h2 {
 	position: relative;
 	top: 15px;
 	font-weight: bold;
+	line-height: 30px;
 }
 
 .reserve {
@@ -48,6 +49,7 @@ h2.header,.contactus > h2 {
 	margin-top: 10px;
 	height: 40px;
 	display: block;
+	font-weight: 700;
 }
 
 div.number-list {
@@ -99,7 +101,7 @@ div.people > ul > li.inactive:hover {
 	color: #ffffff;
 }
 
-div.time, div.people {
+div.time, div.people, #datepicker {
 	display: none;
 }
 
@@ -172,4 +174,142 @@ div.time > ul > li.inactive, div.people > ul > li.inactive {
     .contactus {
     	right: 6%;
     }
+}
+
+
+/* datepicker */
+.reservedate {
+	position: absolute;
+	left: 0;
+	margin-top: 44px;
+    font-size: 90%;
+    z-index: 10;
+    font-size: 0.8em;
+}
+
+.reservedate .ui-widget {
+    font-family: "Open Sans", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+    background: #ffffff;
+    border: solid 1px #e5e5e5;
+    border-radius: 0;
+    -webkit-border-radius: 0;-
+    -moz-border-radius: 0;
+    box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.506);
+}
+
+.reservedate .ui-widget-content {
+	border: solid 1px #cccccc;
+}
+
+.reservedate .ui-datepicker {
+    padding: 0;
+    width: 262px;
+}
+
+.reservedate .ui-datepicker-header {
+    border: none;
+    background: transparent;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.reservedate .ui-datepicker-header .ui-state-hover {
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+.reservedate .ui-datepicker .ui-datepicker-title {
+    margin-top: .4em;
+    margin-bottom: .3em;
+    color: #333333;
+}
+
+.reservedate .ui-datepicker .ui-datepicker-prev-hover,
+.reservedate .ui-datepicker .ui-datepicker-next-hover,
+.reservedate .ui-datepicker .ui-datepicker-next,
+.reservedate .ui-datepicker .ui-datepicker-prev {
+    top: .9em;
+    border:none;
+}
+
+.reservedate .ui-datepicker .ui-datepicker-prev-hover {
+    left: 2px;
+}
+
+.reservedate .ui-datepicker .ui-datepicker-next-hover {
+    right: 2px;
+}
+
+.reservedate .ui-datepicker .ui-datepicker-next span,
+.reservedate .ui-datepicker .ui-datepicker-prev span {
+    background-image: url(/css/ui-lightness/images/ui-icons_222222_256x240.png);
+    background-position: -32px 0;
+    margin-top: 0;
+    top: 0;
+    font-weight: normal;
+}
+
+.reservedate .ui-datepicker .ui-datepicker-prev span {
+    background-position: -96px 0;
+}
+
+.reservedate .ui-datepicker table {
+    margin: 0;
+}
+
+.reservedate .ui-datepicker th {
+    padding: 1em 0;
+    color: #666666;
+    font-size: 12px;
+    font-weight: 700;
+    border: none;
+    border-top: none;
+    background-color: #ffffff;
+    width: 14.27%;
+}
+
+.reservedate .ui-datepicker td {
+    background-color: #fcfcfc;
+    border: solid 1px #dddddd;
+    padding: 0;
+}
+
+.reservedate td .ui-state-default {
+    background: #F5F5F5;
+    border: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+    color: #666666;
+    font-size: 12px;
+    height: 30px;
+    line-height: 32px;
+    font-weight: 600;
+}
+
+.reservedate .ui-state-disabled  {
+    opacity: 1;
+}
+
+.reservedate .ui-state-disabled .ui-state-default {
+    color: #fba49e;
+}
+
+.reservedate td .ui-state-active {
+    background: #33AAFF;
+    color: #ffffff;
+}
+
+.reservedate td .ui-state-hover {
+    background: #aab7b7;
+    color: #ffffff;
+}
+
+.reservedate .ui-state-disabled .ui-state-default {
+    color: #fba49e;
 }

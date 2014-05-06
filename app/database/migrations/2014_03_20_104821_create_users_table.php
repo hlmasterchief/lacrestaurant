@@ -15,6 +15,9 @@ class CreateUsersTable extends Migration {
             $table->increments('id');
             $table->string('username')->unique();
             $table->string('password');
+            $table->string('email')->default('email@domain.com');
+            $table->string('realname')->default('Sairen Nguyen');
+            $table->date('birthday')->default('1993-01-01');
             $table->integer('group_id')->unsigned();
             $table->integer('room_id')->default(-1);
             $table->timestamps();

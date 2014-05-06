@@ -28,8 +28,21 @@ Route::post('admin/user/login', 'UserController@postLogin');
 Route::get('admin/user/logout', 'UserController@getLogout');
 
 // admin routes
-Route::get('admin', 'AdminController@getIndex');
-Route::get('admin/manage_users', 'AdminController@getManageUsers');
+Route::get('/admin', 'AdminController@getIndex');
+Route::get('/admin/menu', 'AdminController@getManageMenu');
+Route::get('/admin/dishes', 'AdminController@getManageDishes');
+Route::get('/admin/users', 'AdminController@getManageUsers');
+Route::get('/admin/users/create', 'AdminController@getCreateUser');
+Route::post('/admin/users/create', 'AdminController@postCreateUser');
+Route::get('/admin/users/edit/{id?}', 'AdminController@getEditUser');
+Route::post('/admin/users/edit/{id?}', 'AdminController@postEditUser');
+Route::get('/admin/users/delete/{id?}', 'AdminController@getDeleteUser');
+Route::post('/admin/users/delete/{id?}', 'AdminController@postDeleteUser');
+Route::get('/admin/news', 'AdminController@getManageNews');
+Route::get('/admin/feedback', 'AdminController@getManageFeedback');
+Route::get('/admin/feedback/{id}', 'AdminController@getReadFeedback');
+Route::get('/admin/feedback/delete/{id?}', 'AdminController@getDeleteFeedback');
+Route::post('/admin/feedback/delete/{id?}', 'AdminController@postDeleteFeedback');
 
 // dish routes
 Route::get('admin/dish', 'DishController@getIndex');
@@ -40,7 +53,6 @@ Route::post('admin/dish/edit_dish/{id}', 'DishController@postEditDish');
 Route::get('admin/dish/{id}', 'DishController@getDish');
 
 // menu routes
-Route::get('admin/menu', 'MenuController@getIndex');
 Route::get('admin/menu/create_menu', 'MenuController@getCreateMenu');
 Route::post('admin/menu/create_menu', 'MenuController@postCreateMenu');
 Route::get('admin/menu/edit_menu/{id}', 'MenuController@getEditMenu');
@@ -56,4 +68,15 @@ Route::post('admin/contact', 'ContactController@postCreateContact');
 
 App::missing(function($exception) {
     return View::make('singlepage');
+});
+
+HTML::macro('is_active', function($route) {    
+    if( (Request::is($route."/*") AND $route != "admin") OR Request::is($route) ) {
+        $active = " class = 'active'";
+    }
+    else {
+        $active = '';
+    }
+ 
+    return $active;
 });

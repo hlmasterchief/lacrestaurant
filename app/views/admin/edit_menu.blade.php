@@ -1,6 +1,6 @@
 @section('body')
 
-{{ Form::open(array('url'=>"menu/edit_menu/$menu->id", 'autocomplete' => 'off')) }}
+{{ Form::open(array('url'=>"admin/menu/edit_menu/$menu->id", 'autocomplete' => 'off')) }}
 
 <h2>Edit Menu</h2>
 
