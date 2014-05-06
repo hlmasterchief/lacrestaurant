@@ -1,6 +1,6 @@
 var lacApp = angular.module(
     'lacApp', 
-    ['ngRoute'], 
+    ['ngRoute', 'ngSanitize', 'ngAnimate'], 
     function($interpolateProvider) {
         $interpolateProvider.startSymbol('<%');
         $interpolateProvider.endSymbol('%>');
@@ -83,19 +83,24 @@ lacApp.controller("NewsController", function($scope, $http) {
     $scope.message = "";
 
     $scope.fetch = function() {
-        $http({method: "GET", url: 'admin/news', params: {'_request': 'ajax'}}).
-            success(function(data, status) {
-                $scope.news = data.sort(function(a,b) {
-                    return b.id > a.id;
-                });
+        $(".overlay-ajax").fadeIn(200, function() {
+            $http({method: "GET", url: 'ajax/news', params: {'_request': 'ajax'}}).
+                success(function(data, status) {
+                    $scope.news = data.sort(function(a,b) {
+                        return b.id > a.id;
+                    });
 
-                for (var index in $scope.news) {
-                    $scope.news[index].status = 1;             
-                }
-            }).
-            error(function(data, status) {
-                $scope.message = "Cannot fetch news.";
-            });
+                    for (var index in $scope.news) {
+                        $scope.news[index].status = 1;             
+                    }
+
+                    $(".overlay-ajax").fadeOut(100);
+                }).
+                error(function(data, status) {
+                    $scope.message = "Cannot fetch news.";
+                    $(".overlay-ajax").fadeOut(100);
+                });
+        });
     };
 
     $scope.change = function() {

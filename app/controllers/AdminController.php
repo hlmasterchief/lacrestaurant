@@ -79,13 +79,17 @@ class AdminController extends BaseController {
                                     ->with('feedbacks', $query);
     }
 
+    public function getCreateNews($id = null) {
+        $this->layout->content = View::make('admin.create_news');
+    }
+
     public function getEditNews($id = null) {
         if (!isset($id) or is_null($id))
             return Redirect::to('/admin/news');
         $query = News::find($id);
         if (is_null($query))
             return Redirect::to('/admin/news');
-        $this->layout->body = View::make('admin.edit_news')->with('new', $query);
+        $this->layout->content = View::make('admin.edit_news')->with('new', $query);
     }
 
     public function getDeleteNews($id = null) {
@@ -94,7 +98,7 @@ class AdminController extends BaseController {
         $query = News::find($id);
         if (is_null($query))
             return Redirect::to('/admin/news');
-        $this->layout->body = View::make('admin.delete_news')->with('new', $query);
+        $this->layout->content = View::make('admin.delete_news')->with('new', $query);
     }
 
     public function postDeleteNews($id = null) {
@@ -109,7 +113,7 @@ class AdminController extends BaseController {
     }
 
     public function getCreateUser() {
-        $this->layout->body = View::make('admin.create_user');
+        $this->layout->content = View::make('admin.create_user');
     }
 
     public function getEditUser($id = null) {
@@ -118,7 +122,7 @@ class AdminController extends BaseController {
         $query = User::find($id);
         if (is_null($query))
             return Redirect::to('/admin/users');
-        $this->layout->body = View::make('admin.edit_user')->with('user', $query);
+        $this->layout->content = View::make('admin.edit_user')->with('user', $query);
     }
 
     public function getDeleteUser($id = null) {
@@ -127,7 +131,7 @@ class AdminController extends BaseController {
         $query = User::find($id);
         if (is_null($query))
             return Redirect::to('/admin/users');
-        $this->layout->body = View::make('admin.delete_user')->with('user', $query);
+        $this->layout->content = View::make('admin.delete_user')->with('user', $query);
     }
 
     public function getReadFeedback($id = null) {
@@ -136,7 +140,7 @@ class AdminController extends BaseController {
         $query = Contact::find($id);
         if (is_null($query))
             return Redirect::to('/admin/feedback');
-        $this->layout->body = View::make('admin.read_feedback')->with('feedback', $query);
+        $this->layout->content = View::make('admin.read_feedback')->with('feedback', $query);
     }
 
     public function getDeleteFeedback($id = null) {
@@ -145,7 +149,7 @@ class AdminController extends BaseController {
         $query = Contact::find($id);
         if (is_null($query))
             return Redirect::to('/admin/feedback');
-        $this->layout->body = View::make('admin.delete_feedback')->with('feedback', $query);
+        $this->layout->content = View::make('admin.delete_feedback')->with('feedback', $query);
     }
 
     public function postEditNews($id = null) {
@@ -203,6 +207,31 @@ class AdminController extends BaseController {
             return Redirect::to('admin/users/create')->with('message', "Successfully created new user!");
         } else {
             return Redirect::to('admin/users/create')
+                    ->with('message', "")->withErrors($validator);
+        } // end validation
+    }
+
+    public function postCreateNews() {
+        /* validate input */
+        $validator = Validator::make(Input::all(), array(
+            "title"       =>  "required",
+            "description" =>  "required"
+        ));
+
+        /* if validated */
+        if ($validator->passes()) {
+            $user = Auth::user();
+            $news = new News();
+
+            $news->title       = Input::get('title');
+            $news->description = News::nl2br(Input::get('description'));
+            $news->user_id     = $user->id;
+
+            $news->save();
+
+            return Redirect::to('admin/news/create')->with('message', "Successfully posted news!");
+        } else {
+            return Redirect::to('admin/news/create')
                     ->with('message', "")->withErrors($validator);
         } // end validation
     }

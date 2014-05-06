@@ -44,6 +44,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular.min.js"></script>
         <script src="js/angular-route.min.js"></script>
         <script src="js/angular-animate.min.js"></script>
+        <script src="http://code.angularjs.org/1.2.15/angular-sanitize.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/moment.js"></script>
     </body>

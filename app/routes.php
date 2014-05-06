@@ -36,6 +36,8 @@ Route::post('/admin/users/edit/{id?}', 'AdminController@postEditUser');
 Route::get('/admin/users/delete/{id?}', 'AdminController@getDeleteUser');
 Route::post('/admin/users/delete/{id?}', 'AdminController@postDeleteUser');
 Route::get('/admin/news', 'AdminController@getManageNews');
+Route::get('/admin/news/create', 'AdminController@getCreateNews');
+Route::post('/admin/news/create', 'AdminController@postCreateNews');
 Route::get('/admin/news/edit/{id?}', 'AdminController@getEditNews');
 Route::post('/admin/news/edit/{id?}', 'AdminController@postEditNews');
 Route::get('/admin/news/delete/{id?}', 'AdminController@getDeleteNews');
@@ -45,27 +47,8 @@ Route::get('/admin/feedback/{id}', 'AdminController@getReadFeedback');
 Route::get('/admin/feedback/delete/{id?}', 'AdminController@getDeleteFeedback');
 Route::post('/admin/feedback/delete/{id?}', 'AdminController@postDeleteFeedback');
 
-// dish routes
-Route::get('admin/dish', 'DishController@getIndex');
-Route::get('admin/dish/create_dish', 'DishController@getCreateDish');
-Route::post('admin/dish/create_dish', 'DishController@postCreateDish');
-Route::get('admin/dish/edit_dish/{id}', 'DishController@getEditDish');
-Route::post('admin/dish/edit_dish/{id}', 'DishController@postEditDish');
-Route::get('admin/dish/{id}', 'DishController@getDish');
-
-// menu routes
-Route::get('admin/menu/create_menu', 'MenuController@getCreateMenu');
-Route::post('admin/menu/create_menu', 'MenuController@postCreateMenu');
-Route::get('admin/menu/edit_menu/{id}', 'MenuController@getEditMenu');
-Route::post('admin/menu/edit_menu/{id}', 'MenuController@postEditMenu');
-Route::get('admin/menu/{id}', 'MenuController@getMenu');
-
-Route::get('date_menu/{date}', 'MenuController@getMenuDate');
-
-// contact routes
-Route::get('admin/contact', 'ContactController@getIndex');
-Route::get('admin/contact/{id}', 'ContactController@getContact');
-Route::post('admin/contact', 'ContactController@postCreateContact');
+// front-end routes
+Route::get('/ajax/news', 'NewsController@getIndex');
 
 App::missing(function($exception) {
     return View::make('singlepage');

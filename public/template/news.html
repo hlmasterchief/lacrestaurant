@@ -5,7 +5,7 @@
 			<span class="title"><% info.title %></span>
 			<span class="newsdate"><em><% info.created_date %></em><em>Published at <% info.created_time %> GMT</em></span>
 		</div>
-		<p id="<% info.id %>"><% info.description %></p>
+		<p id="<% info.id %>" ng-bind-html="info.description"></p>
 		</br>
 	</div>
 
