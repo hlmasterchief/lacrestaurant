@@ -16,4 +16,12 @@ class News extends Eloquent {
     public function user() {
         return $this->belongsTo('User');
     }
+
+    public function br2nl() {
+        return preg_replace('/\<br(\s*)?\/?\>/i', "\n", $this->description);
+    }
+
+    public static function nl2br($text) {
+        return preg_replace('/\r?\n/', "<br/>", $text);
+    }
 }

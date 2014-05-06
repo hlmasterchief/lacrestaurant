@@ -19,11 +19,12 @@
     </head>
 
     <body>
+        @if(Auth::check())
         <div class="admin-navbar pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
             <a href="/admin" class="pure-menu-heading"><i class="fa fa-cogs"></i> LAC RESTAURANT</a>
             <ul>
-                <li><a href="#"><i class="fa fa-user"></i> t3ngcu00</a></li>
-                <li><a href="#"><i class="fa fa-sign-out"></i> Sign Out</a></li>
+                <li><a href="#"><i class="fa fa-user"></i> {{Auth::user()->realname}}</a></li>
+                <li><a href="/admin/logout"><i class="fa fa-sign-out"></i> Sign Out</a></li>
             </ul>
         </div>
 
@@ -71,6 +72,10 @@
             <div class="footer">
             </div>
         </div>
+
+        @else
+            @yield('content', 'MOTHERUFACKER')
+        @endif
 
         <!-- include javascript -->
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>

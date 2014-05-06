@@ -21,14 +21,11 @@ Route::get('ascii', function() {
 	return View::make('layout.master')->nest('body', 'ascii');
 });
 
-// user routes
-Route::get('admin/user', 'UserController@getIndex');
-Route::get('admin/user/login', 'UserController@getLogin');
-Route::post('admin/user/login', 'UserController@postLogin');
-Route::get('admin/user/logout', 'UserController@getLogout');
-
 // admin routes
 Route::get('/admin', 'AdminController@getIndex');
+Route::get('/admin/login', 'AdminController@getLogin');
+Route::post('/admin/login', 'AdminController@postLogin');
+Route::get('/admin/logout', 'AdminController@getLogout');
 Route::get('/admin/menu', 'AdminController@getManageMenu');
 Route::get('/admin/dishes', 'AdminController@getManageDishes');
 Route::get('/admin/users', 'AdminController@getManageUsers');
@@ -39,6 +36,10 @@ Route::post('/admin/users/edit/{id?}', 'AdminController@postEditUser');
 Route::get('/admin/users/delete/{id?}', 'AdminController@getDeleteUser');
 Route::post('/admin/users/delete/{id?}', 'AdminController@postDeleteUser');
 Route::get('/admin/news', 'AdminController@getManageNews');
+Route::get('/admin/news/edit/{id?}', 'AdminController@getEditNews');
+Route::post('/admin/news/edit/{id?}', 'AdminController@postEditNews');
+Route::get('/admin/news/delete/{id?}', 'AdminController@getDeleteNews');
+Route::post('/admin/news/delete/{id?}', 'AdminController@postDeleteNews');
 Route::get('/admin/feedback', 'AdminController@getManageFeedback');
 Route::get('/admin/feedback/{id}', 'AdminController@getReadFeedback');
 Route::get('/admin/feedback/delete/{id?}', 'AdminController@getDeleteFeedback');

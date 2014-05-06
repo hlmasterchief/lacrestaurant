@@ -5,12 +5,46 @@ class AdminController extends BaseController {
     protected $layout = 'layout.admin';
 
     public function __construct() {
-        // $this->beforeFilter('auth');
-        // $this->beforeFilter('admin');
+        $this->beforeFilter('auth', array('except' => array('getLogin', 'postLogin')));
     }
 
     public function getIndex() {
         $this->layout->content = View::make('admin.dashboard');
+    }
+
+    public function getLogin() {
+        $this->layout->content = View::make('admin.login');
+    }
+
+    public function postLogin() {
+        /* validate input */
+        $validator = Validator::make(Input::all(), array(
+            "username" =>  "required",
+            "password" =>  "required"
+        ));
+
+        /* if validated */
+        if ($validator->passes()) {
+            /* get input */
+            $login = array(
+                "username" =>  Input::get("username"),
+                "password" =>  Input::get("password")
+            );
+
+            /* check login */
+            if (Auth::attempt($login)) {
+                return Redirect::to('admin');
+            } else {
+                return Redirect::to('admin/login')->with('message', trans('user.login_fail'));
+            } // end auth
+        } else {
+            return Redirect::to('admin/login')->with('message', trans('user.login_fail'));
+        } // end validation
+    }
+
+    public function getLogout() {
+        Auth::logout();
+        return Redirect::intended('admin');
     }
 
     public function getManageDishes() {
@@ -43,6 +77,35 @@ class AdminController extends BaseController {
         $query = Contact::orderBy('id', 'desc')->paginate(10);
         $this->layout->content = View::make('admin.manage_feedback')
                                     ->with('feedbacks', $query);
+    }
+
+    public function getEditNews($id = null) {
+        if (!isset($id) or is_null($id))
+            return Redirect::to('/admin/news');
+        $query = News::find($id);
+        if (is_null($query))
+            return Redirect::to('/admin/news');
+        $this->layout->body = View::make('admin.edit_news')->with('new', $query);
+    }
+
+    public function getDeleteNews($id = null) {
+        if (!isset($id) or is_null($id))
+            return Redirect::to('/admin/news');
+        $query = News::find($id);
+        if (is_null($query))
+            return Redirect::to('/admin/news');
+        $this->layout->body = View::make('admin.delete_news')->with('new', $query);
+    }
+
+    public function postDeleteNews($id = null) {
+        if (!isset($id) or is_null($id))
+            return Redirect::to('/admin/news');
+        $new = News::find($id);
+        if (is_null($new))
+            return Redirect::to('/admin/news');
+
+        $new->delete();
+        return Redirect::to('/admin/news');
     }
 
     public function getCreateUser() {
@@ -83,6 +146,32 @@ class AdminController extends BaseController {
         if (is_null($query))
             return Redirect::to('/admin/feedback');
         $this->layout->body = View::make('admin.delete_feedback')->with('feedback', $query);
+    }
+
+    public function postEditNews($id = null) {
+        if (!isset($id) or is_null($id))
+            return Redirect::to('/admin/news');
+        $news = News::find($id);
+        if (is_null($news))
+            return Redirect::to('/admin/news');
+
+        /* validate input */
+        $validator = Validator::make(Input::all(), array(
+            "title"       =>  "required",
+            "description" =>  "required"
+        ));
+
+        /* if validated */
+        if ($validator->passes()) {
+            $news->title       = Input::get('title');
+            $news->description = News::nl2br(Input::get('description'));
+            $news->save();
+
+            return Redirect::to('admin/news/edit/' . $id)->with('message', "Successfully edited news!");
+        } else {
+            return Redirect::to('admin/news/edit/' . $id)
+                    ->with('message', "")->withErrors($validator);
+        } // end validation
     }
 
     public function postCreateUser() {

@@ -294,6 +294,44 @@ body {
     text-decoration: none;
 }
 
+.box .box-content .message {
+    margin: 0 auto;
+    margin-bottom: 12px;
+    border: solid 1px #e5e5e5;
+}
+
+.box .box-content .info {
+    color: #5a5a5a;
+    font-size: 0.9em;
+    padding: 4px 12px;
+    display: block;
+}
+
+.box .box-content .info.error {
+    color: #9f9f9f;
+    font-size: 0.9em;
+    padding: 4px 12px;
+    display: block;
+}
+
+/*.box .box-content input {
+    width: 100%;
+}*/
+
+.box .box-content .form-container {
+    margin: 0 auto;
+    border: solid 1px #e5e5e5;
+    padding-bottom: 0.5em;
+}
+
+.box .box-content .pure-form {
+    margin: 0 auto;
+}
+
+.create-staff .box .box-content .message {
+    width: 680px;
+}
+
 .inside-box {
     border: solid 1px #e5e5e5;
     margin-bottom: 12px;
@@ -411,7 +449,7 @@ table.data .price {
 }
 
 table.data .creator {
-    width: 160px;
+    width: 200px;
 }
 
 table.data .created-date {
@@ -422,46 +460,25 @@ table.data tfoot {
     color: #5f5f5f;
 }
 
-.create-staff input {
+.create-staff .box .box-content input {
     width: 100%;
 }
 
-.create-staff .form-container {
+.create-staff .box .box-content .form-container {
     width: 680px;
-    margin: 0 auto;
-    border: solid 1px #e5e5e5;
-    padding-bottom: 0.5em;
 }
 
-.create-staff .pure-form {
+.create-staff .box .box-content .pure-form {
     width: 680px;
-    margin: 0 auto;
 }
 
-.create-staff .pure-u-1-2 {
+.create-staff .box .box-content .pure-u-1-2 {
     margin: 0 1%;
     width: 48%;
 }
 
-.create-staff .message {
+.create-staff .box .box-content .message {
     width: 680px;
-    margin: 0 auto;
-    margin-bottom: 12px;
-    border: solid 1px #e5e5e5;
-}
-
-.create-staff .info {
-    color: #5a5a5a;
-    font-size: 0.9em;
-    padding: 4px 12px;
-    display: block;
-}
-
-.create-staff .info.error {
-    color: #9f9f9f;
-    font-size: 0.9em;
-    padding: 4px 12px;
-    display: block;
 }
 
 /*.create-staff .pure-button {
@@ -478,8 +495,14 @@ table.data tfoot {
 
 .pure-form-stacked input[type=text], 
 .pure-form-stacked input[type=email],
-.pure-form-stacked input[type=password] {
+.pure-form-stacked input[type=password],
+.pure-form-stacked textarea {
     margin: 0.5em 0;
+}
+
+.pure-form textarea {
+    border-radius: 0;
+    width: 100%;
 }
 
 .pure-button {
@@ -526,6 +549,10 @@ table.data tfoot {
     padding: 0 16px;
 }
 
+.edit-news input[type=text] {
+    height: 36px;
+    width: 100%;
+}
 
 
 
@@ -535,6 +562,30 @@ table.data tfoot {
 
 
 
+/* login */
+.login-box {
+    width: 320px;
+    height: 210px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: solid 1px #e5e5e5;
+    background-color: #fcfcfc;
+    font-size: 0.9em;
+    color: #6f6f6f;
+}
+
+.login-box .container {
+    padding: 12px;
+}
+
+.login-box input {
+    width: 100%;
+    height: 48px;
+}
 
 
 

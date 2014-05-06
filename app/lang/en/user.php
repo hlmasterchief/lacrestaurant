@@ -2,6 +2,6 @@
 
 return array(
 
-	'login_fail' => 'Your username/password combination was incorrect.',
+	'login_fail' => 'Your login information was incorrect.',
 
 );

@@ -48,7 +48,7 @@ class NewsController extends BaseController {
             return Redirect::to('admin/news/create_news')->withErrors($validator);
         } // end validation
     }
-
+    
     public function getEditNews($id) {
         $news = News::find($id);
         $this->layout->body = View::make('admin.edit_news')->with('news', $news);
