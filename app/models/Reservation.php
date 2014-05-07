@@ -11,7 +11,7 @@ class Reservation extends Eloquent {
     public static function getUnread() {
         $result = array();
         foreach (Reservation::all() as $reservation) {
-            if (!$reservation->is_read) {
+            if (!$reservation->status) {
                 $result[] = $reservation;
             }
         }
@@ -21,9 +21,4 @@ class Reservation extends Eloquent {
     public static function countUnread() {
         return count(Reservation::getUnread());
     }
-
-    public function getTableAttribute() {
-        return ceil($this->numbers / 2);
-    }
-   
 }

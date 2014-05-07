@@ -142,21 +142,27 @@ div.time > ul > li.inactive, div.people > ul > li.inactive {
 	top: 14px;
 } 
 
-.contactus > p > a {
+.contactus > p > a, 
+.contact > .header > p > a{
 	text-decoration: none;
 	color: #fff;
 	border-bottom: 1px dotted #0078e7;
 }
 
-.contactus > p > a:hover {
+.contactus > p > a:hover, 
+.contact > .header > p > a:hover {
 	color: #0078e7;
 }
 
-#msg {
-	position: absolute;
-	left: 8%;
-	bottom: 18px;
-	font-weight: 600;
+.reservepage > .msg {
+    margin-left: 40px;
+    margin-top: 10px;
+    font-weight: 600;
+    display: block;
+}
+
+.reservepage > .msg > strong {
+    display: block;
 }
 
 #reservedate {
@@ -169,6 +175,10 @@ div.time > ul > li.inactive, div.people > ul > li.inactive {
 
 #people {
 	background: #fff url('../img/people.png') no-repeat 10px center;
+}
+
+#phonenumber {
+	background: #fff url('../img/phone.png') no-repeat 3px center;
 }
 
 @media (max-width: 1150px) {

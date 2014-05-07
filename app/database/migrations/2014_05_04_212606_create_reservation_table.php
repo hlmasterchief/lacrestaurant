@@ -17,6 +17,7 @@ class CreateReservationTable extends Migration {
             $table->date('date');
             $table->time('time');
             $table->tinyInteger('numbers');
+            $table->text('phonenumber');
             $table->mediumText('requirements')->default('');
             $table->tinyInteger('status')->default(0);
             $table->timestamps();

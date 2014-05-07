@@ -1,36 +1,66 @@
-.contact {
-    position: absolute;
-    top: 96px;
+.content.right.contact {
     left: 300px;
-    width: 60%;
-    padding: 30px;
-    background-color: rgba(1, 1, 1,0.7);
+    min-width: 400px;
+    width: 440px;
+    margin-bottom: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgba(1, 1, 1,0.8);
     color: #fff;
 }
 
 .contact > .header {
-    line-height: 10px;
+    position: relative;
+    left: 10%;
 }
 
-.contact h2 {
+.contact > .header > h2 {
+    margin-bottom: 34px;
+}
+
+.contact > .header > p {
     margin-top: 0px;
+    width: 80%;
+    left: 10%;
+    line-height: 24px;
 }
 
-.contact > .pure-form > .pure-input-1-2 {
-    width: 48.8%;
-    height: 44px;
-    margin-bottom: 14px;
-    border-radius: 0px; 
+.contact > form {
+    position: relative;
+    left: 10%; 
+    width: 78%;
 }
 
-form.pure-form > .pure-input-1 {
-    height: 44px;
-    margin-bottom: 14px;
-    border-radius: 0px; 
+.contact > .pure-form > .pure-input-1 {
+    height: 46px;
+    margin-bottom: 16px;
+    border-radius: 1px; 
+    display: block;
+}
+
+.contact > .pure-form > textarea.pure-input-1 {
+    height: 180px;
+}
+
+.contact > .msg {
+    margin-left: 40px;
+    margin-top: 10px;
+    font-weight: 600;
+    display: block;
+}
+
+.contact > .msg > strong {
+    display: block;
 }
 
 form.pureform {
     margin-top: 30px;
+}
+
+form.pure-form > .pure-input-1 {
+    height: 44px;
+    margin-bottom: 20px;
+    border-radius: 1px; 
 }
 
 form.pure-form > select > option {
@@ -45,15 +75,10 @@ form.pure-form > textarea.pure-input-1 {
 }
 
 form.pure-form > button {
+    margin-top: 20px;
     border-radius: 0px;
 }
 
 form.pure-form > .right {
     float: right;
-}
-
-@media (max-width: 1150px) {
-    .contact > .pure-form > .pure-input-1-2 {
-        width: 100%;
-    }
 }

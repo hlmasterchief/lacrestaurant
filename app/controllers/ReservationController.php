@@ -24,15 +24,15 @@ class ReservationController extends BaseController {
         $validator = Validator::make(Input::all(), array(
             'date'        =>  'required|date_format:Y-m-d|after:$today',
             'time'        =>  'required|date_format:H:i',
-            'numbers'     =>  'required|integer|between:1,64'
+            'numbers'     =>  'required|integer|between:1,64',
             'phonenumber' =>  'required'
         ), array(
-            'required'            =>  'We need to know your :attribute.',
-            'date.date_format'    =>  'The date need to be formatted "dd-mm-yyyy"',
-            'date.after'          =>  'You date is invalid.',
-            'time.date_format'    =>  'The time need to be formatted "hh:mm"',
-            'numbers.integer'     =>  'We need to know numbers of people in your reservation.',
-            'numbers.between'     =>  'Our restaurant has full of slot now. Please make a new reservation if you are interested in.' 
+            'required'         =>  'We need to know your :attribute.',
+            'date.date_format' =>  'The date need to be formatted "dd-mm-yyyy".',
+            'date.after'       =>  'You date is invalid.',
+            'time.date_format' =>  'The time need to be formatted "hh:mm".',
+            'numbers.integer'  =>  'We need to know numbers of people in your reservation.',
+            'numbers.between'  =>  'We can only serve maximum 64 people.'
         ));
 
         /* if validated */
@@ -46,9 +46,10 @@ class ReservationController extends BaseController {
             $reservation->phonenumber  = Input::get('phonenumber');
             $reservation->requirements = (Input::has('requirements')?Input::get('requirements'):'');
             $reservation->save();
-            return Response::json(array('message'=>'Your reservation is sent successfully. We will contact with you soon to confirm. Thank you!'), 200);
+            return Response::json(array('message'=>['Your reservation is sent successfully. We will contact with you soon to confirm. Thank you!']), 200);
         } else {
-            return Response::json(array('message'=>$validator->messages()), 400);
+            $messages = $validator->messages()->all();
+            return Response::json(array('message'=>$messages), 400);
         } // end validation
     }
 
