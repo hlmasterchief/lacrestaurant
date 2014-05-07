@@ -2,6 +2,7 @@
 	margin-bottom: 40px;
 	background-color: rgba(1,1,1,0.8);
 	width: 60%;
+	height: 640px;
 	color: #fff;
 	left: 26%;
 }
@@ -19,25 +20,28 @@ h2.header,.contactus > h2 {
 	line-height: 30px;
 }
 
-.reserve {
+.reserve, .login {
 	position: relative;
 	width: 264px;
 	margin: 0;
 	display: inline-block;
 }
 
-.reserve > p {
+.reserve > p,
+.login > p {
 	position: inherit;
 	top: 38px;
 }
 
-.reserve > form.pure-form {
+.reserve > form.pure-form,
+.login > form.pure-form {
 	position: relative;
 	top: 34px;
 	width: 100;
 }
 
-.reserve > form.pure-form > input {
+.reserve > form.pure-form > input,
+.login > form.pure-form > input {
 	padding-left: 50px;
 	display: block;
 }
@@ -46,7 +50,8 @@ h2.header,.contactus > h2 {
 	height: 140px;
 }
 
-.reserve > form.pure-form > button {
+.reserve > form.pure-form > button,
+.login > form.pure-form > button {
 	margin-top: 10px;
 	height: 40px;
 	display: block;

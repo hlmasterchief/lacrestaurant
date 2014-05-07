@@ -1,7 +1,7 @@
 <div class="animated fadeInDown content right reservepage">
 	<div class="maincontainer">
 
-		<div class="reserve">
+		<div id="reserve" class="reserve animated fadeIn" ng-show="vreserve">
 			<h2 class="header">BOOK A TABLE</h2>
 			<p>Select your date, time and number of people</p>
 
@@ -31,6 +31,20 @@
 		        <textarea class="pure-input-1" placeholder="Requirements" ng-model="reservation.requirements"></textarea>
 
 		        <button class="pure-button pure-button-primary pure-u-1-3" type="submit">Reserve</button>
+		    </form>
+		</div>
+
+		<div id="login" class="login" ng-show="vlogin">
+			<h2 class="header">PLEASE LOGIN</h2>
+			<p>You need to login to reserve</p>
+
+			<form class="pure-form pure-g" autocomplete="off" ng-submit="postLogin()">
+
+		        <input id="username" class="pure-input-1" type="text" ng-model="login.username">
+
+		        <input id="password" class="pure-input-1" type="password" ng-model="login.password">
+
+		        <button class="pure-button pure-button-primary pure-u-1-3" type="submit">Login</button>
 		    </form>
 		</div>
 

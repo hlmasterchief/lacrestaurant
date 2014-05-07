@@ -82,6 +82,7 @@ lacApp.controller("ContactController", function($scope, $http) {
 lacApp.controller("ReserveController", function($scope, $http) {
     $scope.reservation = {};
     $scope.message = "";
+    $scope.msg = "";
     $scope.reservation.datadate = moment().format("DD/MM/YYYY"); 
     $scope.reservation.time = "19:00";
     $scope.reservation.datanumbers = "2 People";
@@ -171,6 +172,7 @@ lacApp.controller("ReserveController", function($scope, $http) {
     // ajax post
     $scope.post = function() {
         var datadate = $scope.reservation.datadate.split("/");
+        $scope.reservation.user_id = $scope.user_id;
         $scope.reservation.date = datadate[2] + "-" + datadate[1] + "-" + datadate[0];
         $scope.reservation.numbers = parseInt($scope.reservation.datanumbers);
 
@@ -192,6 +194,72 @@ lacApp.controller("ReserveController", function($scope, $http) {
                 });
         });
     };
+
+    $scope.user_id = 0;
+    $scope.login = {};
+    $scope.vlogin = true;
+    $scope.vreserve = false;
+
+    $scope.getLogin = function(callback) {
+        $http({method: "GET", url: 'ajax/login'}).
+            success(function(data, status) {
+                $scope.message = data.message;
+                $scope.user_id = data.user_id;
+                callback(status);
+            }).
+            error(function(data, status) {
+                $scope.message = data.message;
+                $scope.user_id = data.user_id;
+                callback(status);
+            });
+    };
+
+    $scope.getIndex = function() {
+        $(".overlay-ajax").fadeIn(200, function() {
+            $scope.getLogin(function(status) {
+                if (status == 401) {
+                    // $("#login").show();
+                    // $("#reserve").hide();
+                    $scope.vlogin = true;
+                    $scope.vreserve = false;
+                    $(".overlay-ajax").fadeOut(100);
+                } else if (status == 200) {
+                    // $("#login").hide();
+                    // $("#reserve").show();
+                    $scope.vlogin = false;
+                    $scope.vreserve = true;
+                    $(".overlay-ajax").fadeOut(100);
+                }
+            });
+        });
+    };
+
+    $scope.postLogin = function() {
+        $http({method: "POST", url: 'ajax/login', data: $scope.login}).
+            success(function(data, status) {
+                $scope.message = data.message;
+                $scope.user_id = data.user_id;
+                $scope.login = {};
+                $scope.getIndex();
+            }).
+            error(function(data, status) {
+                $scope.message = data.message;
+            });
+    };
+
+    $scope.getLogout = function() {
+        $http({method: "GET", url: 'ajax/logout'}).
+            success(function(data, status) {
+                $scope.message = data.message;
+                $scope.user_id = 0;
+                $location.path('/');
+            }).
+            error(function(data, status) {
+                $scope.message = data.message;
+            });
+    };
+
+    $scope.getIndex();
 });
 
 // NewsController

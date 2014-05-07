@@ -79,6 +79,11 @@ Route::get('admin/news/edit_news/{id}', 'NewsController@getEditNews');
 Route::post('admin/news/edit_news/{id}', 'NewsController@postEditNews');
 Route::get('admin/news/{id}', 'NewsController@getNews');
 
+// front-end routes
+Route::get('ajax/login', 'ReservationController@getLogin');
+Route::post('ajax/login', 'ReservationController@postLogin');
+Route::get('ajax/logout', 'ReservationController@getLogout');
+
 App::missing(function($exception) {
     return View::make('singlepage');
 });

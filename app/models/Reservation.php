@@ -3,7 +3,6 @@
 class Reservation extends Eloquent {
 
     protected $table = 'reservations';
-    protected $appends = array('table');
 
     public function user() {
         return $this->belongsTo('User');
