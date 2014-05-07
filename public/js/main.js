@@ -20,6 +20,7 @@ lacApp.controller("HomeController", function($scope, $http) {
 lacApp.controller("MenuController", function($scope, $http) {
     $scope.dishes = null;
     $scope.msg = "";
+    $scope.notAvailable = false;
     $date = moment();
 
     $(".content.right").css("width", $(window).width() - 320);
@@ -37,14 +38,17 @@ lacApp.controller("MenuController", function($scope, $http) {
     $scope.fetch = function(getdate) {
         $scope.date = getdate.format("DD - MM - YYYY");
         var datadate = getdate.format("YYYY-MM-DD");
-        $scope.url = "date_menu/" + datadate;
+        $scope.url = "ajax/menu/" + datadate;
         $(".overlay-ajax").fadeIn(200, function() {
             $http({method: "GET", url: $scope.url}).
                 success(function(data, status) {
+                    $scope.notAvailable = false;
                     $scope.dishes = data;
                     $(".overlay-ajax").fadeOut(100);
                 }).
                 error(function(data, status) {
+                    $scope.notAvailable = true;
+                    $scope.dishes = {};
                     $scope.msg = data.message;
                     $(".overlay-ajax").fadeOut(100);
                 });

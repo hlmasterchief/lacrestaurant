@@ -21,11 +21,11 @@ class MenuController extends BaseController {
     }
 
     public function getMenuDate($date) {
-        $data = Menu::with('dishes.dishImages')->where('menu_date', "=", $date)->first();
+        $data = Menu::with('dishes.dishImage')->where('menu_date', "=", $date)->first();
         if ($data) {
             return $data->dishes->toJson();
         } else {
-            return Response::json(array('message'=>'Menu data not found'), 404);;
+            return Response::json(array('message'=>'Special Daily in this day is not available.'), 404);
         }
     }
 

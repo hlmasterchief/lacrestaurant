@@ -10,7 +10,7 @@
 	<div class="pure-u-1-2" ng-repeat="dish in dishes">
 		<div class="animated fadeIn dish">
 			<div class="img-wrapper">
-				<img src="<% dish.dish_images[0].link %>" />
+				<img ng-src="<% dish.dish_image.link %>" />
 			</div>
 
 			<div class="description">
@@ -28,4 +28,9 @@
 	</div>
 </div>
 
+</div>
+
+<div class="animated fadeInDown about-us" ng-show="notAvailable">
+    <h2>NOT AVAILABLE</h2>
+    <p>The special daily for this day has not been decided.</p>
 </div>

@@ -82,6 +82,7 @@ Route::post('/admin/feedback/delete/{id?}', 'AdminController@postDeleteFeedback'
 
 // front-end routes
 Route::get('/ajax/news', 'NewsController@getIndex');
+Route::get('/ajax/menu/{date}', 'MenuController@getMenuDate');
 
 App::missing(function($exception) {
     return View::make('singlepage');
