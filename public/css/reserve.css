@@ -137,13 +137,15 @@ div.time > ul > li.inactive, div.people > ul > li.inactive {
 	top: 14px;
 } 
 
-.contactus > p > a {
+.contactus > p > a, 
+.contact > .header > p > a{
 	text-decoration: none;
 	color: #fff;
 	border-bottom: 1px dotted #0078e7;
 }
 
-.contactus > p > a:hover {
+.contactus > p > a:hover, 
+.contact > .header > p > a:hover {
 	color: #0078e7;
 }
 
