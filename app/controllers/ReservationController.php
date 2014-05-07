@@ -20,17 +20,12 @@ class ReservationController extends BaseController {
     }
 
     public function postCreateReservation() {
-        $max_table = 40;
-        $today = date('Y-m-d');
-
-        $valid_table = $max_table - (Reservation::all()->sum('table'));
-        $valid_number = 2 * $valid_table;
-
         /* validate input */
         $validator = Validator::make(Input::all(), array(
-            'date'    =>  'required|date_format:Y-m-d|after:$today',
-            'time'    =>  'required|date_format:H:i',
-            'numbers' =>  'required|integer|between:1,$valid_number'
+            'date'        =>  'required|date_format:Y-m-d|after:$today',
+            'time'        =>  'required|date_format:H:i',
+            'numbers'     =>  'required|integer|between:1,$valid_number',
+            'phonenumber' =>  'required'
         ), array(
             'required'            =>  'We need to know your :attribute.',
             'date.date_format'    =>  'The date need to be formatted "dd-mm-yyyy"',
@@ -47,12 +42,13 @@ class ReservationController extends BaseController {
             $reservation->user_id = Input::get('user_id');
             $reservation->date    = Input::get('date');
             $reservation->time    = Input::get('time');
-            $reservation->number  = Input::get('numbers');
-            $reservation->comment = Input::get('requirements');
+            $reservation->numbers  = Input::get('numbers');
+            $reservation->requirements = Input::get('requirements');
             $reservation->save();
             return Response::json(array('message'=>'Your reservation is sent successfully. We will contact with you soon to confirm. Thank you!'), 200);
         } else {
-            return Response::json(array('message'=>$validator->message()), 400);
+            $messages = $validator->messages()->all();
+            return Response::json(array('message'=>$messages), 400);
         } // end validation
     }
 

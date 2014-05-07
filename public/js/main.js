@@ -55,7 +55,7 @@ lacApp.controller("MenuController", function($scope, $http) {
 
 // ContactController
 lacApp.controller("ContactController", function($scope, $http) {
-    $scope.msg = "";
+    $scope.msg = null;
     $scope.contact = {};
     $scope.contact.type = 0;
 
@@ -81,7 +81,7 @@ lacApp.controller("ContactController", function($scope, $http) {
 // ReserveController
 lacApp.controller("ReserveController", function($scope, $http) {
     $scope.reservation = {};
-    $scope.message = "";
+    $scope.msg = null;
     $scope.reservation.datadate = moment().format("DD/MM/YYYY"); 
     $scope.reservation.time = "19:00";
     $scope.reservation.datanumbers = "2 People";

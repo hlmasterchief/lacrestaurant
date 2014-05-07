@@ -4,7 +4,7 @@
     width: 440px;
     margin-bottom: 40px;
     padding-top: 30px;
-    padding-bottom: 60px;
+    padding-bottom: 30px;
     background-color: rgba(1, 1, 1,0.8);
     color: #fff;
 }
@@ -28,7 +28,7 @@
 .contact > form {
     position: relative;
     left: 10%; 
-    width: 80%;
+    width: 78%;
 }
 
 .contact > .pure-form > .pure-input-1 {
@@ -42,8 +42,15 @@
     height: 180px;
 }
 
-.contact > #msg {
-    left: 10%;
+.contact > .msg {
+    margin-left: 40px;
+    margin-top: 10px;
+    font-weight: 600;
+    display: block;
+}
+
+.contact > .msg > strong {
+    display: block;
 }
 
 form.pureform {
@@ -52,7 +59,7 @@ form.pureform {
 
 form.pure-form > .pure-input-1 {
     height: 44px;
-    margin-bottom: 14px;
+    margin-bottom: 20px;
     border-radius: 1px; 
 }
 

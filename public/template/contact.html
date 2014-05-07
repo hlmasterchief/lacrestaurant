@@ -25,5 +25,8 @@
         <button class="pure-button pure-button-primary" type="submit">Send us your comments</button>
     </form>
 
-    <strong id="msg"><% msg %></strong>
+    <div class="msg">
+    <strong ng-repeat="message in msg"><% message %></strong>
+    </div>
+
 </div>

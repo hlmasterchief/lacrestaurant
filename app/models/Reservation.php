@@ -3,7 +3,6 @@
 class Reservation extends Eloquent {
 
     protected $table = 'reservations';
-    protected $appends = array('table');
 
     public function user() {
         return $this->belongsTo('User');
@@ -22,9 +21,4 @@ class Reservation extends Eloquent {
     public static function countUnread() {
         return count(Reservation::getUnread());
     }
-
-    public function getTableAttribute() {
-        return ceil($this->numbers / 2);
-    }
-   
 }

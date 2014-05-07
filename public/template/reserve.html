@@ -27,6 +27,8 @@
 		        	<br />
 		        	<small>If you want to reserve for more than 4 people, please type numbers in the above box.</small>
 		        </div>
+
+		        <input id="phonenumber" class="pure-input-1" type="text" ng-model="reservation.phonenumber" placeholder="Phone number">
 		        
 		        <textarea class="pure-input-1" placeholder="Requirements" ng-model="reservation.requirements"></textarea>
 
@@ -55,5 +57,7 @@
 
 	</div>
 
-	<strong id="msg"><% msg %></strong>
+	<div class="msg">
+    <strong ng-repeat="message in msg"><% message %></strong>
+    </div>
 </div>

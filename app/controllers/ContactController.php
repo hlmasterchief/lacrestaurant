@@ -22,26 +22,31 @@ class ContactController extends BaseController {
     public function postCreateContact() {
         /* validate input */
         $validator = Validator::make(Input::all(), array(
-            "name"    =>  "required",
-            "email"   =>  "required|email",
-            "type"    =>  "required|in:0,1",
-            "subject" =>  "required",
-            "comment" =>  "required"
+            'name'    =>  'required|size:5',
+            'email'   =>  'required|email',
+            'type'    =>  'required|in:0,1',
+            'subject' =>  'required',
+            'comment' =>  'required'
+        ), array(
+            'required'=>  'The :attribute is required.',
+            'name.size' => 'Invalid',
+            'email.email' => 'Your email is invalid.',
         ));
 
         /* if validated */
         if ($validator->passes()) {
             /* get input */
             $contact = new Contact();
-            $contact->name    = Input::get("name");
-            $contact->email   = Input::get("email");
-            $contact->type    = Input::get("type");
-            $contact->subject = Input::get("subject");
-            $contact->comment = Input::get("comment");
+            $contact->name    = Input::get('name');
+            $contact->email   = Input::get('email');
+            $contact->type    = Input::get('type');
+            $contact->subject = Input::get('subject');
+            $contact->comment = Input::get('comment');
             $contact->save();
             return Response::json(array('message'=>'The form has been sent. Thank you!'), 200);
         } else {
-            return Response::json(array('message'=>'Error! Cannot send the form.'), 400);
+            $messages = $validator->messages()->all();
+            return Response::json(array('message'=>$messages), 400);
         } // end validation
     }
 
