@@ -66,6 +66,19 @@ Route::get('admin/contact', 'ContactController@getIndex');
 Route::get('admin/contact/{id}', 'ContactController@getContact');
 Route::post('admin/contact', 'ContactController@postCreateContact');
 
+// reservation routes
+Route::get('admin/reservation', 'ReservationController@getIndex');
+Route::get('admin/reservation/{id}', 'ReservationController@getReservation');
+Route::post('admin/reservation', 'ReservationController@postCreateReservation');
+
+// news routes
+Route::get('admin/news', 'NewsController@getIndex');
+Route::get('admin/news/create_news', 'NewsController@getCreateNews');
+Route::post('admin/news/create_news', 'NewsController@postCreateNews');
+Route::get('admin/news/edit_news/{id}', 'NewsController@getEditNews');
+Route::post('admin/news/edit_news/{id}', 'NewsController@postEditNews');
+Route::get('admin/news/{id}', 'NewsController@getNews');
+
 App::missing(function($exception) {
     return View::make('singlepage');
 });

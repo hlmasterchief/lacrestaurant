@@ -1,4 +1,5 @@
 .content.right.reservepage {
+	margin-bottom: 40px;
 	background-color: rgba(1,1,1,0.8);
 	width: 60%;
 	color: #fff;
@@ -49,7 +50,6 @@ h2.header,.contactus > h2 {
 	margin-top: 10px;
 	height: 40px;
 	display: block;
-	font-weight: 700;
 }
 
 div.number-list {
