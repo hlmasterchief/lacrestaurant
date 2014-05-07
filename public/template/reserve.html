@@ -5,7 +5,7 @@
 			<h2 class="header">BOOK A TABLE</h2>
 			<p>Select your date, time and number of people</p>
 
-			<form class="pure-form pure-g" autocomplete="off" ng-submit="post()">
+			<form class="pure-form pure-g" autocomplete="off">
 
 		        <input id="reservedate" class="pure-input-1" type="text" ng-model="reservation.datadate">
 		        <div id="datepicker" class="reservedate pure-u-1-1"></div>
@@ -32,7 +32,10 @@
 		        
 		        <textarea class="pure-input-1" placeholder="Requirements" ng-model="reservation.requirements"></textarea>
 
-		        <button class="pure-button pure-button-primary pure-u-1-3" type="submit">Reserve</button>
+		        <button class="pure-button pure-button-primary pure-u-2-5" ng-click="post()">Reserve</button>
+
+		        <button class="pure-button pure-button-primary pure-u-2-5 logout" ng-click="getLogout()">Log out</button>
+
 		    </form>
 		</div>
 
@@ -42,12 +45,16 @@
 
 			<form class="pure-form pure-g" autocomplete="off" ng-submit="postLogin()">
 
-		        <input id="username" class="pure-input-1" type="text" ng-model="login.username">
+		        <input id="username" class="pure-input-1" type="text" placeholder="Username" ng-model="login.username">
 
-		        <input id="password" class="pure-input-1" type="password" ng-model="login.password">
+		        <input id="password" class="pure-input-1" type="password" placeholder="Password" ng-model="login.password">
 
 		        <button class="pure-button pure-button-primary pure-u-1-3" type="submit">Login</button>
 		    </form>
+
+		   	<div class="msg">
+   			<strong><% message %></strong>
+    		</div>
 		</div>
 
 		<div class="contactus">	
@@ -72,6 +79,6 @@
 	</div>
 
 	<div class="msg">
-    <strong ng-repeat="message in msg"><% message %></strong>
+    <strong ng-repeat="error in msg"><% error %></strong>
     </div>
 </div>

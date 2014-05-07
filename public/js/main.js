@@ -82,6 +82,7 @@ lacApp.controller("ContactController", function($scope, $http) {
 lacApp.controller("ReserveController", function($scope, $http) {
     $scope.reservation = {};
     $scope.message = null;
+    $scope.error = null;
     $scope.msg = null;
     $scope.reservation.datadate = moment().format("DD/MM/YYYY"); 
     $scope.reservation.time = "19:00";
@@ -195,6 +196,8 @@ lacApp.controller("ReserveController", function($scope, $http) {
         });
     };
 
+
+    // login
     $scope.user_id = 0;
     $scope.login = {};
     $scope.vlogin = true;
@@ -218,14 +221,10 @@ lacApp.controller("ReserveController", function($scope, $http) {
         $(".overlay-ajax").fadeIn(200, function() {
             $scope.getLogin(function(status) {
                 if (status == 401) {
-                    // $("#login").show();
-                    // $("#reserve").hide();
                     $scope.vlogin = true;
                     $scope.vreserve = false;
                     $(".overlay-ajax").fadeOut(100);
                 } else if (status == 200) {
-                    // $("#login").hide();
-                    // $("#reserve").show();
                     $scope.vlogin = false;
                     $scope.vreserve = true;
                     $(".overlay-ajax").fadeOut(100);
@@ -252,10 +251,12 @@ lacApp.controller("ReserveController", function($scope, $http) {
             success(function(data, status) {
                 $scope.message = data.message;
                 $scope.user_id = 0;
-                $location.path('/');
+                // $location.path('/');
+                $scope.getIndex();
+                console.log($scope.message);
             }).
             error(function(data, status) {
-                $scope.message = data.message;
+                $scope.message = 'Fail';
             });
     };
 

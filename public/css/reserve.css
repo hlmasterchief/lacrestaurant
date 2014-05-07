@@ -1,14 +1,15 @@
 .content.right.reservepage {
-	margin-bottom: 40px;
+	margin-bottom: 48px;
 	background-color: rgba(1,1,1,0.8);
 	width: 60%;
-	height: 640px;
+	height: 690px;
 	color: #fff;
 	left: 26%;
 }
 
 .maincontainer {
 	position: relative;
+	height: 80%;
 	margin: 0;
 	padding: 0 38px 96px 8%;	
 }
@@ -27,6 +28,10 @@ h2.header,.contactus > h2 {
 	display: inline-block;
 }
 
+.login > .msg {
+	margin-top: 46px;
+}
+
 .reserve > p,
 .login > p {
 	position: inherit;
@@ -40,8 +45,7 @@ h2.header,.contactus > h2 {
 	width: 100;
 }
 
-.reserve > form.pure-form > input,
-.login > form.pure-form > input {
+.reserve > form.pure-form > input {
 	padding-left: 50px;
 	display: block;
 }
@@ -52,9 +56,13 @@ h2.header,.contactus > h2 {
 
 .reserve > form.pure-form > button,
 .login > form.pure-form > button {
-	margin-top: 10px;
+	margin-top: 6px;
 	height: 40px;
-	display: block;
+	display: inline-block;
+}
+
+.reserve > form.pure-form > button.logout {
+	margin-left: 10px;
 }
 
 div.number-list {
@@ -143,19 +151,19 @@ div.time > ul > li.inactive, div.people > ul > li.inactive {
 } 
 
 .contactus > p > a, 
-.contact > .header > p > a{
+.contact > .header > p > a {
 	text-decoration: none;
 	color: #fff;
 	border-bottom: 1px dotted #0078e7;
 }
 
-.contactus > p > a:hover, 
+.contactus > p > a:hover,
 .contact > .header > p > a:hover {
 	color: #0078e7;
 }
 
 .reservepage > .msg {
-    margin-left: 40px;
+    margin-left: 8%;
     margin-top: 10px;
     font-weight: 600;
     display: block;

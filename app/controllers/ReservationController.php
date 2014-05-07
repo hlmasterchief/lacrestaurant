@@ -27,11 +27,11 @@ class ReservationController extends BaseController {
             'numbers'     =>  'required|integer|between:1,64',
             'phonenumber' =>  'required'
         ), array(
-            'required'         =>  'We need to know your :attribute.',
+            'required'         =>  'The :attribute is required.',
             'date.date_format' =>  'The date need to be formatted "dd-mm-yyyy".',
             'date.after'       =>  'You date is invalid.',
             'time.date_format' =>  'The time need to be formatted "hh:mm".',
-            'numbers.integer'  =>  'We need to know numbers of people in your reservation.',
+            'numbers.integer'  =>  'We need to know number of people in your reservation.',
             'numbers.between'  =>  'We can only serve maximum 64 people.'
         ));
 
@@ -88,11 +88,8 @@ class ReservationController extends BaseController {
     }
 
     public function getLogout() {
-        if (Auth::logout()) {
-            return Response::json(array('message'=>'Logout success!'), 200);
-        } else {
-            return Response::json(array('message'=>'Error! Logout fail.'), 400);
-        }
+        Auth::logout();
+        return Response::json(array('message'=>'Logout success!'), 200);
     }
 
 }
