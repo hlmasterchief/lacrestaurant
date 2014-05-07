@@ -404,4 +404,30 @@ class AdminController extends BaseController {
         return Redirect::to('/admin/dishes');
     }
 
+    public function getEditMenu($date = null) {
+        if (!isset($date) or is_null($date))
+            return Redirect::to('/admin/menu');
+        $query = Menu::where('menu_date', $date)->first();
+        if (is_null($query)) {
+            $query = new Menu();
+            $query->menu_date = $date;
+        }
+        $this->layout->content = View::make('admin.edit_menu')->with('menu', $query);
+    }
+
+    public function postEditMenu($date = null) {
+        if (!isset($date) or is_null($date))
+            return Redirect::to('/admin/menu');
+        $menu = Menu::where('menu_date', $date)->first();
+        if (is_null($menu))
+            $menu = new Menu();
+
+        $menu->menu_date = $date;
+        $menu->save();
+        
+        $menu->dishes()->sync(Input::get('dishes'));
+
+        return Redirect::to('admin/menu/edit/'.$date)->with('message', "Successfully edited menu!");
+    }
+
 }

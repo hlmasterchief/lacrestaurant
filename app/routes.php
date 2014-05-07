@@ -33,6 +33,8 @@ Route::get('/admin/logout', 'AdminController@getLogout');
 
 
 Route::get('/admin/menu', 'AdminController@getManageMenu');
+Route::get('/admin/menu/edit/{date?}', 'AdminController@getEditMenu');
+Route::post('/admin/menu/edit/{date?}', 'AdminController@postEditMenu');
 
 
 Route::get('/admin/dishes', 'AdminController@getManageDishes');
