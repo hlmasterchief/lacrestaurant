@@ -60,12 +60,12 @@ body {
 }
 
 .about-us > p > a { 
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
 }
 
 .about-us > p > a:hover { 
-    color: #000;
+    color: #111111;
     font-style: italic;
 }
 

@@ -1,0 +1,338 @@
+.content.right.reservepage {
+	margin-bottom: 48px;
+	background-color: rgba(1,1,1,0.8);
+	width: 60%;
+	height: 690px;
+	color: #fff;
+	left: 26%;
+}
+
+.maincontainer {
+	position: relative;
+	height: 80%;
+	margin: 0;
+	padding: 0 38px 96px 8%;	
+}
+
+h2.header,.contactus > h2 {
+	position: relative;
+	top: 15px;
+	font-weight: bold;
+	line-height: 30px;
+}
+
+.reserve, .login {
+	position: relative;
+	width: 264px;
+	margin: 0;
+	display: inline-block;
+}
+
+.login > .msg {
+	margin-top: 46px;
+}
+
+.reserve > p,
+.login > p {
+	position: inherit;
+	top: 38px;
+}
+
+.reserve > form.pure-form,
+.login > form.pure-form {
+	position: relative;
+	top: 34px;
+	width: 100;
+}
+
+.reserve > form.pure-form > input {
+	padding-left: 50px;
+	display: block;
+}
+
+.reserve > form.pure-form > textarea {
+	height: 140px;
+}
+
+.reserve > form.pure-form > button,
+.login > form.pure-form > button {
+	margin-top: 6px;
+	height: 40px;
+	display: inline-block;
+}
+
+.reserve > form.pure-form > button.logout {
+	margin-left: 10px;
+}
+
+div.number-list {
+	position: absolute;
+	left: 0;
+	margin-top: 44px;
+	padding: 2px 10px 8px 10px;
+	width: 264px;
+	box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.506);
+	background: #FFFFFF;
+	border: 1px solid #cccccc;
+	color: #333333;
+	display: block;
+	font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	z-index: 9999;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align: justify;
+	display: none;
+}
+
+div.number-list > ul {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	padding: 0;
+	border-top: solid 1px #dddddd;
+	border-left: solid 1px #cccccc;
+	border-right: solid 1px #cccccc;
+	list-style: none;
+}
+
+div.number-list > ul > li {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	border-bottom: solid 1px #dddddd;
+	border-left: solid 1px #dddddd;
+	border-right: solid 1px #dddddd;
+	background: #F5F5F5;
+	font-size: 0.9em;
+	text-align: center;
+	cursor: pointer;
+	color: #333333;
+}
+
+div.number-list > ul > li:hover,
+div.time > ul > li.inactive:hover,
+div.people > ul > li.inactive:hover {
+	background: #aab7b7;
+	color: #ffffff;
+}
+
+div.time, div.people, #datepicker {
+	display: none;
+}
+
+div.time > ul {
+	height: 160px;
+	overflow: auto;
+}
+
+div.time > ul > li.active, div.people > ul > li.active { 
+	background: #33AAFF;
+	color: #ffffff;
+}
+
+div.time > ul > li.inactive, div.people > ul > li.inactive {
+	background: #F5F5F5;
+	color: #333333;
+}
+
+.contactus {
+	position: absolute;
+	top: 0;
+	right: 14%;
+	width: 36%;
+	height: 100%;
+}
+
+.contactus > h2 {
+	margin-bottom: 44px;
+}
+
+.contactus > h4 {
+	position: relative;
+	top: 14px;
+} 
+
+.contactus > p > a, 
+.contact > .header > p > a {
+	text-decoration: none;
+	color: #fff;
+	border-bottom: 1px dotted #0078e7;
+}
+
+.contactus > p > a:hover,
+.contact > .header > p > a:hover {
+	color: #0078e7;
+}
+
+.reservepage > .msg {
+    margin-left: 8%;
+    margin-top: 10px;
+    font-weight: 600;
+    display: block;
+}
+
+.reservepage > .msg > strong {
+    display: block;
+}
+
+#reservedate {
+	background: #fff url('../img/calendar.png') no-repeat 10px center;
+}
+
+#time {
+	background: #fff url('../img/clock.png') no-repeat 10px center;
+}
+
+#people {
+	background: #fff url('../img/people.png') no-repeat 10px center;
+}
+
+#phonenumber {
+	background: #fff url('../img/phone.png') no-repeat 3px center;
+}
+
+@media (max-width: 1150px) {
+    .content.right.reservepage {
+    	left: 290px;
+    }
+
+    .contactus {
+    	right: 6%;
+    }
+}
+
+
+/* datepicker */
+.reservedate {
+	position: absolute;
+	left: 0;
+	margin-top: 44px;
+    font-size: 90%;
+    z-index: 10;
+    font-size: 0.8em;
+}
+
+.reservedate .ui-widget {
+    font-family: "Open Sans", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+    background: #ffffff;
+    border: solid 1px #e5e5e5;
+    border-radius: 0;
+    -webkit-border-radius: 0;-
+    -moz-border-radius: 0;
+    box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.506);
+}
+
+.reservedate .ui-widget-content {
+	border: solid 1px #cccccc;
+}
+
+.reservedate .ui-datepicker {
+    padding: 0;
+    width: 262px;
+}
+
+.reservedate .ui-datepicker-header {
+    border: none;
+    background: transparent;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.reservedate .ui-datepicker-header .ui-state-hover {
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+.reservedate .ui-datepicker .ui-datepicker-title {
+    margin-top: .4em;
+    margin-bottom: .3em;
+    color: #333333;
+}
+
+.reservedate .ui-datepicker .ui-datepicker-prev-hover,
+.reservedate .ui-datepicker .ui-datepicker-next-hover,
+.reservedate .ui-datepicker .ui-datepicker-next,
+.reservedate .ui-datepicker .ui-datepicker-prev {
+    top: .9em;
+    border:none;
+}
+
+.reservedate .ui-datepicker .ui-datepicker-prev-hover {
+    left: 2px;
+}
+
+.reservedate .ui-datepicker .ui-datepicker-next-hover {
+    right: 2px;
+}
+
+.reservedate .ui-datepicker .ui-datepicker-next span,
+.reservedate .ui-datepicker .ui-datepicker-prev span {
+    background-image: url(/css/ui-lightness/images/ui-icons_222222_256x240.png);
+    background-position: -32px 0;
+    margin-top: 0;
+    top: 0;
+    font-weight: normal;
+}
+
+.reservedate .ui-datepicker .ui-datepicker-prev span {
+    background-position: -96px 0;
+}
+
+.reservedate .ui-datepicker table {
+    margin: 0;
+}
+
+.reservedate .ui-datepicker th {
+    padding: 1em 0;
+    color: #666666;
+    font-size: 12px;
+    font-weight: 700;
+    border: none;
+    border-top: none;
+    background-color: #ffffff;
+    width: 14.27%;
+}
+
+.reservedate .ui-datepicker td {
+    background-color: #fcfcfc;
+    border: solid 1px #dddddd;
+    padding: 0;
+}
+
+.reservedate td .ui-state-default {
+    background: #F5F5F5;
+    border: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+    color: #666666;
+    font-size: 12px;
+    height: 30px;
+    line-height: 32px;
+    font-weight: 600;
+}
+
+.reservedate .ui-state-disabled  {
+    opacity: 1;
+}
+
+.reservedate .ui-state-disabled .ui-state-default {
+    color: #fba49e;
+}
+
+.reservedate td .ui-state-active {
+    background: #33AAFF;
+    color: #ffffff;
+}
+
+.reservedate td .ui-state-hover {
+    background: #aab7b7;
+    color: #ffffff;
+}
+
+.reservedate .ui-state-disabled .ui-state-default {
+    color: #fba49e;
+}

@@ -15,6 +15,8 @@
         <link rel="stylesheet" href="css/menu.css">
         <link rel="stylesheet" href="css/contact.css">
         <link rel="stylesheet" href="css/news.css">
+        <link rel="stylesheet" href="css/reserve.css">
+        <link rel="stylesheet" href="/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">        
 
         <script type="text/ng-template" src="template/menubar.html"></script>
 
@@ -47,5 +49,6 @@
         <script src="http://code.angularjs.org/1.2.15/angular-sanitize.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/moment.js"></script>
+        <script src="/js/jquery-ui-1.10.4.custom.min.js"></script>
     </body>
 </html>
