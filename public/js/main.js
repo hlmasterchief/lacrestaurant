@@ -47,9 +47,10 @@ lacApp.controller("MenuController", function($scope, $http) {
                     $(".overlay-ajax").fadeOut(100);
                 }).
                 error(function(data, status) {
-                    $scope.notAvailable = true;
+                    if (status == 404) {
+                        $scope.notAvailable = true;
+                    }
                     $scope.dishes = {};
-                    $scope.msg = data.message;
                     $(".overlay-ajax").fadeOut(100);
                 });
         });
