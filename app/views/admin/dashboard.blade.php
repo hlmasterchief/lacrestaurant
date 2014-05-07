@@ -22,7 +22,7 @@
 
                 <div class="text">
                     <div class="value">
-                    36
+                    {{ Reservation::countNew() }}
                     </div>
 
                     <div class="title">
@@ -42,7 +42,7 @@
 
                 <div class="text">                    
                     <div class="value">
-                    15
+                    {{ Reservation::countOngoing() }}
                     </div>
 
                     <div class="title">

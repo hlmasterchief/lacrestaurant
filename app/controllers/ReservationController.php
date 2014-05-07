@@ -46,7 +46,7 @@ class ReservationController extends BaseController {
             $reservation->phonenumber  = Input::get('phonenumber');
             $reservation->requirements = (Input::has('requirements')?Input::get('requirements'):'');
             $reservation->save();
-            return Response::json(array('message'=>['Your reservation is sent successfully. We will contact with you soon to confirm. Thank you!']), 200);
+            return Response::json(array('message'=>array('Your reservation is sent successfully. We will contact with you soon to confirm. Thank you!')), 200);
         } else {
             $messages = $validator->messages()->all();
             return Response::json(array('message'=>$messages), 400);

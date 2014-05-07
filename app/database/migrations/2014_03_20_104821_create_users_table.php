@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration {
             $table->date('birthday')->default('1993-01-01');
             $table->integer('group_id')->unsigned();
             $table->integer('room_id')->default(-1);
+            $table->string('remember_token', 100)->nullable();
             $table->timestamps();
         });
     }

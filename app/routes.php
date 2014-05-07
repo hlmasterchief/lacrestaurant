@@ -32,6 +32,12 @@ Route::post('/admin/login', 'AdminController@postLogin');
 Route::get('/admin/logout', 'AdminController@getLogout');
 
 
+Route::get('/admin/reserve', 'AdminController@getManageReserve');
+Route::get('admin/reserve/{id}', 'AdminController@getReserve');
+Route::get('admin/reserve/ongoing/{id}', 'AdminController@getReserveOngoing');
+Route::get('admin/reserve/close/{id}', 'AdminController@getReserveClose');
+
+
 Route::get('/admin/menu', 'AdminController@getManageMenu');
 Route::get('/admin/menu/edit/{date?}', 'AdminController@getEditMenu');
 Route::post('/admin/menu/edit/{date?}', 'AdminController@postEditMenu');
@@ -85,17 +91,7 @@ Route::get('/ajax/news', 'NewsController@getIndex');
 Route::get('/ajax/menu/{date}', 'MenuController@getMenuDate');
 
 // reservation routes
-Route::get('admin/reservation', 'ReservationController@getIndex');
-Route::get('admin/reservation/{id}', 'ReservationController@getReservation');
-Route::post('admin/reservation', 'ReservationController@postCreateReservation');
-
-// news routes
-Route::get('admin/news', 'NewsController@getIndex');
-Route::get('admin/news/create_news', 'NewsController@getCreateNews');
-Route::post('admin/news/create_news', 'NewsController@postCreateNews');
-Route::get('admin/news/edit_news/{id}', 'NewsController@getEditNews');
-Route::post('admin/news/edit_news/{id}', 'NewsController@postEditNews');
-Route::get('admin/news/{id}', 'NewsController@getNews');
+Route::post('ajax/reserve', 'ReservationController@postCreateReservation');
 
 // front-end routes
 Route::get('ajax/login', 'ReservationController@getLogin');

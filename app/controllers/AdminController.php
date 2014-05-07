@@ -430,4 +430,44 @@ class AdminController extends BaseController {
         return Redirect::to('admin/menu/edit/'.$date)->with('message', "Successfully edited menu!");
     }
 
+    public function getManageReserve() {
+        $query = Reservation::orderBy('status')->paginate(10);
+        $this->layout->content = View::make('admin.manage_reservation')
+                                    ->with('reserves', $query);
+    }
+
+    public function getReserve($id = null) {
+        if (!isset($id) or is_null($id))
+            return Redirect::to('/admin/reserve');
+        $query = Reservation::find($id);
+        if (is_null($query))
+            return Redirect::to('/admin/reserve');
+        $this->layout->content = View::make('admin.read_reservation')->with('reserve', $query);
+    }
+
+    public function getReserveOngoing($id = null) {
+        if (!isset($id) or is_null($id))
+            return Redirect::to('/admin/reserve');
+        $query = Reservation::find($id);
+        if (is_null($query))
+            return Redirect::to('/admin/reserve');
+
+        $query->status = 1;
+        $query->save();
+
+        return Redirect::to('admin/reserve/'.$id)->with('message', "The reservation has been confirmed!");
+    }
+
+    public function getReserveClose($id = null) {
+        if (!isset($id) or is_null($id))
+            return Redirect::to('/admin/reserve');
+        $query = Reservation::find($id);
+        if (is_null($query))
+            return Redirect::to('/admin/reserve');
+
+        $query->status = 2;
+        $query->save();
+        
+        return Redirect::to('admin/reserve/'.$id)->with('message', "The reservation has been closed!");
+    }
 }

@@ -185,7 +185,7 @@ lacApp.controller("ReserveController", function($scope, $http) {
         $("#msg").addClass("animated fadeIn");
         $(".overlay-ajax").fadeIn(200, function() {
 
-            $http({method: "POST", url: 'admin/reservation', data: $scope.reservation}).
+            $http({method: "POST", url: 'ajax/reserve', data: $scope.reservation}).
                 success(function(data, status) {
                     $scope.msg = data.message;
                     $scope.reservation = {};

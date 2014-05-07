@@ -112,6 +112,10 @@ body {
     background-color: #8e44ad;
 }
 
+.sidebar > .nav > li.hover-turquoise:hover {
+    background-color: #1abc9c;
+}
+
 .sidebar > .nav > li.logo {
     height: 120px;
     background-image: url('../img/marios-logo.png'); 
