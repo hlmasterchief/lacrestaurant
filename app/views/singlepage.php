@@ -16,7 +16,8 @@
         <link rel="stylesheet" href="css/contact.css">
         <link rel="stylesheet" href="css/news.css">
         <link rel="stylesheet" href="css/reserve.css">
-        <link rel="stylesheet" href="/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">        
+        <link rel="stylesheet" href="/css/ui-lightness/jquery-ui-1.10.4.custom.min.css">  
+        <link rel="shortcut icon" type="image/x-icon" href="./img/L.ico" />
 
         <script type="text/ng-template" src="template/menubar.html"></script>
 
