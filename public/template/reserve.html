@@ -35,13 +35,8 @@
 		        <button class="pure-button pure-button-primary pure-u-2-5" ng-click="post()">Reserve</button>
 
 		        <button class="pure-button pure-button-primary pure-u-2-5 logout" ng-click="getLogout()">Log out</button>
-
+		    
 		    </form>
-
-		    <div class="msg">
-    			<strong ng-repeat="error in msg"><% error %></strong>
-    		</div>
-    		
 		</div>
 
 		<div id="login" class="login" ng-show="vlogin">
@@ -58,7 +53,7 @@
 		    </form>
 
 		   	<div class="msg">
-   			<strong><% message %></strong>
+   				<strong><% message %></strong>
     		</div>
 		</div>
 
@@ -82,4 +77,8 @@
 		</div>
 
 	</div>
+
+	<div class="msg" ng-show="vreserve">
+    	<strong ng-repeat="error in msg"><% error %></strong>
+   	</div>
 </div>

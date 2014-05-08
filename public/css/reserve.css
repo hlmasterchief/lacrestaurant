@@ -2,16 +2,16 @@
 	margin-bottom: 48px;
 	background-color: rgba(1,1,1,0.8);
 	width: 60%;
-	height: 690px;
+	min-height: 690px;
 	color: #fff;
-	/*left: 26%;*/
+	padding-bottom: 20px;
 }
 
 .maincontainer {
 	position: relative;
-	height: 80%;
+	height: 640px;
 	margin: 0;
-	padding: 0 38px 96px 8%;	
+	padding: 0 38px 0 8%;	
 }
 
 h2.header,.contactus > h2 {
@@ -162,13 +162,14 @@ div.time > ul > li.inactive, div.people > ul > li.inactive {
 	color: #0078e7;
 }
 
-.reserve > .msg {
-    margin-top: 40px;
+.reservepage > .msg {
+    margin-left: 8%;
+    /*margin-top: 0px;*/
     font-weight: 600;
     display: block;
 }
 
-.reserve > .msg > strong {
+.reservepage > .msg > strong {
     display: block;
 }
 

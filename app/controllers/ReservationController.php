@@ -20,19 +20,21 @@ class ReservationController extends BaseController {
     }
 
     public function postCreateReservation() {
+        // $today = date("Y-m-d");
+
         /* validate input */
         $validator = Validator::make(Input::all(), array(
-            'date'        =>  'required|date_format:Y-m-d|after:$today',
+            'date'        =>  'required|date_format:Y-m-d',
             'time'        =>  'required|date_format:H:i',
             'numbers'     =>  'required|integer|between:1,64',
             'phonenumber' =>  'required'
         ), array(
-            'required'         =>  'The :attribute is required.',
-            'date.date_format' =>  'The date need to be formatted "dd-mm-yyyy".',
-            'date.after'       =>  'You date is invalid.',
-            'time.date_format' =>  'The time need to be formatted "hh:mm".',
-            'numbers.integer'  =>  'We need to know number of people in your reservation.',
-            'numbers.between'  =>  'We can only serve maximum 64 people.'
+            'required'               =>  'The :attribute is required.',
+            'date.date_format:Y-m-d' =>  'The date need to be formatted "dd-mm-yyyy".',
+            'date.after'     =>  'You date is invalid.',
+            'time.date_format:H:i'   =>  'The time need to be formatted "hh:mm".',
+            'numbers.integer'        =>  'We need to know number of people in your reservation.',
+            'numbers.between:1,64'   =>  'We can only serve maximum 64 people.'
         ));
 
         /* if validated */
