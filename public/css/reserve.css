@@ -88,19 +88,19 @@ div.number-list > ul {
 	margin-top: 5px;
 	margin-bottom: 5px;
 	padding: 0;
-	border-top: solid 1px #dddddd;
-	border-left: solid 1px #cccccc;
-	border-right: solid 1px #cccccc;
+	border-top: solid 1px rgba(221,221,221, 0.2);
+	border-left: solid 1px rgba(204,204,204,0.2);
+	border-right: solid 1px rgba(204,204,204,0.2);
 	list-style: none;
 }
 
 div.number-list > ul > li {
 	padding-top: 4px;
 	padding-bottom: 4px;
-	border-bottom: solid 1px #dddddd;
-	border-left: solid 1px #dddddd;
-	border-right: solid 1px #dddddd;
-	background: #F5F5F5;
+	border-bottom: solid 1px rgba(221,221,221, 0.2);
+	border-left: solid 1px rgba(221,221,221, 0.2);
+	border-right: solid 1px rgba(221,221,221, 0.2);
+	background: rgba(245,245,245, 0.4);
 	font-size: 0.9em;
 	text-align: center;
 	cursor: pointer;
@@ -162,14 +162,13 @@ div.time > ul > li.inactive, div.people > ul > li.inactive {
 	color: #0078e7;
 }
 
-.reservepage > .msg {
-    margin-left: 8%;
-    margin-top: 10px;
+.reserve > .msg {
+    margin-top: 40px;
     font-weight: 600;
     display: block;
 }
 
-.reservepage > .msg > strong {
+.reserve > .msg > strong {
     display: block;
 }
 
@@ -296,8 +295,8 @@ div.time > ul > li.inactive, div.people > ul > li.inactive {
 }
 
 .reservedate .ui-datepicker td {
-    background-color: #fcfcfc;
-    border: solid 1px #dddddd;
+    background-color: rgba(252,252,252,0.4);
+    border: solid 1px rgba(221,221,221,0.2);
     padding: 0;
 }
 
