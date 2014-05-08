@@ -43,7 +43,7 @@ class UserTableSeeder extends Seeder {
             $user->username = sprintf("%03dS", $i);
             $user->password = Hash::make("passnhulon");
             $user->group_id = $customer_group->id;
-            $user->room_id  = Room::all()->first()->id;
+            $user->room_id  = Room::all()->first()->id + $i - 1;
             $user->realname = $faker->name();
             $user->email    = $faker->email;
             $user->save();
