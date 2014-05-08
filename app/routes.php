@@ -92,6 +92,7 @@ Route::get('/ajax/menu/{date}', 'MenuController@getMenuDate');
 
 // reservation routes
 Route::post('ajax/reserve', 'ReservationController@postCreateReservation');
+Route::post('ajax/contact', 'ContactController@postCreateContact');
 
 // front-end routes
 Route::get('ajax/login', 'ReservationController@getLogin');
