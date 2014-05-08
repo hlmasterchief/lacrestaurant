@@ -42,7 +42,7 @@ class ContactController extends BaseController {
             $contact->subject = Input::get('subject');
             $contact->comment = Input::get('comment');
             $contact->save();
-            return Response::json(array('message'=>['The form has been sent. Thank you!']), 200);
+            return Response::json(array('message'=>array('The form has been sent. Thank you!')), 200);
         } else {
             $messages = $validator->messages()->all();
             return Response::json(array('message'=>$messages), 400);

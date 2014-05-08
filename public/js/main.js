@@ -67,7 +67,7 @@ lacApp.controller("ContactController", function($scope, $http) {
     $scope.post = function() {
         $("#msg").addClass("animated fadeIn");
         $(".overlay-ajax").fadeIn(200, function() {
-            $http({method: "POST", url: 'admin/contact', data: $scope.contact}).
+            $http({method: "POST", url: 'ajax/contact', data: $scope.contact}).
                 success(function(data, status) {
                     $scope.msg = data.message;
                     $scope.contact = {};
