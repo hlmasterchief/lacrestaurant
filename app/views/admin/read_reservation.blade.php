@@ -29,10 +29,10 @@
         <thead>
             <tr>
                 <th>Room Code</th>
-                <th width="64px" class="center">Status</th>
+                <th width="60px" class="center">Status</th>
                 <th width="120px" class="center">Datetime</th>
                 <th width="120px" class="center">Person Number</th>
-                <th width="120px" class="center">Contact</th>
+                <th width="136px" class="center">Contact</th>
             </tr>
         </thead>
         <tbody>
@@ -52,9 +52,9 @@
         </tfoot>
         </table>
         <div class="footer-data">
-            @if($reserve->status === 0)
+            @if($reserve->status == 0)
             <a href="/admin/reserve/ongoing/{{$reserve->id}}" class="pure-button pure-button-primary float-left">Confirm Reservation</a>
-            @elseif($reserve->status === 1)
+            @elseif($reserve->status == 1)
             <a href="/admin/reserve/close/{{$reserve->id}}" class="pure-button pure-button-primary float-left">Close Reservation</a>
             @endif
         </div>

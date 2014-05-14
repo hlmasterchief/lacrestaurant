@@ -36,7 +36,7 @@
                         <span class="icon"><i class="fa fa-home"></i></span>
                         <span class="text">Dashboard</span>
                     </a></li>
-                    <li {{ HTML::is_active("admin/reserves") }}><a href="/admin/reserve">
+                    <li {{ HTML::is_active("admin/reserve") }}><a href="/admin/reserve">
                         <span class="icon"><i class="fa fa-phone-square"></i></span>
                         <span class="text">Manage Reservation</span>
                     </a></li>

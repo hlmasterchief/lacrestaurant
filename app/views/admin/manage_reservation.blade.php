@@ -24,7 +24,7 @@
                 <th width="64px" class="center">Status</th>
                 <th width="120px" class="center">Datetime</th>
                 <th width="120px" class="center">Person Number</th>
-                <th width="120px" class="center">Contact</th>
+                <th width="136px" class="center">Contact</th>
             </tr>
         </thead>
         <tbody>
